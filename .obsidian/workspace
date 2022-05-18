@@ -1,0 +1,201 @@
+{
+  "main": {
+    "id": "85b6b0a290a19701",
+    "type": "split",
+    "children": [
+      {
+        "id": "f45d27580ed81467",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Untitled.md",
+            "mode": "source",
+            "source": false
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "08e327d51f914e03",
+    "type": "split",
+    "children": [
+      {
+        "id": "0f2b9f1a571a1d3e",
+        "type": "tabs",
+        "dimension": 32.65869365225391,
+        "children": [
+          {
+            "id": "20db68dd0d72a26e",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          },
+          {
+            "id": "2714d0a07a8779a1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Math/Discrete Math/Questions.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "2bc96b43980e79d5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Math/Discrete Math/My methods.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "71a10ad7958ac25f",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 3
+      },
+      {
+        "id": "878481651a0844f7",
+        "type": "tabs",
+        "dimension": 67.34130634774608,
+        "children": [
+          {
+            "id": "7cb1fac3ee0edd2c",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "0dec55617d4408e7",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": true,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 391.0121879577637
+  },
+  "right": {
+    "id": "cea5acb34f371c6b",
+    "type": "split",
+    "children": [
+      {
+        "id": "3fc3c8523d414f9f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "fda028b522de0717",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Untitled.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "aced64b4003683f0",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
+          },
+          {
+            "id": "997ca15508001dfc",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {}
+            }
+          },
+          {
+            "id": "3126eaea614f2f7e",
+            "type": "leaf",
+            "state": {
+              "type": "juggl_nodes",
+              "state": {}
+            }
+          },
+          {
+            "id": "9a763554e6792d05",
+            "type": "leaf",
+            "state": {
+              "type": "juggl_style",
+              "state": {}
+            }
+          },
+          {
+            "id": "f44cfb8888150bdb",
+            "type": "leaf",
+            "state": {
+              "type": "review-queue-list-view",
+              "state": {}
+            }
+          },
+          {
+            "id": "30c4771c1b26c12b",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 6
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "f45d27580ed81467",
+  "lastOpenFiles": [
+    "Untitled.md",
+    "Homework Template.md",
+    "Math/Discrete Math/My methods.md",
+    "Math/Discrete Math/Chapter 1 - Logic and Proofs/;1.4 - Predicate Logic/Subnotes/Logical Equivalences with Quantifiers.md",
+    "Math/Discrete Math/Chapter 1 - Logic and Proofs/;1.4 - Predicate Logic/;1.4 - Predicate Logic.md",
+    "Math/Discrete Math/Chapter 1 - Logic and Proofs/;1.4 - Predicate Logic/Subnotes/De Morgan’s Law for Quantifiers.md",
+    "Math/Discrete Math/Chapter 1 - Logic and Proofs/;1.4 - Predicate Logic/Untitled.md",
+    "Math/Discrete Math/Questions.md",
+    "Math/Discrete Math/Chapter 1 - Logic and Proofs/Chapter 1 - Logic and Proofs.md",
+    "Math/Discrete Math/Chapter 1 - Logic and Proofs/;1.4 - Predicate Logic/English To Logic With Quantifiers.md"
+  ]
+}

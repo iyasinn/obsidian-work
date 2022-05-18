@@ -1,0 +1,30 @@
+{
+  "settings": {
+    "migrated": true,
+    "iconPacksPath": "plugins/obsidian-icon-folder/icons",
+    "fontSize": 16,
+    "iconColor": null,
+    "recentlyUsedIcons": [
+      "RiBallPenLine",
+      "RiNumber1",
+      "RiInkBottleLine",
+      "RiQuillPenLine",
+      "RiCamera3Line"
+    ],
+    "recentlyUsedIconsSize": 5,
+    "rules": [],
+    "extraPadding": {
+      "top": 2,
+      "right": 2,
+      "bottom": 2,
+      "left": 2
+    }
+  },
+  "Excalidraw": "RiBallPenLine",
+  "Images": "RiCamera3Line",
+  "Math/Discrete Math": "RiQuillPenLine",
+  "Math/Discrete Math/Chapter 1 - Logic and Proofs": {
+    "iconName": null,
+    "inheritanceIcon": "RiQuillPenLine"
+  }
+}

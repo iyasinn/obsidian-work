@@ -1,0 +1,199 @@
+{
+  "appData": {
+    "Math/Discrete Math/Chapter 1 - Logic and Proofs/;1.1 - Propositions/;1.1 - Propositions.md": {
+      "yrqsyl": {
+        "headers": [
+          {
+            "id": "3266e82e-5dee-4e2e-a954-c3c3532bd32a",
+            "content": "Amazing",
+            "sortName": "default",
+            "width": "100px",
+            "type": "text"
+          },
+          {
+            "id": "a7ef320e-b377-4d1f-928f-e899062e3efb",
+            "content": "Column 1",
+            "sortName": "default",
+            "width": "100px",
+            "type": "text"
+          },
+          {
+            "id": "627c317d-eb06-4438-8a50-becb3a0c8aed",
+            "content": "Column 2",
+            "sortName": "default",
+            "width": "100px",
+            "type": "text"
+          },
+          {
+            "id": "56efb822-94e8-40f8-b4a7-2b7bf4e91df1",
+            "content": "Column 3",
+            "sortName": "default",
+            "width": "100px",
+            "type": "text"
+          }
+        ],
+        "rows": [
+          {
+            "id": "3c7cc526-cf0a-44a7-b125-c18bcebe5979",
+            "creationTime": 1652160642585
+          },
+          {
+            "id": "2f6675a5-63e4-4d9e-966c-3551d4eed4e6",
+            "creationTime": 1652160643935
+          },
+          {
+            "id": "88eaca51-1bc2-43aa-b8a0-37a544adb2e5",
+            "creationTime": 1652160645066
+          }
+        ],
+        "cells": [
+          {
+            "id": "fc942a75-78e7-4b04-9334-fec9daaf5bef",
+            "rowId": "3c7cc526-cf0a-44a7-b125-c18bcebe5979",
+            "headerId": "3266e82e-5dee-4e2e-a954-c3c3532bd32a",
+            "type": "text",
+            "content": "",
+            "expectedType": null
+          },
+          {
+            "id": "5244bbcc-85ab-4918-b39f-36ff98f99ea8",
+            "rowId": "3c7cc526-cf0a-44a7-b125-c18bcebe5979",
+            "headerId": "a7ef320e-b377-4d1f-928f-e899062e3efb",
+            "type": "text",
+            "content": "Interesting",
+            "expectedType": null
+          },
+          {
+            "id": "10e1abea-f49d-4bc7-91b3-e173c09c5bc1",
+            "rowId": "3c7cc526-cf0a-44a7-b125-c18bcebe5979",
+            "headerId": "627c317d-eb06-4438-8a50-becb3a0c8aed",
+            "type": "text",
+            "content": "Cool",
+            "expectedType": null
+          },
+          {
+            "id": "92d86d2d-d667-4dd9-9618-e30f6998fc75",
+            "rowId": "3c7cc526-cf0a-44a7-b125-c18bcebe5979",
+            "headerId": "56efb822-94e8-40f8-b4a7-2b7bf4e91df1",
+            "type": "text",
+            "content": "",
+            "expectedType": null
+          },
+          {
+            "id": "069e0d64-8c7a-4804-ae14-0a3e89105d99",
+            "rowId": "2f6675a5-63e4-4d9e-966c-3551d4eed4e6",
+            "headerId": "3266e82e-5dee-4e2e-a954-c3c3532bd32a",
+            "type": "text",
+            "content": "",
+            "expectedType": null
+          },
+          {
+            "id": "4c2d018d-47ee-47b1-a7ca-523ec81c7f1b",
+            "rowId": "2f6675a5-63e4-4d9e-966c-3551d4eed4e6",
+            "headerId": "a7ef320e-b377-4d1f-928f-e899062e3efb",
+            "type": "text",
+            "content": "",
+            "expectedType": null
+          },
+          {
+            "id": "109f8d4e-ef9e-4751-ab2a-cf452bfa5dea",
+            "rowId": "2f6675a5-63e4-4d9e-966c-3551d4eed4e6",
+            "headerId": "627c317d-eb06-4438-8a50-becb3a0c8aed",
+            "type": "text",
+            "content": "",
+            "expectedType": null
+          },
+          {
+            "id": "5ca746a7-f0f6-4ded-ba76-41f3a7fa15ca",
+            "rowId": "2f6675a5-63e4-4d9e-966c-3551d4eed4e6",
+            "headerId": "56efb822-94e8-40f8-b4a7-2b7bf4e91df1",
+            "type": "text",
+            "content": "",
+            "expectedType": null
+          },
+          {
+            "id": "35414922-20cc-4a26-8158-4ab4337074bd",
+            "rowId": "88eaca51-1bc2-43aa-b8a0-37a544adb2e5",
+            "headerId": "3266e82e-5dee-4e2e-a954-c3c3532bd32a",
+            "type": "text",
+            "content": "",
+            "expectedType": null
+          },
+          {
+            "id": "d68e255f-7d7e-4ec1-b0ee-a7e0939d11f1",
+            "rowId": "88eaca51-1bc2-43aa-b8a0-37a544adb2e5",
+            "headerId": "a7ef320e-b377-4d1f-928f-e899062e3efb",
+            "type": "text",
+            "content": "",
+            "expectedType": null
+          },
+          {
+            "id": "e743e197-87f7-4b41-9026-0ab26a91c8c9",
+            "rowId": "88eaca51-1bc2-43aa-b8a0-37a544adb2e5",
+            "headerId": "627c317d-eb06-4438-8a50-becb3a0c8aed",
+            "type": "text",
+            "content": "Testi",
+            "expectedType": null
+          },
+          {
+            "id": "75ac3f82-c949-4711-aba1-cfdfd4a12fcf",
+            "rowId": "88eaca51-1bc2-43aa-b8a0-37a544adb2e5",
+            "headerId": "56efb822-94e8-40f8-b4a7-2b7bf4e91df1",
+            "type": "text",
+            "content": "",
+            "expectedType": null
+          }
+        ],
+        "tags": [],
+        "updateTime": 0
+      },
+      "spv9ta": {
+        "headers": [
+          {
+            "id": "7f60a3b3-62a3-4b06-82a5-b4d405d201c9",
+            "content": "Column 1",
+            "sortName": "default",
+            "width": "100px",
+            "type": "text"
+          },
+          {
+            "id": "3203fcf7-cc0f-4fee-a969-8e78fcb15d53",
+            "content": "Column 1",
+            "sortName": "default",
+            "width": "100px",
+            "type": "text"
+          }
+        ],
+        "rows": [
+          {
+            "id": "de5c31af-8cd0-4fbd-8c7a-01224a14c57e",
+            "creationTime": 1652160741934
+          }
+        ],
+        "cells": [
+          {
+            "id": "ed84ed43-e930-46a7-a756-fa44c7bdd162",
+            "rowId": "de5c31af-8cd0-4fbd-8c7a-01224a14c57e",
+            "headerId": "7f60a3b3-62a3-4b06-82a5-b4d405d201c9",
+            "type": "text",
+            "content": "",
+            "expectedType": null
+          },
+          {
+            "id": "a013a6f0-7ea0-4317-acb7-d8b0fb2c4f6f",
+            "rowId": "de5c31af-8cd0-4fbd-8c7a-01224a14c57e",
+            "headerId": "3203fcf7-cc0f-4fee-a969-8e78fcb15d53",
+            "type": "text",
+            "content": "",
+            "expectedType": null
+          }
+        ],
+        "tags": [],
+        "updateTime": 0
+      }
+    }
+  },
+  "focusedElement": {
+    "-1": "unfocused"
+  }
+}
