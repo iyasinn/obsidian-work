@@ -4,12 +4,12 @@
     "type": "split",
     "children": [
       {
-        "id": "f45d27580ed81467",
+        "id": "ecc9fe5345700f85",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Math/Discrete Math/Questions.md",
+            "file": "Math/Math.md",
             "mode": "source",
             "source": false
           }
@@ -118,7 +118,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Math/Discrete Math/Questions.md",
+                "file": "Math/Math.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -168,33 +168,26 @@
               "type": "review-queue-list-view",
               "state": {}
             }
-          },
-          {
-            "id": "30c4771c1b26c12b",
-            "type": "leaf",
-            "state": {
-              "type": "git-view",
-              "state": {}
-            }
           }
         ],
-        "currentTab": 6
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 513.2669677734375,
+    "collapsed": true
   },
-  "active": "f45d27580ed81467",
+  "active": "ecc9fe5345700f85",
   "lastOpenFiles": [
-    "Math/Discrete Math/Questions.md",
-    "Bond.Market.md",
-    "365 economy 2021.pdf.md",
+    "Math/Math.md",
     "Untitled.md",
+    "365 economy 2021.pdf.md",
+    "Bond.Market.md",
+    "Math/Discrete Math/Questions.md",
     "Homework Template.md",
     "Math/Discrete Math/My methods.md",
     "Math/Discrete Math/Chapter 1 - Logic and Proofs/;1.4 - Predicate Logic/Subnotes/Logical Equivalences with Quantifiers.md",
     "Math/Discrete Math/Chapter 1 - Logic and Proofs/;1.4 - Predicate Logic/;1.4 - Predicate Logic.md",
-    "Math/Discrete Math/Chapter 1 - Logic and Proofs/;1.4 - Predicate Logic/Subnotes/De Morgan’s Law for Quantifiers.md",
-    "Math/Discrete Math/Chapter 1 - Logic and Proofs/;1.4 - Predicate Logic/Untitled.md"
+    "Math/Discrete Math/Chapter 1 - Logic and Proofs/;1.4 - Predicate Logic/Subnotes/De Morgan’s Law for Quantifiers.md"
   ]
 }
