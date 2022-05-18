@@ -981,7 +981,7 @@ var require_react_development = __commonJS({
           }
           return lazyType;
         }
-        function forwardRef2(render) {
+        function forwardRef(render) {
           {
             if (render != null && render.$$typeof === REACT_MEMO_TYPE) {
               error("forwardRef requires a render function but received a `memo` component. Instead of forwardRef(memo(...)), use memo(forwardRef(...)).");
@@ -1073,7 +1073,7 @@ var require_react_development = __commonJS({
           }
           return dispatcher;
         }
-        function useContext(Context, unstable_observedBits) {
+        function useContext3(Context, unstable_observedBits) {
           var dispatcher = resolveDispatcher();
           {
             if (unstable_observedBits !== void 0) {
@@ -1090,7 +1090,7 @@ var require_react_development = __commonJS({
           }
           return dispatcher.useContext(Context, unstable_observedBits);
         }
-        function useState8(initialState) {
+        function useState10(initialState) {
           var dispatcher = resolveDispatcher();
           return dispatcher.useState(initialState);
         }
@@ -1098,11 +1098,11 @@ var require_react_development = __commonJS({
           var dispatcher = resolveDispatcher();
           return dispatcher.useReducer(reducer, initialArg, init);
         }
-        function useRef7(initialValue) {
+        function useRef6(initialValue) {
           var dispatcher = resolveDispatcher();
           return dispatcher.useRef(initialValue);
         }
-        function useEffect8(create, deps) {
+        function useEffect6(create, deps) {
           var dispatcher = resolveDispatcher();
           return dispatcher.useEffect(create, deps);
         }
@@ -1110,7 +1110,7 @@ var require_react_development = __commonJS({
           var dispatcher = resolveDispatcher();
           return dispatcher.useLayoutEffect(create, deps);
         }
-        function useCallback6(callback, deps) {
+        function useCallback9(callback, deps) {
           var dispatcher = resolveDispatcher();
           return dispatcher.useCallback(callback, deps);
         }
@@ -1665,20 +1665,20 @@ var require_react_development = __commonJS({
         exports.createElement = createElement$1;
         exports.createFactory = createFactory;
         exports.createRef = createRef;
-        exports.forwardRef = forwardRef2;
+        exports.forwardRef = forwardRef;
         exports.isValidElement = isValidElement;
         exports.lazy = lazy;
         exports.memo = memo;
-        exports.useCallback = useCallback6;
-        exports.useContext = useContext;
+        exports.useCallback = useCallback9;
+        exports.useContext = useContext3;
         exports.useDebugValue = useDebugValue;
-        exports.useEffect = useEffect8;
+        exports.useEffect = useEffect6;
         exports.useImperativeHandle = useImperativeHandle;
         exports.useLayoutEffect = useLayoutEffect;
         exports.useMemo = useMemo;
         exports.useReducer = useReducer;
-        exports.useRef = useRef7;
-        exports.useState = useState8;
+        exports.useRef = useRef6;
+        exports.useState = useState10;
         exports.version = ReactVersion;
       })();
     }
@@ -2486,11 +2486,11 @@ var require_react_dom_development = __commonJS({
     if (true) {
       (function() {
         "use strict";
-        var React20 = require_react();
+        var React30 = require_react();
         var _assign = require_object_assign();
         var Scheduler = require_scheduler();
         var tracing = require_tracing();
-        var ReactSharedInternals = React20.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+        var ReactSharedInternals = React30.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
         function warn(format) {
           {
             for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
@@ -2522,7 +2522,7 @@ var require_react_dom_development = __commonJS({
             Function.prototype.apply.call(console[level], console, argsWithFormat);
           }
         }
-        if (!React20) {
+        if (!React30) {
           {
             throw Error("ReactDOM was loaded before React. Make sure you load the React package before loading ReactDOM.");
           }
@@ -3738,7 +3738,7 @@ var require_react_dom_development = __commonJS({
         var didWarnInvalidChild = false;
         function flattenChildren(children) {
           var content = "";
-          React20.Children.forEach(children, function(child) {
+          React30.Children.forEach(children, function(child) {
             if (child == null) {
               return;
             }
@@ -3749,7 +3749,7 @@ var require_react_dom_development = __commonJS({
         function validateProps(element, props) {
           {
             if (typeof props.children === "object" && props.children !== null) {
-              React20.Children.forEach(props.children, function(child) {
+              React30.Children.forEach(props.children, function(child) {
                 if (child == null) {
                   return;
                 }
@@ -10942,7 +10942,7 @@ var require_react_dom_development = __commonJS({
         }
         var fakeInternalInstance = {};
         var isArray = Array.isArray;
-        var emptyRefsObject = new React20.Component().refs;
+        var emptyRefsObject = new React30.Component().refs;
         var didWarnAboutStateAssignmentForComponent;
         var didWarnAboutUninitializedState;
         var didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate;
@@ -21498,7 +21498,7 @@ var require_cjs = __commonJS({
 // node_modules/html-react-parser/lib/utilities.js
 var require_utilities2 = __commonJS({
   "node_modules/html-react-parser/lib/utilities.js"(exports, module2) {
-    var React20 = require_react();
+    var React30 = require_react();
     var styleToJS = require_cjs().default;
     function invertObject(obj, override) {
       if (!obj || typeof obj !== "object") {
@@ -21553,7 +21553,7 @@ var require_utilities2 = __commonJS({
         props.style = {};
       }
     }
-    var PRESERVE_CUSTOM_ATTRIBUTES = React20.version.split(".")[0] >= 16;
+    var PRESERVE_CUSTOM_ATTRIBUTES = React30.version.split(".")[0] >= 16;
     var elementsWithNoTextChildren = new Set([
       "tr",
       "tbody",
@@ -21639,14 +21639,14 @@ var require_attributes_to_props = __commonJS({
 // node_modules/html-react-parser/lib/dom-to-react.js
 var require_dom_to_react = __commonJS({
   "node_modules/html-react-parser/lib/dom-to-react.js"(exports, module2) {
-    var React20 = require_react();
+    var React30 = require_react();
     var attributesToProps2 = require_attributes_to_props();
     var utilities = require_utilities2();
     var setStyleProp = utilities.setStyleProp;
     var canTextBeChildOfNode = utilities.canTextBeChildOfNode;
     function domToReact2(nodes, options) {
       options = options || {};
-      var library = options.library || React20;
+      var library = options.library || React30;
       var cloneElement = library.cloneElement;
       var createElement = library.createElement;
       var isValidElement = library.isValidElement;
@@ -24866,7 +24866,7 @@ var require_isMuiElement = __commonJS({
       value: true
     });
     exports.default = isMuiElement;
-    var React20 = _interopRequireWildcard(require_react());
+    var React30 = _interopRequireWildcard(require_react());
     function _getRequireWildcardCache(nodeInterop) {
       if (typeof WeakMap !== "function")
         return null;
@@ -24906,7 +24906,7 @@ var require_isMuiElement = __commonJS({
       return newObj;
     }
     function isMuiElement(element, muiNames) {
-      return /* @__PURE__ */ React20.isValidElement(element) && muiNames.indexOf(element.type.muiName) !== -1;
+      return /* @__PURE__ */ React30.isValidElement(element) && muiNames.indexOf(element.type.muiName) !== -1;
     }
   }
 });
@@ -25002,7 +25002,7 @@ var require_useEnhancedEffect = __commonJS({
       value: true
     });
     exports.default = void 0;
-    var React20 = _interopRequireWildcard(require_react());
+    var React30 = _interopRequireWildcard(require_react());
     function _getRequireWildcardCache(nodeInterop) {
       if (typeof WeakMap !== "function")
         return null;
@@ -25041,7 +25041,7 @@ var require_useEnhancedEffect = __commonJS({
       }
       return newObj;
     }
-    var useEnhancedEffect = typeof window !== "undefined" ? React20.useLayoutEffect : React20.useEffect;
+    var useEnhancedEffect = typeof window !== "undefined" ? React30.useLayoutEffect : React30.useEffect;
     var _default = useEnhancedEffect;
     exports.default = _default;
   }
@@ -25055,7 +25055,7 @@ var require_useId = __commonJS({
       value: true
     });
     exports.default = useId;
-    var React20 = _interopRequireWildcard(require_react());
+    var React30 = _interopRequireWildcard(require_react());
     function _getRequireWildcardCache(nodeInterop) {
       if (typeof WeakMap !== "function")
         return null;
@@ -25096,9 +25096,9 @@ var require_useId = __commonJS({
     }
     var globalId = 0;
     function useGlobalId(idOverride) {
-      const [defaultId, setDefaultId] = React20.useState(idOverride);
+      const [defaultId, setDefaultId] = React30.useState(idOverride);
       const id = idOverride || defaultId;
-      React20.useEffect(() => {
+      React30.useEffect(() => {
         if (defaultId == null) {
           globalId += 1;
           setDefaultId(`mui-${globalId}`);
@@ -25106,7 +25106,7 @@ var require_useId = __commonJS({
       }, [defaultId]);
       return id;
     }
-    var maybeReactUseId = React20["useId"];
+    var maybeReactUseId = React30["useId"];
     function useId(idOverride) {
       if (maybeReactUseId !== void 0) {
         const reactId = maybeReactUseId();
@@ -25146,7 +25146,7 @@ var require_useControlled = __commonJS({
       value: true
     });
     exports.default = useControlled;
-    var React20 = _interopRequireWildcard(require_react());
+    var React30 = _interopRequireWildcard(require_react());
     function _getRequireWildcardCache(nodeInterop) {
       if (typeof WeakMap !== "function")
         return null;
@@ -25193,25 +25193,25 @@ var require_useControlled = __commonJS({
     }) {
       const {
         current: isControlled
-      } = React20.useRef(controlled !== void 0);
-      const [valueState, setValue] = React20.useState(defaultProp);
+      } = React30.useRef(controlled !== void 0);
+      const [valueState, setValue] = React30.useState(defaultProp);
       const value = isControlled ? controlled : valueState;
       if (true) {
-        React20.useEffect(() => {
+        React30.useEffect(() => {
           if (isControlled !== (controlled !== void 0)) {
             console.error([`MUI: A component is changing the ${isControlled ? "" : "un"}controlled ${state} state of ${name} to be ${isControlled ? "un" : ""}controlled.`, "Elements should not switch from uncontrolled to controlled (or vice versa).", `Decide between using a controlled or uncontrolled ${name} element for the lifetime of the component.`, "The nature of the state is determined during the first render. It's considered controlled if the value is not `undefined`.", "More info: https://fb.me/react-controlled-components"].join("\n"));
           }
         }, [state, name, controlled]);
         const {
           current: defaultValue
-        } = React20.useRef(defaultProp);
-        React20.useEffect(() => {
+        } = React30.useRef(defaultProp);
+        React30.useEffect(() => {
           if (!isControlled && defaultValue !== defaultProp) {
             console.error([`MUI: A component is changing the default ${state} state of an uncontrolled ${name} after being initialized. To suppress this warning opt to use a controlled ${name}.`].join("\n"));
           }
         }, [JSON.stringify(defaultProp)]);
       }
-      const setValueIfUncontrolled = React20.useCallback((newValue) => {
+      const setValueIfUncontrolled = React30.useCallback((newValue) => {
         if (!isControlled) {
           setValue(newValue);
         }
@@ -25230,7 +25230,7 @@ var require_useEventCallback = __commonJS({
       value: true
     });
     exports.default = useEventCallback;
-    var React20 = _interopRequireWildcard(require_react());
+    var React30 = _interopRequireWildcard(require_react());
     var _useEnhancedEffect = _interopRequireDefault(require_useEnhancedEffect());
     function _getRequireWildcardCache(nodeInterop) {
       if (typeof WeakMap !== "function")
@@ -25271,11 +25271,11 @@ var require_useEventCallback = __commonJS({
       return newObj;
     }
     function useEventCallback(fn) {
-      const ref = React20.useRef(fn);
+      const ref = React30.useRef(fn);
       (0, _useEnhancedEffect.default)(() => {
         ref.current = fn;
       });
-      return React20.useCallback((...args) => (0, ref.current)(...args), []);
+      return React30.useCallback((...args) => (0, ref.current)(...args), []);
     }
   }
 });
@@ -25289,7 +25289,7 @@ var require_useForkRef = __commonJS({
       value: true
     });
     exports.default = useForkRef;
-    var React20 = _interopRequireWildcard(require_react());
+    var React30 = _interopRequireWildcard(require_react());
     var _setRef = _interopRequireDefault(require_setRef());
     function _getRequireWildcardCache(nodeInterop) {
       if (typeof WeakMap !== "function")
@@ -25330,7 +25330,7 @@ var require_useForkRef = __commonJS({
       return newObj;
     }
     function useForkRef(refA, refB) {
-      return React20.useMemo(() => {
+      return React30.useMemo(() => {
         if (refA == null && refB == null) {
           return null;
         }
@@ -25352,7 +25352,7 @@ var require_useIsFocusVisible = __commonJS({
     });
     exports.default = useIsFocusVisible;
     exports.teardown = teardown;
-    var React20 = _interopRequireWildcard(require_react());
+    var React30 = _interopRequireWildcard(require_react());
     function _getRequireWildcardCache(nodeInterop) {
       if (typeof WeakMap !== "function")
         return null;
@@ -25466,12 +25466,12 @@ var require_useIsFocusVisible = __commonJS({
       return hadKeyboardEvent || focusTriggersKeyboardModality(target);
     }
     function useIsFocusVisible() {
-      const ref = React20.useCallback((node) => {
+      const ref = React30.useCallback((node) => {
         if (node != null) {
           prepare(node.ownerDocument);
         }
       }, []);
-      const isFocusVisibleRef = React20.useRef(false);
+      const isFocusVisibleRef = React30.useRef(false);
       function handleBlurVisible() {
         if (isFocusVisibleRef.current) {
           hadFocusVisibleRecently = true;
@@ -25581,7 +25581,7 @@ var require_usePreviousProps = __commonJS({
       value: true
     });
     exports.default = void 0;
-    var React20 = _interopRequireWildcard(require_react());
+    var React30 = _interopRequireWildcard(require_react());
     function _getRequireWildcardCache(nodeInterop) {
       if (typeof WeakMap !== "function")
         return null;
@@ -25621,8 +25621,8 @@ var require_usePreviousProps = __commonJS({
       return newObj;
     }
     var usePreviousProps = (value) => {
-      const ref = React20.useRef({});
-      React20.useEffect(() => {
+      const ref = React30.useRef({});
+      React30.useEffect(() => {
         ref.current = value;
       });
       return ref.current;
@@ -26270,7 +26270,7 @@ var require_useAutocomplete = __commonJS({
     exports.createFilterOptions = createFilterOptions;
     exports.default = useAutocomplete;
     var _extends2 = _interopRequireDefault(require_extends());
-    var React20 = _interopRequireWildcard(require_react());
+    var React30 = _interopRequireWildcard(require_react());
     var _utils = require_utils();
     function _getRequireWildcardCache(nodeInterop) {
       if (typeof WeakMap !== "function")
@@ -26411,14 +26411,14 @@ var require_useAutocomplete = __commonJS({
         }
         return optionLabel;
       };
-      const ignoreFocus = React20.useRef(false);
-      const firstFocus = React20.useRef(true);
-      const inputRef = React20.useRef(null);
-      const listboxRef = React20.useRef(null);
-      const [anchorEl, setAnchorEl] = React20.useState(null);
-      const [focusedTag, setFocusedTag] = React20.useState(-1);
+      const ignoreFocus = React30.useRef(false);
+      const firstFocus = React30.useRef(true);
+      const inputRef = React30.useRef(null);
+      const listboxRef = React30.useRef(null);
+      const [anchorEl, setAnchorEl] = React30.useState(null);
+      const [focusedTag, setFocusedTag] = React30.useState(-1);
       const defaultHighlighted = autoHighlight ? 0 : -1;
-      const highlightedIndexRef = React20.useRef(defaultHighlighted);
+      const highlightedIndexRef = React30.useRef(defaultHighlighted);
       const [value, setValueState] = (0, _utils.unstable_useControlled)({
         controlled: valueProp,
         default: defaultValue,
@@ -26430,8 +26430,8 @@ var require_useAutocomplete = __commonJS({
         name: componentName,
         state: "inputValue"
       });
-      const [focused, setFocused] = React20.useState(false);
-      const resetInputValue = React20.useCallback((event, newValue) => {
+      const [focused, setFocused] = React30.useState(false);
+      const resetInputValue = React30.useCallback((event, newValue) => {
         const isOptionSelected = multiple ? value.length < newValue.length : newValue !== null;
         if (!isOptionSelected && !clearOnBlur) {
           return;
@@ -26453,8 +26453,8 @@ var require_useAutocomplete = __commonJS({
           onInputChange(event, newInputValue, "reset");
         }
       }, [getOptionLabel, inputValue, multiple, onInputChange, setInputValueState, clearOnBlur, value]);
-      const prevValue = React20.useRef();
-      React20.useEffect(() => {
+      const prevValue = React30.useRef();
+      React30.useEffect(() => {
         const valueChange = value !== prevValue.current;
         prevValue.current = value;
         if (focused && !valueChange) {
@@ -26471,7 +26471,7 @@ var require_useAutocomplete = __commonJS({
         name: componentName,
         state: "open"
       });
-      const [inputPristine, setInputPristine] = React20.useState(true);
+      const [inputPristine, setInputPristine] = React30.useState(true);
       const inputValueIsSelectedValue = !multiple && value != null && inputValue === getOptionLabel(value);
       const popupOpen = open && !readOnly;
       const filteredOptions = popupOpen ? filterOptions(options.filter((option) => {
@@ -26499,7 +26499,7 @@ var require_useAutocomplete = __commonJS({
           anchorEl.querySelector(`[data-tag-index="${tagToFocus}"]`).focus();
         }
       });
-      React20.useEffect(() => {
+      React30.useEffect(() => {
         if (multiple && focusedTag > value.length - 1) {
           setFocusedTag(-1);
           focusTag(-1);
@@ -26632,7 +26632,7 @@ var require_useAutocomplete = __commonJS({
           }
         }
       });
-      const syncHighlightedIndex = React20.useCallback(() => {
+      const syncHighlightedIndex = React30.useCallback(() => {
         if (!popupOpen) {
           return;
         }
@@ -26690,7 +26690,7 @@ var require_useAutocomplete = __commonJS({
         syncHighlightedIndex();
       });
       if (true) {
-        React20.useEffect(() => {
+        React30.useEffect(() => {
           if (!inputRef.current || inputRef.current.nodeName !== "INPUT") {
             if (inputRef.current && inputRef.current.nodeName === "TEXTAREA") {
               console.warn([`A textarea element was provided to ${componentName} where input was expected.`, `This is not a supported scenario but it may work under certain conditions.`, `A textarea keyboard navigation may conflict with Autocomplete controls (e.g. enter and arrow keys).`, `Make sure to test keyboard navigation and add custom event handlers if necessary.`].join("\n"));
@@ -26700,7 +26700,7 @@ var require_useAutocomplete = __commonJS({
           }
         }, [componentName]);
       }
-      React20.useEffect(() => {
+      React30.useEffect(() => {
         syncHighlightedIndex();
       }, [syncHighlightedIndex]);
       const handleOpen = (event) => {
@@ -26735,7 +26735,7 @@ var require_useAutocomplete = __commonJS({
         }
         setValueState(newValue);
       };
-      const isTouch = React20.useRef(false);
+      const isTouch = React30.useRef(false);
       const selectNewValue = (event, option, reasonProp = "selectOption", origin = "options") => {
         let reason = reasonProp;
         let newValue = option;
@@ -27415,7 +27415,7 @@ var require_react_jsx_runtime_development = __commonJS({
     if (true) {
       (function() {
         "use strict";
-        var React20 = require_react();
+        var React30 = require_react();
         var _assign = require_object_assign();
         var REACT_ELEMENT_TYPE = 60103;
         var REACT_PORTAL_TYPE = 60106;
@@ -27472,7 +27472,7 @@ var require_react_jsx_runtime_development = __commonJS({
           }
           return null;
         }
-        var ReactSharedInternals = React20.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+        var ReactSharedInternals = React30.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
         function error(format) {
           {
             for (var _len2 = arguments.length, args = new Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {
@@ -28274,7 +28274,7 @@ var require_BackdropUnstyled = __commonJS({
     exports.default = void 0;
     var _extends2 = _interopRequireDefault(require_extends());
     var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require_objectWithoutPropertiesLoose());
-    var React20 = _interopRequireWildcard(require_react());
+    var React30 = _interopRequireWildcard(require_react());
     var _propTypes = _interopRequireDefault(require_prop_types());
     var _clsx = _interopRequireDefault(require_clsx());
     var _composeClasses = _interopRequireDefault(require_composeClasses2());
@@ -28330,7 +28330,7 @@ var require_BackdropUnstyled = __commonJS({
       };
       return (0, _composeClasses.default)(slots, _backdropUnstyledClasses.getBackdropUtilityClass, classes);
     };
-    var BackdropUnstyled = /* @__PURE__ */ React20.forwardRef(function BackdropUnstyled2(props, ref) {
+    var BackdropUnstyled = /* @__PURE__ */ React30.forwardRef(function BackdropUnstyled2(props, ref) {
       const {
         classes: classesProp,
         className,
@@ -28531,7 +28531,7 @@ var require_BadgeUnstyled = __commonJS({
     exports.default = void 0;
     var _extends2 = _interopRequireDefault(require_extends());
     var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require_objectWithoutPropertiesLoose());
-    var React20 = _interopRequireWildcard(require_react());
+    var React30 = _interopRequireWildcard(require_react());
     var _propTypes = _interopRequireDefault(require_prop_types());
     var _clsx = _interopRequireDefault(require_clsx());
     var _utils = require_utils();
@@ -28592,7 +28592,7 @@ var require_BadgeUnstyled = __commonJS({
       };
       return (0, _composeClasses.default)(slots, _badgeUnstyledClasses.getBadgeUtilityClass, classes);
     };
-    var BadgeUnstyled = /* @__PURE__ */ React20.forwardRef(function BadgeUnstyled2(props, ref) {
+    var BadgeUnstyled = /* @__PURE__ */ React30.forwardRef(function BadgeUnstyled2(props, ref) {
       const {
         anchorOrigin: anchorOriginProp = {
           vertical: "top",
@@ -28779,7 +28779,7 @@ var require_useButton = __commonJS({
     });
     exports.default = useButton;
     var _extends2 = _interopRequireDefault(require_extends());
-    var React20 = _interopRequireWildcard(require_react());
+    var React30 = _interopRequireWildcard(require_react());
     var _utils = require_utils();
     var _extractEventHandlers = _interopRequireDefault(require_extractEventHandlers());
     function _getRequireWildcardCache(nodeInterop) {
@@ -28830,19 +28830,19 @@ var require_useButton = __commonJS({
         to,
         type
       } = parameters;
-      const buttonRef = React20.useRef();
-      const [active, setActive] = React20.useState(false);
+      const buttonRef = React30.useRef();
+      const [active, setActive] = React30.useState(false);
       const {
         isFocusVisibleRef,
         onFocus: handleFocusVisible,
         onBlur: handleBlurVisible,
         ref: focusVisibleRef
       } = (0, _utils.unstable_useIsFocusVisible)();
-      const [focusVisible, setFocusVisible] = React20.useState(false);
+      const [focusVisible, setFocusVisible] = React30.useState(false);
       if (disabled && focusVisible) {
         setFocusVisible(false);
       }
-      React20.useEffect(() => {
+      React30.useEffect(() => {
         isFocusVisibleRef.current = focusVisible;
       }, [focusVisible, isFocusVisibleRef]);
       const createHandleMouseLeave = (otherHandlers) => (event) => {
@@ -28928,7 +28928,7 @@ var require_useButton = __commonJS({
       };
       const handleOwnRef = (0, _utils.unstable_useForkRef)(focusVisibleRef, buttonRef);
       const handleRef = (0, _utils.unstable_useForkRef)(ref, handleOwnRef);
-      const [hostElementName, setHostElementName] = React20.useState("");
+      const [hostElementName, setHostElementName] = React30.useState("");
       const updateRef = (instance) => {
         var _instance$tagName;
         setHostElementName((_instance$tagName = instance == null ? void 0 : instance.tagName) != null ? _instance$tagName : "");
@@ -28987,7 +28987,7 @@ var require_ButtonUnstyled = __commonJS({
     exports.default = void 0;
     var _extends2 = _interopRequireDefault(require_extends());
     var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require_objectWithoutPropertiesLoose());
-    var React20 = _interopRequireWildcard(require_react());
+    var React30 = _interopRequireWildcard(require_react());
     var _propTypes = _interopRequireDefault(require_prop_types());
     var _clsx = _interopRequireDefault(require_clsx());
     var _utils = require_utils();
@@ -29046,7 +29046,7 @@ var require_ButtonUnstyled = __commonJS({
       };
       return (0, _composeClasses.default)(slots, _buttonUnstyledClasses.getButtonUnstyledUtilityClass, {});
     };
-    var ButtonUnstyled = /* @__PURE__ */ React20.forwardRef(function ButtonUnstyled2(props, forwardedRef) {
+    var ButtonUnstyled = /* @__PURE__ */ React30.forwardRef(function ButtonUnstyled2(props, forwardedRef) {
       var _ref, _componentsProps$root;
       const {
         className,
@@ -29056,7 +29056,7 @@ var require_ButtonUnstyled = __commonJS({
         children,
         action
       } = props, other = (0, _objectWithoutPropertiesLoose2.default)(props, _excluded);
-      const buttonRef = React20.useRef();
+      const buttonRef = React30.useRef();
       const handleRef = (0, _utils.unstable_useForkRef)(buttonRef, forwardedRef);
       const ButtonRoot = (_ref = component != null ? component : components.Root) != null ? _ref : "button";
       const {
@@ -29068,7 +29068,7 @@ var require_ButtonUnstyled = __commonJS({
         component: ButtonRoot,
         ref: handleRef
       }));
-      React20.useImperativeHandle(action, () => ({
+      React30.useImperativeHandle(action, () => ({
         focusVisible: () => {
           setFocusVisible(true);
           buttonRef.current.focus();
@@ -29249,7 +29249,7 @@ var require_ClickAwayListener = __commonJS({
       value: true
     });
     exports.default = void 0;
-    var React20 = _interopRequireWildcard(require_react());
+    var React30 = _interopRequireWildcard(require_react());
     var _propTypes = _interopRequireDefault(require_prop_types());
     var _utils = require_utils();
     var _jsxRuntime = require_jsx_runtime();
@@ -29305,11 +29305,11 @@ var require_ClickAwayListener = __commonJS({
         onClickAway,
         touchEvent = "onTouchEnd"
       } = props;
-      const movedRef = React20.useRef(false);
-      const nodeRef = React20.useRef(null);
-      const activatedRef = React20.useRef(false);
-      const syntheticEventRef = React20.useRef(false);
-      React20.useEffect(() => {
+      const movedRef = React30.useRef(false);
+      const nodeRef = React30.useRef(null);
+      const activatedRef = React30.useRef(false);
+      const syntheticEventRef = React30.useRef(false);
+      React30.useEffect(() => {
         setTimeout(() => {
           activatedRef.current = true;
         }, 0);
@@ -29352,7 +29352,7 @@ var require_ClickAwayListener = __commonJS({
       if (touchEvent !== false) {
         childrenProps[touchEvent] = createHandleSynthetic(touchEvent);
       }
-      React20.useEffect(() => {
+      React30.useEffect(() => {
         if (touchEvent !== false) {
           const mappedTouchEvent = mapEventPropToEvent(touchEvent);
           const doc = (0, _utils.unstable_ownerDocument)(nodeRef.current);
@@ -29371,7 +29371,7 @@ var require_ClickAwayListener = __commonJS({
       if (mouseEvent !== false) {
         childrenProps[mouseEvent] = createHandleSynthetic(mouseEvent);
       }
-      React20.useEffect(() => {
+      React30.useEffect(() => {
         if (mouseEvent !== false) {
           const mappedMouseEvent = mapEventPropToEvent(mouseEvent);
           const doc = (0, _utils.unstable_ownerDocument)(nodeRef.current);
@@ -29382,8 +29382,8 @@ var require_ClickAwayListener = __commonJS({
         }
         return void 0;
       }, [handleClickAway, mouseEvent]);
-      return /* @__PURE__ */ (0, _jsxRuntime.jsx)(React20.Fragment, {
-        children: /* @__PURE__ */ React20.cloneElement(children, childrenProps)
+      return /* @__PURE__ */ (0, _jsxRuntime.jsx)(React30.Fragment, {
+        children: /* @__PURE__ */ React30.cloneElement(children, childrenProps)
       });
     }
     true ? ClickAwayListener.propTypes = {
@@ -29479,7 +29479,7 @@ var require_FormControlContext = __commonJS({
       value: true
     });
     exports.default = void 0;
-    var React20 = _interopRequireWildcard(require_react());
+    var React30 = _interopRequireWildcard(require_react());
     function _getRequireWildcardCache(nodeInterop) {
       if (typeof WeakMap !== "function")
         return null;
@@ -29518,7 +29518,7 @@ var require_FormControlContext = __commonJS({
       }
       return newObj;
     }
-    var FormControlUnstyledContext = /* @__PURE__ */ React20.createContext(void 0);
+    var FormControlUnstyledContext = /* @__PURE__ */ React30.createContext(void 0);
     if (true) {
       FormControlUnstyledContext.displayName = "FormControlUnstyledContext";
     }
@@ -29559,7 +29559,7 @@ var require_FormControlUnstyled = __commonJS({
     exports.default = void 0;
     var _extends2 = _interopRequireDefault(require_extends());
     var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require_objectWithoutPropertiesLoose());
-    var React20 = _interopRequireWildcard(require_react());
+    var React30 = _interopRequireWildcard(require_react());
     var _propTypes = _interopRequireDefault(require_prop_types());
     var _clsx = _interopRequireDefault(require_clsx());
     var _utils = require_utils();
@@ -29609,7 +29609,7 @@ var require_FormControlUnstyled = __commonJS({
     function hasValue(value) {
       return value != null && !(Array.isArray(value) && value.length === 0) && value !== "";
     }
-    var FormControlUnstyled = /* @__PURE__ */ React20.forwardRef(function FormControlUnstyled2(props, ref) {
+    var FormControlUnstyled = /* @__PURE__ */ React30.forwardRef(function FormControlUnstyled2(props, ref) {
       var _ref;
       const {
         defaultValue,
@@ -29632,7 +29632,7 @@ var require_FormControlUnstyled = __commonJS({
         state: "value"
       });
       const filled = hasValue(value);
-      const [focusedState, setFocused] = React20.useState(false);
+      const [focusedState, setFocused] = React30.useState(false);
       if (disabled && focusedState) {
         setFocused(false);
       }
@@ -29647,7 +29647,7 @@ var require_FormControlUnstyled = __commonJS({
       let registerEffect = () => {
       };
       if (true) {
-        const registeredInput = React20.useRef(false);
+        const registeredInput = React30.useRef(false);
         registerEffect = () => {
           if (registeredInput.current) {
             console.error(["MUI: There are multiple `Input` components inside a FormControl.", "This creates visual inconsistencies, only use one `Input`."].join("\n"));
@@ -29722,7 +29722,7 @@ var require_useFormControl = __commonJS({
       value: true
     });
     exports.default = useFormControlUnstyled;
-    var React20 = _interopRequireWildcard(require_react());
+    var React30 = _interopRequireWildcard(require_react());
     var _FormControlContext = _interopRequireDefault(require_FormControlContext());
     function _getRequireWildcardCache(nodeInterop) {
       if (typeof WeakMap !== "function")
@@ -29763,7 +29763,7 @@ var require_useFormControl = __commonJS({
       return newObj;
     }
     function useFormControlUnstyled() {
-      return React20.useContext(_FormControlContext.default);
+      return React30.useContext(_FormControlContext.default);
     }
   }
 });
@@ -29910,7 +29910,7 @@ var require_useInput = __commonJS({
     exports.default = useInput;
     var _extends2 = _interopRequireDefault(require_extends());
     var _utils = require_utils();
-    var React20 = _interopRequireWildcard(require_react());
+    var React30 = _interopRequireWildcard(require_react());
     var _useFormControl = _interopRequireDefault(require_useFormControl());
     var _extractEventHandlers = _interopRequireDefault(require_extractEventHandlers());
     function _getRequireWildcardCache(nodeInterop) {
@@ -29981,19 +29981,19 @@ var require_useInput = __commonJS({
       }
       const {
         current: isControlled
-      } = React20.useRef(value != null);
-      const handleInputRefWarning = React20.useCallback((instance) => {
+      } = React30.useRef(value != null);
+      const handleInputRefWarning = React30.useCallback((instance) => {
         if (true) {
           if (instance && instance.nodeName !== "INPUT" && !instance.focus) {
             console.error(["MUI: You have provided a `components.Input` to the input component", "that does not correctly handle the `ref` prop.", "Make sure the `ref` prop is called with a HTMLInputElement."].join("\n"));
           }
         }
       }, []);
-      const internalInputRef = React20.useRef(null);
+      const internalInputRef = React30.useRef(null);
       const handleIncomingRef = (0, _utils.unstable_useForkRef)(inputRef, handleInputRefWarning);
       const handleInputRef = (0, _utils.unstable_useForkRef)(internalInputRef, handleIncomingRef);
-      const [focused, setFocused] = React20.useState(false);
-      React20.useEffect(() => {
+      const [focused, setFocused] = React30.useState(false);
+      React30.useEffect(() => {
         if (!formControlContext && disabled && focused) {
           setFocused(false);
           onBlur == null ? void 0 : onBlur();
@@ -30093,7 +30093,7 @@ var require_InputUnstyled = __commonJS({
     exports.default = void 0;
     var _extends2 = _interopRequireDefault(require_extends());
     var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require_objectWithoutPropertiesLoose());
-    var React20 = _interopRequireWildcard(require_react());
+    var React30 = _interopRequireWildcard(require_react());
     var _clsx = _interopRequireDefault(require_clsx());
     var _propTypes = _interopRequireDefault(require_prop_types());
     var _appendOwnerState = _interopRequireDefault(require_appendOwnerState());
@@ -30140,7 +30140,7 @@ var require_InputUnstyled = __commonJS({
       }
       return newObj;
     }
-    var InputUnstyled = /* @__PURE__ */ React20.forwardRef(function InputUnstyled2(props, ref) {
+    var InputUnstyled = /* @__PURE__ */ React30.forwardRef(function InputUnstyled2(props, ref) {
       var _componentsProps$inpu, _ref, _componentsProps$root, _components$Input, _componentsProps$inpu2;
       const {
         "aria-describedby": ariaDescribedby,
@@ -30643,7 +30643,7 @@ var require_useControllableReducer = __commonJS({
       value: true
     });
     exports.default = useControllableReducer;
-    var React20 = _interopRequireWildcard(require_react());
+    var React30 = _interopRequireWildcard(require_react());
     var _utils = require_utils();
     var _useListbox = require_useListbox_types();
     var _areArraysEqual = _interopRequireDefault(require_areArraysEqual());
@@ -30686,17 +30686,17 @@ var require_useControllableReducer = __commonJS({
       return newObj;
     }
     function useReducerReturnValueHandler(state, value, options, optionComparer, setValueState, onValueChange, onHighlightChange) {
-      const valueRef = React20.useRef(value);
+      const valueRef = React30.useRef(value);
       valueRef.current = value;
-      const onValueChangeRef = React20.useRef(onValueChange);
-      React20.useEffect(() => {
+      const onValueChangeRef = React30.useRef(onValueChange);
+      React30.useEffect(() => {
         onValueChangeRef.current = onValueChange;
       }, [onValueChange]);
-      const onHighlightChangeRef = React20.useRef(onHighlightChange);
-      React20.useEffect(() => {
+      const onHighlightChangeRef = React30.useRef(onHighlightChange);
+      React30.useEffect(() => {
         onHighlightChangeRef.current = onHighlightChange;
       }, [onHighlightChange]);
-      React20.useEffect(() => {
+      React30.useEffect(() => {
         if (Array.isArray(state.selectedValue)) {
           if ((0, _areArraysEqual.default)(state.selectedValue, valueRef.current)) {
             return;
@@ -30710,7 +30710,7 @@ var require_useControllableReducer = __commonJS({
           (_onValueChangeRef$cur = onValueChangeRef.current) == null ? void 0 : _onValueChangeRef$cur.call(onValueChangeRef, state.selectedValue);
         }
       }, [state.selectedValue, setValueState, optionComparer]);
-      React20.useEffect(() => {
+      React30.useEffect(() => {
         var _onHighlightChangeRef;
         (_onHighlightChangeRef = onHighlightChangeRef.current) == null ? void 0 : _onHighlightChangeRef.call(onHighlightChangeRef, state.highlightedValue);
       }, [state.highlightedValue]);
@@ -30724,21 +30724,21 @@ var require_useControllableReducer = __commonJS({
         options,
         optionComparer
       } = props;
-      const propsRef = React20.useRef(props);
+      const propsRef = React30.useRef(props);
       propsRef.current = props;
       const [value, setValueState] = (0, _utils.unstable_useControlled)({
         controlled: controlledValue,
         default: defaultValue,
         name: "useListbox"
       });
-      const previousValueRef = React20.useRef(null);
-      const [state, dispatch] = React20.useReducer(externalReducer != null ? externalReducer : internalReducer, {
+      const previousValueRef = React30.useRef(null);
+      const [state, dispatch] = React30.useReducer(externalReducer != null ? externalReducer : internalReducer, {
         highlightedValue: null,
         selectedValue: value
       });
-      const optionComparerRef = React20.useRef(optionComparer);
+      const optionComparerRef = React30.useRef(optionComparer);
       optionComparerRef.current = optionComparer;
-      React20.useEffect(() => {
+      React30.useEffect(() => {
         if (controlledValue === void 0) {
           return;
         }
@@ -30770,7 +30770,7 @@ var require_useListbox = __commonJS({
     });
     exports.default = useListbox;
     var _extends2 = _interopRequireDefault(require_extends());
-    var React20 = _interopRequireWildcard(require_react());
+    var React30 = _interopRequireWildcard(require_react());
     var _utils = require_utils();
     var _useListbox = require_useListbox_types();
     var _defaultListboxReducer = _interopRequireDefault(require_defaultListboxReducer());
@@ -30843,17 +30843,17 @@ var require_useListbox = __commonJS({
         multiple,
         optionComparer
       });
-      const listboxRef = React20.useRef(null);
+      const listboxRef = React30.useRef(null);
       const handleRef = (0, _utils.unstable_useForkRef)(externalListboxRef, listboxRef);
       const [{
         highlightedValue,
         selectedValue
       }, dispatch] = (0, _useControllableReducer.default)(_defaultListboxReducer.default, externalReducer, propsWithDefaults);
-      const highlightedIndex = React20.useMemo(() => {
+      const highlightedIndex = React30.useMemo(() => {
         return highlightedValue == null ? -1 : options.findIndex((option) => optionComparer(option, highlightedValue));
       }, [highlightedValue, options, optionComparer]);
-      const previousOptions = React20.useRef([]);
-      React20.useEffect(() => {
+      const previousOptions = React30.useRef([]);
+      React30.useEffect(() => {
         if ((0, _areArraysEqual.default)(previousOptions.current, options, optionComparer)) {
           return;
         }
@@ -30865,13 +30865,13 @@ var require_useListbox = __commonJS({
         });
         previousOptions.current = options;
       }, [options, optionComparer, dispatch]);
-      const setSelectedValue = React20.useCallback((option) => {
+      const setSelectedValue = React30.useCallback((option) => {
         dispatch({
           type: _useListbox.ActionTypes.setValue,
           value: option
         });
       }, [dispatch]);
-      const setHighlightedValue = React20.useCallback((option) => {
+      const setHighlightedValue = React30.useCallback((option) => {
         dispatch({
           type: _useListbox.ActionTypes.setHighlight,
           highlight: option
@@ -30987,7 +30987,7 @@ var require_useListbox = __commonJS({
           role: "option"
         });
       };
-      React20.useDebugValue({
+      React30.useDebugValue({
         highlightedOption: options[highlightedIndex],
         selectedOption: selectedValue
       });
@@ -31056,7 +31056,7 @@ var require_MenuUnstyledContext = __commonJS({
       value: true
     });
     exports.default = void 0;
-    var React20 = _interopRequireWildcard(require_react());
+    var React30 = _interopRequireWildcard(require_react());
     function _getRequireWildcardCache(nodeInterop) {
       if (typeof WeakMap !== "function")
         return null;
@@ -31095,7 +31095,7 @@ var require_MenuUnstyledContext = __commonJS({
       }
       return newObj;
     }
-    var MenuUnstyledContext = /* @__PURE__ */ React20.createContext(null);
+    var MenuUnstyledContext = /* @__PURE__ */ React30.createContext(null);
     MenuUnstyledContext.displayName = "MenuUnstyledContext";
     var _default = MenuUnstyledContext;
     exports.default = _default;
@@ -31131,9 +31131,9 @@ var require_useMenu = __commonJS({
     Object.defineProperty(exports, "__esModule", {
       value: true
     });
-    exports.default = useMenu;
+    exports.default = useMenu2;
     var _extends2 = _interopRequireDefault(require_extends());
-    var React20 = _interopRequireWildcard(require_react());
+    var React30 = _interopRequireWildcard(require_react());
     var _utils = require_utils();
     var _ListboxUnstyled = require_ListboxUnstyled();
     function _getRequireWildcardCache(nodeInterop) {
@@ -31186,24 +31186,24 @@ var require_useMenu = __commonJS({
       }
       return newState;
     }
-    function useMenu(parameters) {
+    function useMenu2(parameters) {
       const {
         listboxRef: listboxRefProp,
         open = false,
         onClose,
         listboxId
       } = parameters;
-      const [menuItems, setMenuItems] = React20.useState({});
-      const listboxRef = React20.useRef(null);
+      const [menuItems, setMenuItems] = React30.useState({});
+      const listboxRef = React30.useRef(null);
       const handleRef = (0, _utils.unstable_useForkRef)(listboxRef, listboxRefProp);
-      const registerItem = React20.useCallback((id, metadata) => {
+      const registerItem = React30.useCallback((id, metadata) => {
         setMenuItems((previousState) => {
           const newState = (0, _extends2.default)({}, previousState);
           newState[id] = metadata;
           return newState;
         });
       }, []);
-      const unregisterItem = React20.useCallback((id) => {
+      const unregisterItem = React30.useCallback((id) => {
         setMenuItems((previousState) => {
           const newState = (0, _extends2.default)({}, previousState);
           delete newState[id];
@@ -31228,17 +31228,17 @@ var require_useMenu = __commonJS({
         stateReducer,
         disabledItemsFocusable: true
       });
-      const highlightFirstItem = React20.useCallback(() => {
+      const highlightFirstItem = React30.useCallback(() => {
         if (Object.keys(menuItems).length > 0) {
           setListboxHighlight(menuItems[Object.keys(menuItems)[0]].id);
         }
       }, [menuItems, setListboxHighlight]);
-      const highlightLastItem = React20.useCallback(() => {
+      const highlightLastItem = React30.useCallback(() => {
         if (Object.keys(menuItems).length > 0) {
           setListboxHighlight(menuItems[Object.keys(menuItems)[Object.keys(menuItems).length - 1]].id);
         }
       }, [menuItems, setListboxHighlight]);
-      React20.useEffect(() => {
+      React30.useEffect(() => {
         if (!open) {
           highlightFirstItem();
         }
@@ -31260,7 +31260,7 @@ var require_useMenu = __commonJS({
           onClose == null ? void 0 : onClose();
         }
       };
-      React20.useEffect(() => {
+      React30.useEffect(() => {
         var _listboxRef$current2;
         if ((_listboxRef$current2 = listboxRef.current) != null && _listboxRef$current2.contains(document.activeElement) && highlightedOption !== null) {
           var _menuItems$highlighte, _menuItems$highlighte2;
@@ -31283,7 +31283,7 @@ var require_useMenu = __commonJS({
           highlighted
         };
       };
-      React20.useDebugValue({
+      React30.useDebugValue({
         menuItems,
         highlightedOption
       });
@@ -32778,7 +32778,7 @@ var require_Portal = __commonJS({
       value: true
     });
     exports.default = void 0;
-    var React20 = _interopRequireWildcard(require_react());
+    var React30 = _interopRequireWildcard(require_react());
     var ReactDOM2 = _interopRequireWildcard(require_react_dom());
     var _propTypes = _interopRequireDefault(require_prop_types());
     var _utils = require_utils();
@@ -32823,14 +32823,14 @@ var require_Portal = __commonJS({
     function getContainer(container) {
       return typeof container === "function" ? container() : container;
     }
-    var Portal = /* @__PURE__ */ React20.forwardRef(function Portal2(props, ref) {
+    var Portal = /* @__PURE__ */ React30.forwardRef(function Portal2(props, ref) {
       const {
         children,
         container,
         disablePortal = false
       } = props;
-      const [mountNode, setMountNode] = React20.useState(null);
-      const handleRef = (0, _utils.unstable_useForkRef)(/* @__PURE__ */ React20.isValidElement(children) ? children.ref : null, ref);
+      const [mountNode, setMountNode] = React30.useState(null);
+      const handleRef = (0, _utils.unstable_useForkRef)(/* @__PURE__ */ React30.isValidElement(children) ? children.ref : null, ref);
       (0, _utils.unstable_useEnhancedEffect)(() => {
         if (!disablePortal) {
           setMountNode(getContainer(container) || document.body);
@@ -32846,8 +32846,8 @@ var require_Portal = __commonJS({
         return void 0;
       }, [ref, mountNode, disablePortal]);
       if (disablePortal) {
-        if (/* @__PURE__ */ React20.isValidElement(children)) {
-          return /* @__PURE__ */ React20.cloneElement(children, {
+        if (/* @__PURE__ */ React30.isValidElement(children)) {
+          return /* @__PURE__ */ React30.cloneElement(children, {
             ref: handleRef
           });
         }
@@ -32900,7 +32900,7 @@ var require_PopperUnstyled = __commonJS({
     var _utils = require_utils();
     var _core = require_popper();
     var _propTypes = _interopRequireDefault(require_prop_types());
-    var React20 = _interopRequireWildcard(require_react());
+    var React30 = _interopRequireWildcard(require_react());
     var _Portal = _interopRequireDefault(require_Portal2());
     var _jsxRuntime = require_jsx_runtime();
     var _excluded = ["anchorEl", "children", "direction", "disablePortal", "modifiers", "open", "ownerState", "placement", "popperOptions", "popperRef", "TransitionProps"];
@@ -32964,7 +32964,7 @@ var require_PopperUnstyled = __commonJS({
       return typeof anchorEl === "function" ? anchorEl() : anchorEl;
     }
     var defaultPopperOptions = {};
-    var PopperTooltip = /* @__PURE__ */ React20.forwardRef(function PopperTooltip2(props, ref) {
+    var PopperTooltip = /* @__PURE__ */ React30.forwardRef(function PopperTooltip2(props, ref) {
       const {
         anchorEl,
         children,
@@ -32977,18 +32977,18 @@ var require_PopperUnstyled = __commonJS({
         popperRef: popperRefProp,
         TransitionProps
       } = props, other = (0, _objectWithoutPropertiesLoose2.default)(props, _excluded);
-      const tooltipRef = React20.useRef(null);
+      const tooltipRef = React30.useRef(null);
       const ownRef = (0, _utils.unstable_useForkRef)(tooltipRef, ref);
-      const popperRef = React20.useRef(null);
+      const popperRef = React30.useRef(null);
       const handlePopperRef = (0, _utils.unstable_useForkRef)(popperRef, popperRefProp);
-      const handlePopperRefRef = React20.useRef(handlePopperRef);
+      const handlePopperRefRef = React30.useRef(handlePopperRef);
       (0, _utils.unstable_useEnhancedEffect)(() => {
         handlePopperRefRef.current = handlePopperRef;
       }, [handlePopperRef]);
-      React20.useImperativeHandle(popperRefProp, () => popperRef.current, []);
+      React30.useImperativeHandle(popperRefProp, () => popperRef.current, []);
       const rtlPlacement = flipPlacement(initialPlacement, direction);
-      const [placement, setPlacement] = React20.useState(rtlPlacement);
-      React20.useEffect(() => {
+      const [placement, setPlacement] = React30.useState(rtlPlacement);
+      React30.useEffect(() => {
         if (popperRef.current) {
           popperRef.current.forceUpdate();
         }
@@ -33059,7 +33059,7 @@ var require_PopperUnstyled = __commonJS({
         children: typeof children === "function" ? children(childProps) : children
       }));
     });
-    var PopperUnstyled = /* @__PURE__ */ React20.forwardRef(function PopperUnstyled2(props, ref) {
+    var PopperUnstyled = /* @__PURE__ */ React30.forwardRef(function PopperUnstyled2(props, ref) {
       const {
         anchorEl,
         children,
@@ -33075,7 +33075,7 @@ var require_PopperUnstyled = __commonJS({
         style,
         transition = false
       } = props, other = (0, _objectWithoutPropertiesLoose2.default)(props, _excluded2);
-      const [exited, setExited] = React20.useState(true);
+      const [exited, setExited] = React30.useState(true);
       const handleEnter = () => {
         setExited(false);
       };
@@ -33192,7 +33192,7 @@ var require_MenuUnstyled = __commonJS({
     exports.default = void 0;
     var _extends2 = _interopRequireDefault(require_extends());
     var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require_objectWithoutPropertiesLoose());
-    var React20 = _interopRequireWildcard(require_react());
+    var React30 = _interopRequireWildcard(require_react());
     var _propTypes = _interopRequireDefault(require_prop_types());
     var _clsx = _interopRequireDefault(require_clsx());
     var _utils = require_utils();
@@ -33252,7 +33252,7 @@ var require_MenuUnstyled = __commonJS({
       };
       return (0, _composeClasses.default)(slots, _menuUnstyledClasses.getMenuUnstyledUtilityClass, {});
     }
-    var MenuUnstyled = /* @__PURE__ */ React20.forwardRef(function MenuUnstyled2(props, forwardedRef) {
+    var MenuUnstyled = /* @__PURE__ */ React30.forwardRef(function MenuUnstyled2(props, forwardedRef) {
       var _componentsProps$list, _componentsProps$list2, _ref, _componentsProps$root, _components$Listbox, _componentsProps$list3;
       const {
         actions,
@@ -33279,7 +33279,7 @@ var require_MenuUnstyled = __commonJS({
         listboxRef: (_componentsProps$list = componentsProps.listbox) == null ? void 0 : _componentsProps$list.ref,
         listboxId: (_componentsProps$list2 = componentsProps.listbox) == null ? void 0 : _componentsProps$list2.id
       });
-      React20.useImperativeHandle(actions, () => ({
+      React30.useImperativeHandle(actions, () => ({
         highlightFirstItem,
         highlightLastItem
       }), [highlightFirstItem, highlightLastItem]);
@@ -33530,7 +33530,7 @@ var require_useMenuItem = __commonJS({
     });
     exports.default = useMenuItem;
     var _extends2 = _interopRequireDefault(require_extends());
-    var React20 = _interopRequireWildcard(require_react());
+    var React30 = _interopRequireWildcard(require_react());
     var _utils = require_utils();
     var _MenuUnstyled = require_MenuUnstyled2();
     var _ButtonUnstyled = require_ButtonUnstyled2();
@@ -33579,8 +33579,8 @@ var require_useMenuItem = __commonJS({
         ref
       } = props;
       const id = (0, _utils.unstable_useId)();
-      const menuContext = React20.useContext(_MenuUnstyled.MenuUnstyledContext);
-      const itemRef = React20.useRef(null);
+      const menuContext = React30.useContext(_MenuUnstyled.MenuUnstyledContext);
+      const itemRef = React30.useRef(null);
       const handleRef = (0, _utils.unstable_useForkRef)(itemRef, ref);
       if (menuContext === null) {
         throw new Error("MenuItemUnstyled must be used within a MenuUnstyled");
@@ -33590,7 +33590,7 @@ var require_useMenuItem = __commonJS({
         unregisterItem,
         open
       } = menuContext;
-      React20.useEffect(() => {
+      React30.useEffect(() => {
         if (id === void 0) {
           return void 0;
         }
@@ -33609,17 +33609,17 @@ var require_useMenuItem = __commonJS({
         ref: handleRef,
         disabled
       });
-      const [focusRequested, requestFocus] = React20.useState(false);
-      const focusIfRequested = React20.useCallback(() => {
+      const [focusRequested, requestFocus] = React30.useState(false);
+      const focusIfRequested = React30.useCallback(() => {
         if (focusRequested && itemRef.current != null) {
           itemRef.current.focus();
           requestFocus(false);
         }
       }, [focusRequested]);
-      React20.useEffect(() => {
+      React30.useEffect(() => {
         focusIfRequested();
       });
-      React20.useDebugValue({
+      React30.useDebugValue({
         id,
         disabled
       });
@@ -33629,7 +33629,7 @@ var require_useMenuItem = __commonJS({
       } = itemState != null ? itemState : {
         highlighted: false
       };
-      React20.useEffect(() => {
+      React30.useEffect(() => {
         requestFocus(highlighted && open);
       }, [highlighted, open]);
       if (id === void 0) {
@@ -33668,7 +33668,7 @@ var require_MenuItemUnstyled = __commonJS({
     exports.default = void 0;
     var _extends2 = _interopRequireDefault(require_extends());
     var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require_objectWithoutPropertiesLoose());
-    var React20 = _interopRequireWildcard(require_react());
+    var React30 = _interopRequireWildcard(require_react());
     var _propTypes = _interopRequireDefault(require_prop_types());
     var _clsx = _interopRequireDefault(require_clsx());
     var _utils = require_utils2();
@@ -33725,7 +33725,7 @@ var require_MenuItemUnstyled = __commonJS({
       };
       return (0, _composeClasses.default)(slots, _menuItemUnstyledClasses.getMenuItemUnstyledUtilityClass, {});
     }
-    var MenuItemUnstyled = /* @__PURE__ */ React20.forwardRef(function MenuItemUnstyled2(props, ref) {
+    var MenuItemUnstyled = /* @__PURE__ */ React30.forwardRef(function MenuItemUnstyled2(props, ref) {
       var _ref, _componentsProps$root;
       const {
         children,
@@ -34107,7 +34107,7 @@ var require_Unstable_TrapFocus = __commonJS({
       value: true
     });
     exports.default = void 0;
-    var React20 = _interopRequireWildcard(require_react());
+    var React30 = _interopRequireWildcard(require_react());
     var _propTypes = _interopRequireDefault(require_prop_types());
     var _utils = require_utils();
     var _jsxRuntime = require_jsx_runtime();
@@ -34213,22 +34213,22 @@ var require_Unstable_TrapFocus = __commonJS({
         isEnabled = defaultIsEnabled,
         open
       } = props;
-      const ignoreNextEnforceFocus = React20.useRef();
-      const sentinelStart = React20.useRef(null);
-      const sentinelEnd = React20.useRef(null);
-      const nodeToRestore = React20.useRef(null);
-      const reactFocusEventTarget = React20.useRef(null);
-      const activated = React20.useRef(false);
-      const rootRef = React20.useRef(null);
+      const ignoreNextEnforceFocus = React30.useRef();
+      const sentinelStart = React30.useRef(null);
+      const sentinelEnd = React30.useRef(null);
+      const nodeToRestore = React30.useRef(null);
+      const reactFocusEventTarget = React30.useRef(null);
+      const activated = React30.useRef(false);
+      const rootRef = React30.useRef(null);
       const handleRef = (0, _utils.unstable_useForkRef)(children.ref, rootRef);
-      const lastKeydown = React20.useRef(null);
-      React20.useEffect(() => {
+      const lastKeydown = React30.useRef(null);
+      React30.useEffect(() => {
         if (!open || !rootRef.current) {
           return;
         }
         activated.current = !disableAutoFocus;
       }, [disableAutoFocus, open]);
-      React20.useEffect(() => {
+      React30.useEffect(() => {
         if (!open || !rootRef.current) {
           return;
         }
@@ -34254,7 +34254,7 @@ var require_Unstable_TrapFocus = __commonJS({
           }
         };
       }, [open]);
-      React20.useEffect(() => {
+      React30.useEffect(() => {
         if (!open || !rootRef.current) {
           return;
         }
@@ -34338,13 +34338,13 @@ var require_Unstable_TrapFocus = __commonJS({
         }
         activated.current = true;
       };
-      return /* @__PURE__ */ (0, _jsxRuntime.jsxs)(React20.Fragment, {
+      return /* @__PURE__ */ (0, _jsxRuntime.jsxs)(React30.Fragment, {
         children: [/* @__PURE__ */ (0, _jsxRuntime.jsx)("div", {
           tabIndex: 0,
           onFocus: handleFocusSentinel,
           ref: sentinelStart,
           "data-test": "sentinelStart"
-        }), /* @__PURE__ */ React20.cloneElement(children, {
+        }), /* @__PURE__ */ React30.cloneElement(children, {
           ref: handleRef,
           onFocus
         }), /* @__PURE__ */ (0, _jsxRuntime.jsx)("div", {
@@ -34422,7 +34422,7 @@ var require_ModalUnstyled = __commonJS({
     exports.default = void 0;
     var _extends2 = _interopRequireDefault(require_extends());
     var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require_objectWithoutPropertiesLoose());
-    var React20 = _interopRequireWildcard(require_react());
+    var React30 = _interopRequireWildcard(require_react());
     var _propTypes = _interopRequireDefault(require_prop_types());
     var _clsx = _interopRequireDefault(require_clsx());
     var _utils = require_utils();
@@ -34490,7 +34490,7 @@ var require_ModalUnstyled = __commonJS({
       return props.children ? props.children.props.hasOwnProperty("in") : false;
     }
     var defaultManager = new _ModalManager.default();
-    var ModalUnstyled = /* @__PURE__ */ React20.forwardRef(function ModalUnstyled2(props, ref) {
+    var ModalUnstyled = /* @__PURE__ */ React30.forwardRef(function ModalUnstyled2(props, ref) {
       const {
         BackdropComponent,
         BackdropProps,
@@ -34519,10 +34519,10 @@ var require_ModalUnstyled = __commonJS({
         onTransitionEnter,
         onTransitionExited
       } = props, other = (0, _objectWithoutPropertiesLoose2.default)(props, _excluded);
-      const [exited, setExited] = React20.useState(true);
-      const modal = React20.useRef({});
-      const mountNodeRef = React20.useRef(null);
-      const modalRef = React20.useRef(null);
+      const [exited, setExited] = React30.useState(true);
+      const modal = React30.useRef({});
+      const mountNodeRef = React30.useRef(null);
+      const modalRef = React30.useRef(null);
       const handleRef = (0, _utils.unstable_useForkRef)(modalRef, ref);
       const hasTransition = getHasTransition(props);
       const getDoc = () => (0, _utils.unstable_ownerDocument)(mountNodeRef.current);
@@ -34544,7 +34544,7 @@ var require_ModalUnstyled = __commonJS({
           handleMounted();
         }
       });
-      const isTopModal = React20.useCallback(() => manager.isTopModal(getModal()), [manager]);
+      const isTopModal = React30.useCallback(() => manager.isTopModal(getModal()), [manager]);
       const handlePortalRef = (0, _utils.unstable_useEventCallback)((node) => {
         mountNodeRef.current = node;
         if (!node) {
@@ -34556,15 +34556,15 @@ var require_ModalUnstyled = __commonJS({
           (0, _ModalManager.ariaHidden)(modalRef.current, true);
         }
       });
-      const handleClose = React20.useCallback(() => {
+      const handleClose = React30.useCallback(() => {
         manager.remove(getModal());
       }, [manager]);
-      React20.useEffect(() => {
+      React30.useEffect(() => {
         return () => {
           handleClose();
         };
       }, [handleClose]);
-      React20.useEffect(() => {
+      React30.useEffect(() => {
         if (open) {
           handleOpen();
         } else if (!hasTransition || !closeAfterTransition) {
@@ -34661,7 +34661,7 @@ var require_ModalUnstyled = __commonJS({
             disableRestoreFocus,
             isEnabled: isTopModal,
             open,
-            children: /* @__PURE__ */ React20.cloneElement(children, childProps)
+            children: /* @__PURE__ */ React30.cloneElement(children, childProps)
           })]
         }))
       });
@@ -34863,7 +34863,7 @@ var require_useSelect = __commonJS({
     });
     exports.default = void 0;
     var _extends2 = _interopRequireDefault(require_extends());
-    var React20 = _interopRequireWildcard(require_react());
+    var React30 = _interopRequireWildcard(require_react());
     var _utils = require_utils();
     var _ButtonUnstyled = require_ButtonUnstyled2();
     var _ListboxUnstyled = require_ListboxUnstyled();
@@ -34920,9 +34920,9 @@ var require_useSelect = __commonJS({
         options,
         value: valueProp
       } = props;
-      const buttonRef = React20.useRef(null);
+      const buttonRef = React30.useRef(null);
       const handleButtonRef = (0, _utils.unstable_useForkRef)(buttonRefProp, buttonRef);
-      const listboxRef = React20.useRef(null);
+      const listboxRef = React30.useRef(null);
       const intermediaryListboxRef = (0, _utils.unstable_useForkRef)(listboxRefProp, listboxRef);
       const [value, setValue] = (0, _utils.unstable_useControlled)({
         controlled: valueProp,
@@ -34930,10 +34930,10 @@ var require_useSelect = __commonJS({
         name: "SelectUnstyled",
         state: "value"
       });
-      const ignoreEnterKeyUp = React20.useRef(false);
-      const ignoreClick = React20.useRef(false);
-      const [listboxFocusRequested, requestListboxFocus] = React20.useState(false);
-      const focusListboxIfRequested = React20.useCallback(() => {
+      const ignoreEnterKeyUp = React30.useRef(false);
+      const ignoreClick = React30.useRef(false);
+      const [listboxFocusRequested, requestListboxFocus] = React30.useState(false);
+      const focusListboxIfRequested = React30.useCallback(() => {
         if (listboxFocusRequested && listboxRef.current != null) {
           listboxRef.current.focus();
           requestListboxFocus(false);
@@ -34944,10 +34944,10 @@ var require_useSelect = __commonJS({
         focusListboxIfRequested();
       };
       const handleListboxRef = (0, _utils.unstable_useForkRef)(intermediaryListboxRef, updateListboxRef);
-      React20.useEffect(() => {
+      React30.useEffect(() => {
         focusListboxIfRequested();
       }, [focusListboxIfRequested]);
-      React20.useEffect(() => {
+      React30.useEffect(() => {
         requestListboxFocus(open);
       }, [open]);
       const createHandleMouseDown = (otherHandlers) => (event) => {
@@ -35032,7 +35032,7 @@ var require_useSelect = __commonJS({
         disabled,
         ref: handleButtonRef
       });
-      const selectedOption = React20.useMemo(() => {
+      const selectedOption = React30.useMemo(() => {
         var _props$options$find;
         return props.multiple ? props.options.filter((o) => value.includes(o.value)) : (_props$options$find = props.options.find((o) => o.value === value)) != null ? _props$options$find : null;
       }, [props.multiple, props.options, value]);
@@ -35100,7 +35100,7 @@ var require_useSelect = __commonJS({
           onClick: createHandleListboxItemClick(otherHandlers)
         }));
       };
-      React20.useDebugValue({
+      React30.useDebugValue({
         selectedOption: listboxSelectedOption,
         open,
         highlightedOption
@@ -35130,7 +35130,7 @@ var require_SelectUnstyledContext = __commonJS({
       value: true
     });
     exports.SelectUnstyledContext = void 0;
-    var React20 = _interopRequireWildcard(require_react());
+    var React30 = _interopRequireWildcard(require_react());
     function _getRequireWildcardCache(nodeInterop) {
       if (typeof WeakMap !== "function")
         return null;
@@ -35169,7 +35169,7 @@ var require_SelectUnstyledContext = __commonJS({
       }
       return newObj;
     }
-    var SelectUnstyledContext = /* @__PURE__ */ React20.createContext(void 0);
+    var SelectUnstyledContext = /* @__PURE__ */ React30.createContext(void 0);
     exports.SelectUnstyledContext = SelectUnstyledContext;
   }
 });
@@ -35206,7 +35206,7 @@ var require_MultiSelectUnstyled = __commonJS({
     exports.default = void 0;
     var _extends2 = _interopRequireDefault(require_extends());
     var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require_objectWithoutPropertiesLoose());
-    var React20 = _interopRequireWildcard(require_react());
+    var React30 = _interopRequireWildcard(require_react());
     var _propTypes = _interopRequireDefault(require_prop_types());
     var _clsx = _interopRequireDefault(require_clsx());
     var _utils = require_utils();
@@ -35258,7 +35258,7 @@ var require_MultiSelectUnstyled = __commonJS({
       return newObj;
     }
     function defaultRenderMultipleValues(selectedOptions) {
-      return /* @__PURE__ */ (0, _jsxRuntime.jsx)(React20.Fragment, {
+      return /* @__PURE__ */ (0, _jsxRuntime.jsx)(React30.Fragment, {
         children: selectedOptions.map((o) => o.label).join(", ")
       });
     }
@@ -35276,7 +35276,7 @@ var require_MultiSelectUnstyled = __commonJS({
       };
       return (0, _composeClasses.default)(slots, _selectUnstyledClasses.getSelectUnstyledUtilityClass, {});
     }
-    var MultiSelectUnstyled = /* @__PURE__ */ React20.forwardRef(function MultiSelectUnstyled2(props, ref) {
+    var MultiSelectUnstyled = /* @__PURE__ */ React30.forwardRef(function MultiSelectUnstyled2(props, ref) {
       var _props$renderValue, _ref, _components$Listbox, _components$Popper, _componentsProps$list, _componentsProps$list2, _componentsProps$root, _componentsProps$list3, _componentsProps$popp;
       const {
         autoFocus,
@@ -35294,21 +35294,21 @@ var require_MultiSelectUnstyled = __commonJS({
         value: valueProp
       } = props, other = (0, _objectWithoutPropertiesLoose2.default)(props, _excluded);
       const renderValue = (_props$renderValue = props.renderValue) != null ? _props$renderValue : defaultRenderMultipleValues;
-      const [groupedOptions, setGroupedOptions] = React20.useState([]);
-      const options = React20.useMemo(() => (0, _utils2.flattenOptionGroups)(groupedOptions), [groupedOptions]);
+      const [groupedOptions, setGroupedOptions] = React30.useState([]);
+      const options = React30.useMemo(() => (0, _utils2.flattenOptionGroups)(groupedOptions), [groupedOptions]);
       const [listboxOpen, setListboxOpen] = (0, _utils.unstable_useControlled)({
         controlled: listboxOpenProp,
         default: defaultListboxOpen,
         name: "MultiSelectUnstyled",
         state: "listboxOpen"
       });
-      React20.useEffect(() => {
+      React30.useEffect(() => {
         setGroupedOptions((0, _utils2.getOptionsFromChildren)(children));
       }, [children]);
-      const [buttonDefined, setButtonDefined] = React20.useState(false);
-      const buttonRef = React20.useRef(null);
-      const listboxRef = React20.useRef(null);
-      const Button = (_ref = component != null ? component : components.Root) != null ? _ref : "button";
+      const [buttonDefined, setButtonDefined] = React30.useState(false);
+      const buttonRef = React30.useRef(null);
+      const listboxRef = React30.useRef(null);
+      const Button2 = (_ref = component != null ? component : components.Root) != null ? _ref : "button";
       const ListboxRoot = (_components$Listbox = components.Listbox) != null ? _components$Listbox : "ul";
       const Popper = (_components$Popper = components.Popper) != null ? _components$Popper : _PopperUnstyled.default;
       const handleButtonRefChange = (element) => {
@@ -35319,7 +35319,7 @@ var require_MultiSelectUnstyled = __commonJS({
       };
       const handleButtonRef = (0, _utils.unstable_useForkRef)(ref, handleButtonRefChange);
       const handleListboxRef = (0, _utils.unstable_useForkRef)(listboxRef, (_componentsProps$list = componentsProps.listbox) == null ? void 0 : _componentsProps$list.ref);
-      React20.useEffect(() => {
+      React30.useEffect(() => {
         if (autoFocus) {
           buttonRef.current.focus();
         }
@@ -35338,7 +35338,7 @@ var require_MultiSelectUnstyled = __commonJS({
         getOptionState,
         value
       } = (0, _useSelect.default)({
-        buttonComponent: Button,
+        buttonComponent: Button2,
         buttonRef: handleButtonRef,
         defaultValue,
         disabled: disabledProp,
@@ -35361,13 +35361,13 @@ var require_MultiSelectUnstyled = __commonJS({
         value
       });
       const classes = useUtilityClasses(ownerState);
-      const selectedOptions = React20.useMemo(() => {
+      const selectedOptions = React30.useMemo(() => {
         if (value == null) {
           return [];
         }
         return options.filter((o) => value.includes(o.value));
       }, [options, value]);
-      const buttonProps = (0, _utils3.appendOwnerState)(Button, (0, _extends2.default)({}, getButtonProps(), other, componentsProps.root, {
+      const buttonProps = (0, _utils3.appendOwnerState)(Button2, (0, _extends2.default)({}, getButtonProps(), other, componentsProps.root, {
         className: (0, _clsx.default)(className, (_componentsProps$root = componentsProps.root) == null ? void 0 : _componentsProps$root.className, classes.root)
       }), ownerState);
       const listboxProps = (0, _utils3.appendOwnerState)(ListboxRoot, (0, _extends2.default)({}, getListboxProps(), componentsProps.listbox, {
@@ -35387,8 +35387,8 @@ var require_MultiSelectUnstyled = __commonJS({
         getOptionState,
         listboxRef
       };
-      return /* @__PURE__ */ (0, _jsxRuntime.jsxs)(React20.Fragment, {
-        children: [/* @__PURE__ */ (0, _jsxRuntime.jsx)(Button, (0, _extends2.default)({}, buttonProps, {
+      return /* @__PURE__ */ (0, _jsxRuntime.jsxs)(React30.Fragment, {
+        children: [/* @__PURE__ */ (0, _jsxRuntime.jsx)(Button2, (0, _extends2.default)({}, buttonProps, {
           children: renderValue(selectedOptions)
         })), buttonDefined && /* @__PURE__ */ (0, _jsxRuntime.jsx)(Popper, (0, _extends2.default)({}, popperProps, {
           children: /* @__PURE__ */ (0, _jsxRuntime.jsx)(ListboxRoot, (0, _extends2.default)({}, listboxProps, {
@@ -35482,7 +35482,7 @@ var require_NoSsr = __commonJS({
       value: true
     });
     exports.default = void 0;
-    var React20 = _interopRequireWildcard(require_react());
+    var React30 = _interopRequireWildcard(require_react());
     var _propTypes = _interopRequireDefault(require_prop_types());
     var _utils = require_utils();
     var _jsxRuntime = require_jsx_runtime();
@@ -35530,18 +35530,18 @@ var require_NoSsr = __commonJS({
         defer = false,
         fallback = null
       } = props;
-      const [mountedState, setMountedState] = React20.useState(false);
+      const [mountedState, setMountedState] = React30.useState(false);
       (0, _utils.unstable_useEnhancedEffect)(() => {
         if (!defer) {
           setMountedState(true);
         }
       }, [defer]);
-      React20.useEffect(() => {
+      React30.useEffect(() => {
         if (defer) {
           setMountedState(true);
         }
       }, [defer]);
-      return /* @__PURE__ */ (0, _jsxRuntime.jsx)(React20.Fragment, {
+      return /* @__PURE__ */ (0, _jsxRuntime.jsx)(React30.Fragment, {
         children: mountedState ? children : fallback
       });
     }
@@ -36013,7 +36013,7 @@ var require_SelectUnstyled = __commonJS({
     exports.default = void 0;
     var _extends2 = _interopRequireDefault(require_extends());
     var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require_objectWithoutPropertiesLoose());
-    var React20 = _interopRequireWildcard(require_react());
+    var React30 = _interopRequireWildcard(require_react());
     var _propTypes = _interopRequireDefault(require_prop_types());
     var _clsx = _interopRequireDefault(require_clsx());
     var _utils = require_utils();
@@ -36082,7 +36082,7 @@ var require_SelectUnstyled = __commonJS({
       };
       return (0, _composeClasses.default)(slots, _selectUnstyledClasses.getSelectUnstyledUtilityClass, {});
     }
-    var SelectUnstyled = /* @__PURE__ */ React20.forwardRef(function SelectUnstyled2(props, ref) {
+    var SelectUnstyled = /* @__PURE__ */ React30.forwardRef(function SelectUnstyled2(props, ref) {
       var _ref, _components$Listbox, _components$Popper, _componentsProps$list, _componentsProps$list2, _componentsProps$root, _componentsProps$list3, _componentsProps$popp;
       const {
         autoFocus,
@@ -36101,21 +36101,21 @@ var require_SelectUnstyled = __commonJS({
         value: valueProp
       } = props, other = (0, _objectWithoutPropertiesLoose2.default)(props, _excluded);
       const renderValue = renderValueProp != null ? renderValueProp : defaultRenderSingleValue;
-      const [groupedOptions, setGroupedOptions] = React20.useState([]);
-      const options = React20.useMemo(() => (0, _utils2.flattenOptionGroups)(groupedOptions), [groupedOptions]);
+      const [groupedOptions, setGroupedOptions] = React30.useState([]);
+      const options = React30.useMemo(() => (0, _utils2.flattenOptionGroups)(groupedOptions), [groupedOptions]);
       const [listboxOpen, setListboxOpen] = (0, _utils.unstable_useControlled)({
         controlled: listboxOpenProp,
         default: defaultListboxOpen,
         name: "SelectUnstyled",
         state: "listboxOpen"
       });
-      React20.useEffect(() => {
+      React30.useEffect(() => {
         setGroupedOptions((0, _utils2.getOptionsFromChildren)(children));
       }, [children]);
-      const [buttonDefined, setButtonDefined] = React20.useState(false);
-      const buttonRef = React20.useRef(null);
-      const listboxRef = React20.useRef(null);
-      const Button = (_ref = component != null ? component : components.Root) != null ? _ref : "button";
+      const [buttonDefined, setButtonDefined] = React30.useState(false);
+      const buttonRef = React30.useRef(null);
+      const listboxRef = React30.useRef(null);
+      const Button2 = (_ref = component != null ? component : components.Root) != null ? _ref : "button";
       const ListboxRoot = (_components$Listbox = components.Listbox) != null ? _components$Listbox : "ul";
       const Popper = (_components$Popper = components.Popper) != null ? _components$Popper : _PopperUnstyled.default;
       const handleButtonRefChange = (element) => {
@@ -36126,7 +36126,7 @@ var require_SelectUnstyled = __commonJS({
       };
       const handleButtonRef = (0, _utils.unstable_useForkRef)(ref, handleButtonRefChange);
       const handleListboxRef = (0, _utils.unstable_useForkRef)(listboxRef, (_componentsProps$list = componentsProps.listbox) == null ? void 0 : _componentsProps$list.ref);
-      React20.useEffect(() => {
+      React30.useEffect(() => {
         if (autoFocus) {
           buttonRef.current.focus();
         }
@@ -36145,7 +36145,7 @@ var require_SelectUnstyled = __commonJS({
         getOptionState,
         value
       } = (0, _useSelect.default)({
-        buttonComponent: Button,
+        buttonComponent: Button2,
         buttonRef: handleButtonRef,
         defaultValue,
         disabled: disabledProp,
@@ -36168,10 +36168,10 @@ var require_SelectUnstyled = __commonJS({
         value
       });
       const classes = useUtilityClasses(ownerState);
-      const selectedOptions = React20.useMemo(() => {
+      const selectedOptions = React30.useMemo(() => {
         return options.find((o) => value === o.value);
       }, [options, value]);
-      const buttonProps = (0, _utils3.appendOwnerState)(Button, (0, _extends2.default)({}, getButtonProps(), other, componentsProps.root, {
+      const buttonProps = (0, _utils3.appendOwnerState)(Button2, (0, _extends2.default)({}, getButtonProps(), other, componentsProps.root, {
         className: (0, _clsx.default)(className, (_componentsProps$root = componentsProps.root) == null ? void 0 : _componentsProps$root.className, classes.root)
       }), ownerState);
       const listboxProps = (0, _utils3.appendOwnerState)(ListboxRoot, (0, _extends2.default)({}, getListboxProps(), componentsProps.listbox, {
@@ -36191,8 +36191,8 @@ var require_SelectUnstyled = __commonJS({
         getOptionState,
         listboxRef
       };
-      return /* @__PURE__ */ (0, _jsxRuntime.jsxs)(React20.Fragment, {
-        children: [/* @__PURE__ */ (0, _jsxRuntime.jsx)(Button, (0, _extends2.default)({}, buttonProps, {
+      return /* @__PURE__ */ (0, _jsxRuntime.jsxs)(React30.Fragment, {
+        children: [/* @__PURE__ */ (0, _jsxRuntime.jsx)(Button2, (0, _extends2.default)({}, buttonProps, {
           children: renderValue(selectedOptions)
         })), buttonDefined && /* @__PURE__ */ (0, _jsxRuntime.jsx)(Popper, (0, _extends2.default)({}, popperProps, {
           children: /* @__PURE__ */ (0, _jsxRuntime.jsx)(ListboxRoot, (0, _extends2.default)({}, listboxProps, {
@@ -36406,7 +36406,7 @@ var require_SliderValueLabelUnstyled = __commonJS({
       value: true
     });
     exports.default = void 0;
-    var React20 = _interopRequireWildcard(require_react());
+    var React30 = _interopRequireWildcard(require_react());
     var _propTypes = _interopRequireDefault(require_prop_types());
     var _clsx = _interopRequireDefault(require_clsx());
     var _sliderUnstyledClasses = _interopRequireDefault(require_sliderUnstyledClasses());
@@ -36468,9 +36468,9 @@ var require_SliderValueLabelUnstyled = __commonJS({
         theme
       } = props;
       const classes = useValueLabelClasses(props);
-      return /* @__PURE__ */ React20.cloneElement(children, {
+      return /* @__PURE__ */ React30.cloneElement(children, {
         className: (0, _clsx.default)(children.props.className)
-      }, /* @__PURE__ */ (0, _jsxRuntime.jsxs)(React20.Fragment, {
+      }, /* @__PURE__ */ (0, _jsxRuntime.jsxs)(React30.Fragment, {
         children: [children.props.children, /* @__PURE__ */ (0, _jsxRuntime.jsx)("span", {
           className: (0, _clsx.default)(classes.offset, className),
           theme,
@@ -36508,7 +36508,7 @@ var require_useSlider = __commonJS({
     exports.default = useSlider;
     exports.valueToPercent = valueToPercent;
     var _extends2 = _interopRequireDefault(require_extends());
-    var React20 = _interopRequireWildcard(require_react());
+    var React30 = _interopRequireWildcard(require_react());
     var _utils = require_utils();
     function _getRequireWildcardCache(nodeInterop) {
       if (typeof WeakMap !== "function")
@@ -36695,11 +36695,11 @@ var require_useSlider = __commonJS({
         value: valueProp,
         isRtl = false
       } = props;
-      const touchId = React20.useRef();
-      const [active, setActive] = React20.useState(-1);
-      const [open, setOpen] = React20.useState(-1);
-      const [dragging, setDragging] = React20.useState(false);
-      const moveCount = React20.useRef(0);
+      const touchId = React30.useRef();
+      const [active, setActive] = React30.useState(-1);
+      const [open, setOpen] = React30.useState(-1);
+      const [dragging, setDragging] = React30.useState(false);
+      const moveCount = React30.useRef(0);
       const [valueDerived, setValueState] = (0, _utils.unstable_useControlled)({
         controlled: valueProp,
         default: defaultValue != null ? defaultValue : min,
@@ -36730,8 +36730,8 @@ var require_useSlider = __commonJS({
         onFocus: handleFocusVisible,
         ref: focusVisibleRef
       } = (0, _utils.unstable_useIsFocusVisible)();
-      const [focusVisible, setFocusVisible] = React20.useState(-1);
-      const sliderRef = React20.useRef();
+      const [focusVisible, setFocusVisible] = React30.useState(-1);
+      const sliderRef = React30.useRef();
       const handleFocusRef = (0, _utils.unstable_useForkRef)(focusVisibleRef, sliderRef);
       const handleRef = (0, _utils.unstable_useForkRef)(ref, handleFocusRef);
       const createHandleHiddenInputFocus = (otherHandlers) => (event) => {
@@ -36808,7 +36808,7 @@ var require_useSlider = __commonJS({
           onChangeCommitted(event, newValue);
         }
       };
-      const previousIndex = React20.useRef();
+      const previousIndex = React30.useRef();
       let axis = orientation;
       if (isRtl && orientation === "horizontal") {
         axis += "-reverse";
@@ -36956,14 +36956,14 @@ var require_useSlider = __commonJS({
         doc.addEventListener("touchmove", handleTouchMove);
         doc.addEventListener("touchend", handleTouchEnd);
       });
-      const stopListening = React20.useCallback(() => {
+      const stopListening = React30.useCallback(() => {
         const doc = (0, _utils.unstable_ownerDocument)(sliderRef.current);
         doc.removeEventListener("mousemove", handleTouchMove);
         doc.removeEventListener("mouseup", handleTouchEnd);
         doc.removeEventListener("touchmove", handleTouchMove);
         doc.removeEventListener("touchend", handleTouchEnd);
       }, [handleTouchEnd, handleTouchMove]);
-      React20.useEffect(() => {
+      React30.useEffect(() => {
         const {
           current: slider
         } = sliderRef;
@@ -36977,7 +36977,7 @@ var require_useSlider = __commonJS({
           stopListening();
         };
       }, [stopListening, handleTouchStart]);
-      React20.useEffect(() => {
+      React30.useEffect(() => {
         if (disabled) {
           stopListening();
         }
@@ -37104,7 +37104,7 @@ var require_SliderUnstyled = __commonJS({
     exports.default = void 0;
     var _extends2 = _interopRequireDefault(require_extends());
     var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require_objectWithoutPropertiesLoose());
-    var React20 = _interopRequireWildcard(require_react());
+    var React30 = _interopRequireWildcard(require_react());
     var _propTypes = _interopRequireDefault(require_prop_types());
     var _clsx = _interopRequireDefault(require_clsx());
     var _utils = require_utils();
@@ -37183,7 +37183,7 @@ var require_SliderUnstyled = __commonJS({
     var Forward = ({
       children
     }) => children;
-    var SliderUnstyled = /* @__PURE__ */ React20.forwardRef(function SliderUnstyled2(props, ref) {
+    var SliderUnstyled = /* @__PURE__ */ React30.forwardRef(function SliderUnstyled2(props, ref) {
       var _ref, _components$Rail, _components$Track, _components$Thumb, _components$ValueLabe, _components$Mark, _components$MarkLabel;
       const {
         "aria-label": ariaLabel,
@@ -37280,7 +37280,7 @@ var require_SliderUnstyled = __commonJS({
           } else {
             markActive = track === "normal" && (range ? mark.value >= values[0] && mark.value <= values[values.length - 1] : mark.value <= values[0]) || track === "inverted" && (range ? mark.value <= values[0] || mark.value >= values[values.length - 1] : mark.value >= values[0]);
           }
-          return /* @__PURE__ */ (0, _jsxRuntime.jsxs)(React20.Fragment, {
+          return /* @__PURE__ */ (0, _jsxRuntime.jsxs)(React30.Fragment, {
             children: [/* @__PURE__ */ (0, _jsxRuntime.jsx)(Mark, (0, _extends2.default)({
               "data-index": index
             }, markProps, !(0, _isHostComponent.default)(Mark) && {
@@ -37303,7 +37303,7 @@ var require_SliderUnstyled = __commonJS({
           const percent = (0, _useSlider.valueToPercent)(value, min, max);
           const style = axisProps[axis].offset(percent);
           const ValueLabelComponent = valueLabelDisplay === "off" ? Forward : ValueLabel;
-          return /* @__PURE__ */ (0, _jsxRuntime.jsx)(React20.Fragment, {
+          return /* @__PURE__ */ (0, _jsxRuntime.jsx)(React30.Fragment, {
             children: /* @__PURE__ */ (0, _jsxRuntime.jsx)(ValueLabelComponent, (0, _extends2.default)({}, !(0, _isHostComponent.default)(ValueLabelComponent) && {
               valueLabelFormat,
               valueLabelDisplay,
@@ -37524,7 +37524,7 @@ var require_useSwitch = __commonJS({
     });
     exports.default = useSwitch;
     var _extends2 = _interopRequireDefault(require_extends());
-    var React20 = _interopRequireWildcard(require_react());
+    var React30 = _interopRequireWildcard(require_react());
     var _utils = require_utils();
     function _getRequireWildcardCache(nodeInterop) {
       if (typeof WeakMap !== "function")
@@ -37596,14 +37596,14 @@ var require_useSwitch = __commonJS({
         onFocus: handleFocusVisible,
         ref: focusVisibleRef
       } = (0, _utils.unstable_useIsFocusVisible)();
-      const [focusVisible, setFocusVisible] = React20.useState(false);
+      const [focusVisible, setFocusVisible] = React30.useState(false);
       if (disabled && focusVisible) {
         setFocusVisible(false);
       }
-      React20.useEffect(() => {
+      React30.useEffect(() => {
         isFocusVisibleRef.current = focusVisible;
       }, [focusVisible, isFocusVisibleRef]);
-      const inputRef = React20.useRef(null);
+      const inputRef = React30.useRef(null);
       const handleFocus = (event, otherHandler) => {
         if (!inputRef.current) {
           inputRef.current = event.currentTarget;
@@ -37681,7 +37681,7 @@ var require_SwitchUnstyled = __commonJS({
     exports.default = void 0;
     var _extends2 = _interopRequireDefault(require_extends());
     var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require_objectWithoutPropertiesLoose());
-    var React20 = _interopRequireWildcard(require_react());
+    var React30 = _interopRequireWildcard(require_react());
     var _propTypes = _interopRequireDefault(require_prop_types());
     var _clsx = _interopRequireDefault(require_clsx());
     var _useSwitch = _interopRequireDefault(require_useSwitch());
@@ -37727,7 +37727,7 @@ var require_SwitchUnstyled = __commonJS({
       }
       return newObj;
     }
-    var SwitchUnstyled = /* @__PURE__ */ React20.forwardRef(function SwitchUnstyled2(props, ref) {
+    var SwitchUnstyled = /* @__PURE__ */ React30.forwardRef(function SwitchUnstyled2(props, ref) {
       var _ref, _components$Thumb, _componentsProps$thum, _components$Input, _componentsProps$inpu, _components$Track, _componentsProps$trac;
       const {
         checked: checkedProp,
@@ -37983,7 +37983,7 @@ var require_useTabs = __commonJS({
       value: true
     });
     exports.default = void 0;
-    var React20 = _interopRequireWildcard(require_react());
+    var React30 = _interopRequireWildcard(require_react());
     var _utils = require_utils();
     function _getRequireWildcardCache(nodeInterop) {
       if (typeof WeakMap !== "function")
@@ -38039,7 +38039,7 @@ var require_useTabs = __commonJS({
         state: "value"
       });
       const idPrefix = (0, _utils.unstable_useId)();
-      const onSelected = React20.useCallback((e, newValue) => {
+      const onSelected = React30.useCallback((e, newValue) => {
         setValue(newValue);
         if (onChange) {
           onChange(e, newValue);
@@ -38048,7 +38048,7 @@ var require_useTabs = __commonJS({
       const getRootProps = () => {
         return {};
       };
-      const tabsContextValue = React20.useMemo(() => {
+      const tabsContextValue = React30.useMemo(() => {
         return {
           idPrefix,
           value,
@@ -38079,7 +38079,7 @@ var require_TabsContext = __commonJS({
     exports.getPanelId = getPanelId;
     exports.getTabId = getTabId;
     exports.useTabContext = useTabContext;
-    var React20 = _interopRequireWildcard(require_react());
+    var React30 = _interopRequireWildcard(require_react());
     function _getRequireWildcardCache(nodeInterop) {
       if (typeof WeakMap !== "function")
         return null;
@@ -38118,12 +38118,12 @@ var require_TabsContext = __commonJS({
       }
       return newObj;
     }
-    var Context = /* @__PURE__ */ React20.createContext(null);
+    var Context = /* @__PURE__ */ React30.createContext(null);
     if (true) {
       Context.displayName = "TabsContext";
     }
     function useTabContext() {
-      return React20.useContext(Context);
+      return React30.useContext(Context);
     }
     function getPanelId(context, value) {
       const {
@@ -38159,7 +38159,7 @@ var require_TabsUnstyled = __commonJS({
     exports.default = void 0;
     var _extends2 = _interopRequireDefault(require_extends());
     var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require_objectWithoutPropertiesLoose());
-    var React20 = _interopRequireWildcard(require_react());
+    var React30 = _interopRequireWildcard(require_react());
     var _propTypes = _interopRequireDefault(require_prop_types());
     var _clsx = _interopRequireDefault(require_clsx());
     var _utils = require_utils2();
@@ -38216,7 +38216,7 @@ var require_TabsUnstyled = __commonJS({
       };
       return (0, _composeClasses.default)(slots, _tabsUnstyledClasses.getTabsUnstyledUtilityClass, {});
     };
-    var TabsUnstyled = /* @__PURE__ */ React20.forwardRef((props, ref) => {
+    var TabsUnstyled = /* @__PURE__ */ React30.forwardRef((props, ref) => {
       var _ref, _componentsProps$root;
       const {
         children,
@@ -38441,7 +38441,7 @@ var require_TabPanelUnstyled = __commonJS({
     exports.default = void 0;
     var _extends2 = _interopRequireDefault(require_extends());
     var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require_objectWithoutPropertiesLoose());
-    var React20 = _interopRequireWildcard(require_react());
+    var React30 = _interopRequireWildcard(require_react());
     var _propTypes = _interopRequireDefault(require_prop_types());
     var _clsx = _interopRequireDefault(require_clsx());
     var _utils = require_utils2();
@@ -38497,7 +38497,7 @@ var require_TabPanelUnstyled = __commonJS({
       };
       return (0, _composeClasses.default)(slots, _tabPanelUnstyledClasses.getTabPanelUnstyledUtilityClass, {});
     };
-    var TabPanelUnstyled = /* @__PURE__ */ React20.forwardRef(function TabPanelUnstyled2(props, ref) {
+    var TabPanelUnstyled = /* @__PURE__ */ React30.forwardRef(function TabPanelUnstyled2(props, ref) {
       var _ref, _componentsProps$root;
       const {
         children,
@@ -38674,7 +38674,7 @@ var require_useTabsList = __commonJS({
     });
     exports.default = void 0;
     var _extends2 = _interopRequireDefault(require_extends());
-    var React20 = _interopRequireWildcard(require_react());
+    var React30 = _interopRequireWildcard(require_react());
     var _utils = require_utils();
     var _reactIs = require_react_is2();
     var _TabsUnstyled = require_TabsUnstyled2();
@@ -38767,7 +38767,7 @@ var require_useTabsList = __commonJS({
         children,
         ref
       } = props;
-      const tabsListRef = /* @__PURE__ */ React20.createRef();
+      const tabsListRef = /* @__PURE__ */ React30.createRef();
       const handleRef = (0, _utils.unstable_useForkRef)(tabsListRef, ref);
       const context = (0, _TabsUnstyled.useTabContext)();
       if (context === null) {
@@ -38833,11 +38833,11 @@ var require_useTabsList = __commonJS({
           ref: handleRef
         }, mergedEventHandlers);
       };
-      const processChildren = React20.useCallback(() => {
+      const processChildren = React30.useCallback(() => {
         const valueToIndex = new Map();
         let childIndex = 0;
-        const processedChildren = React20.Children.map(children, (child) => {
-          if (!/* @__PURE__ */ React20.isValidElement(child)) {
+        const processedChildren = React30.Children.map(children, (child) => {
+          if (!/* @__PURE__ */ React30.isValidElement(child)) {
             return null;
           }
           if (true) {
@@ -38848,7 +38848,7 @@ var require_useTabsList = __commonJS({
           const childValue = child.props.value === void 0 ? childIndex : child.props.value;
           valueToIndex.set(childValue, childIndex);
           childIndex += 1;
-          return /* @__PURE__ */ React20.cloneElement(child, (0, _extends2.default)({
+          return /* @__PURE__ */ React30.cloneElement(child, (0, _extends2.default)({
             value: childValue
           }, childIndex === 1 && value === false && !child.props.tabIndex || value === childValue ? {
             tabIndex: 0
@@ -38882,7 +38882,7 @@ var require_TabsListUnstyled = __commonJS({
     exports.default = void 0;
     var _extends2 = _interopRequireDefault(require_extends());
     var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require_objectWithoutPropertiesLoose());
-    var React20 = _interopRequireWildcard(require_react());
+    var React30 = _interopRequireWildcard(require_react());
     var _propTypes = _interopRequireDefault(require_prop_types());
     var _clsx = _interopRequireDefault(require_clsx());
     var _composeClasses = _interopRequireDefault(require_composeClasses2());
@@ -38938,7 +38938,7 @@ var require_TabsListUnstyled = __commonJS({
       };
       return (0, _composeClasses.default)(slots, _tabsListUnstyledClasses.getTabsListUnstyledUtilityClass, {});
     };
-    var TabsListUnstyled = /* @__PURE__ */ React20.forwardRef((props, ref) => {
+    var TabsListUnstyled = /* @__PURE__ */ React30.forwardRef((props, ref) => {
       var _ref, _componentsProps$root;
       const {
         className,
@@ -39195,7 +39195,7 @@ var require_TabUnstyled = __commonJS({
     exports.default = void 0;
     var _extends2 = _interopRequireDefault(require_extends());
     var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require_objectWithoutPropertiesLoose());
-    var React20 = _interopRequireWildcard(require_react());
+    var React30 = _interopRequireWildcard(require_react());
     var _propTypes = _interopRequireDefault(require_prop_types());
     var _clsx = _interopRequireDefault(require_clsx());
     var _utils = require_utils();
@@ -39253,7 +39253,7 @@ var require_TabUnstyled = __commonJS({
       };
       return (0, _composeClasses.default)(slots, _tabUnstyledClasses.getTabUnstyledUtilityClass, {});
     };
-    var TabUnstyled = /* @__PURE__ */ React20.forwardRef(function TabUnstyled2(props, ref) {
+    var TabUnstyled = /* @__PURE__ */ React30.forwardRef(function TabUnstyled2(props, ref) {
       var _ref, _componentsProps$root;
       const {
         action,
@@ -39264,7 +39264,7 @@ var require_TabUnstyled = __commonJS({
         components = {},
         componentsProps = {}
       } = props, other = (0, _objectWithoutPropertiesLoose2.default)(props, _excluded);
-      const tabRef = React20.useRef();
+      const tabRef = React30.useRef();
       const handleRef = (0, _utils.unstable_useForkRef)(tabRef, ref);
       const {
         active,
@@ -39275,7 +39275,7 @@ var require_TabUnstyled = __commonJS({
       } = (0, _useTab.default)((0, _extends2.default)({}, props, {
         ref: handleRef
       }));
-      React20.useImperativeHandle(action, () => ({
+      React30.useImperativeHandle(action, () => ({
         focusVisible: () => {
           setFocusVisible(true);
           tabRef.current.focus();
@@ -39435,7 +39435,7 @@ var require_TextareaAutosize = __commonJS({
     exports.default = void 0;
     var _extends2 = _interopRequireDefault(require_extends());
     var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require_objectWithoutPropertiesLoose());
-    var React20 = _interopRequireWildcard(require_react());
+    var React30 = _interopRequireWildcard(require_react());
     var _propTypes = _interopRequireDefault(require_prop_types());
     var _utils = require_utils();
     var _jsxRuntime = require_jsx_runtime();
@@ -39492,7 +39492,7 @@ var require_TextareaAutosize = __commonJS({
         transform: "translateZ(0)"
       }
     };
-    var TextareaAutosize = /* @__PURE__ */ React20.forwardRef(function TextareaAutosize2(props, ref) {
+    var TextareaAutosize = /* @__PURE__ */ React30.forwardRef(function TextareaAutosize2(props, ref) {
       const {
         onChange,
         maxRows,
@@ -39502,13 +39502,13 @@ var require_TextareaAutosize = __commonJS({
       } = props, other = (0, _objectWithoutPropertiesLoose2.default)(props, _excluded);
       const {
         current: isControlled
-      } = React20.useRef(value != null);
-      const inputRef = React20.useRef(null);
+      } = React30.useRef(value != null);
+      const inputRef = React30.useRef(null);
       const handleRef = (0, _utils.unstable_useForkRef)(ref, inputRef);
-      const shadowRef = React20.useRef(null);
-      const renders = React20.useRef(0);
-      const [state, setState] = React20.useState({});
-      const syncHeight = React20.useCallback(() => {
+      const shadowRef = React30.useRef(null);
+      const renders = React30.useRef(0);
+      const [state, setState] = React30.useState({});
+      const syncHeight = React30.useCallback(() => {
         const input = inputRef.current;
         const containerWindow = (0, _utils.unstable_ownerWindow)(input);
         const computedStyle = containerWindow.getComputedStyle(input);
@@ -39553,7 +39553,7 @@ var require_TextareaAutosize = __commonJS({
           return prevState;
         });
       }, [maxRows, minRows, props.placeholder]);
-      React20.useEffect(() => {
+      React30.useEffect(() => {
         const handleResize = (0, _utils.unstable_debounce)(() => {
           renders.current = 0;
           syncHeight();
@@ -39576,7 +39576,7 @@ var require_TextareaAutosize = __commonJS({
       (0, _utils.unstable_useEnhancedEffect)(() => {
         syncHeight();
       });
-      React20.useEffect(() => {
+      React30.useEffect(() => {
         renders.current = 0;
       }, [value]);
       const handleChange = (event) => {
@@ -39588,7 +39588,7 @@ var require_TextareaAutosize = __commonJS({
           onChange(event);
         }
       };
-      return /* @__PURE__ */ (0, _jsxRuntime.jsxs)(React20.Fragment, {
+      return /* @__PURE__ */ (0, _jsxRuntime.jsxs)(React30.Fragment, {
         children: [/* @__PURE__ */ (0, _jsxRuntime.jsx)("textarea", (0, _extends2.default)({
           value,
           onChange: handleChange,
@@ -41896,7 +41896,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
 var require_emotion_element_35a1554b_browser_cjs = __commonJS({
   "node_modules/@emotion/react/dist/emotion-element-35a1554b.browser.cjs.js"(exports) {
     "use strict";
-    var React20 = require_react();
+    var React30 = require_react();
     var createCache = require_emotion_cache_browser_cjs();
     var _extends = require_extends();
     var weakMemoize = require_weak_memoize_browser_cjs();
@@ -41926,12 +41926,12 @@ var require_emotion_element_35a1554b_browser_cjs = __commonJS({
       n["default"] = e;
       return Object.freeze(n);
     }
-    var React__namespace = /* @__PURE__ */ _interopNamespace(React20);
+    var React__namespace = /* @__PURE__ */ _interopNamespace(React30);
     var createCache__default = /* @__PURE__ */ _interopDefault(createCache);
     var _extends__default = /* @__PURE__ */ _interopDefault(_extends);
     var weakMemoize__default = /* @__PURE__ */ _interopDefault(weakMemoize);
     var hasOwnProperty = {}.hasOwnProperty;
-    var EmotionCacheContext = /* @__PURE__ */ React20.createContext(typeof HTMLElement !== "undefined" ? /* @__PURE__ */ createCache__default["default"]({
+    var EmotionCacheContext = /* @__PURE__ */ React30.createContext(typeof HTMLElement !== "undefined" ? /* @__PURE__ */ createCache__default["default"]({
       key: "css"
     }) : null);
     if (true) {
@@ -41939,20 +41939,20 @@ var require_emotion_element_35a1554b_browser_cjs = __commonJS({
     }
     var CacheProvider = EmotionCacheContext.Provider;
     var __unsafe_useEmotionCache = function useEmotionCache() {
-      return React20.useContext(EmotionCacheContext);
+      return React30.useContext(EmotionCacheContext);
     };
     var withEmotionCache = function withEmotionCache2(func) {
-      return /* @__PURE__ */ React20.forwardRef(function(props, ref) {
-        var cache = React20.useContext(EmotionCacheContext);
+      return /* @__PURE__ */ React30.forwardRef(function(props, ref) {
+        var cache = React30.useContext(EmotionCacheContext);
         return func(props, cache, ref);
       });
     };
-    var ThemeContext = /* @__PURE__ */ React20.createContext({});
+    var ThemeContext = /* @__PURE__ */ React30.createContext({});
     if (true) {
       ThemeContext.displayName = "EmotionThemeContext";
     }
     var useTheme = function useTheme2() {
-      return React20.useContext(ThemeContext);
+      return React30.useContext(ThemeContext);
     };
     var getTheme = function getTheme2(outerTheme, theme) {
       if (typeof theme === "function") {
@@ -41973,24 +41973,24 @@ var require_emotion_element_35a1554b_browser_cjs = __commonJS({
       });
     });
     var ThemeProvider = function ThemeProvider2(props) {
-      var theme = React20.useContext(ThemeContext);
+      var theme = React30.useContext(ThemeContext);
       if (props.theme !== theme) {
         theme = createCacheWithTheme(theme)(props.theme);
       }
-      return /* @__PURE__ */ React20.createElement(ThemeContext.Provider, {
+      return /* @__PURE__ */ React30.createElement(ThemeContext.Provider, {
         value: theme
       }, props.children);
     };
     function withTheme(Component) {
       var componentName = Component.displayName || Component.name || "Component";
       var render = function render2(props, ref) {
-        var theme = React20.useContext(ThemeContext);
-        return /* @__PURE__ */ React20.createElement(Component, _extends__default["default"]({
+        var theme = React30.useContext(ThemeContext);
+        return /* @__PURE__ */ React30.createElement(Component, _extends__default["default"]({
           theme,
           ref
         }, props));
       };
-      var WithTheme = /* @__PURE__ */ React20.forwardRef(render);
+      var WithTheme = /* @__PURE__ */ React30.forwardRef(render);
       WithTheme.displayName = "WithTheme(" + componentName + ")";
       return _isolatedHnrs_dist_emotionReact_isolatedHnrs["default"](WithTheme, Component);
     }
@@ -42073,7 +42073,7 @@ var require_emotion_element_35a1554b_browser_cjs = __commonJS({
       } else if (props.className != null) {
         className = props.className + " ";
       }
-      var serialized = serialize.serializeStyles(registeredStyles, void 0, React20.useContext(ThemeContext));
+      var serialized = serialize.serializeStyles(registeredStyles, void 0, React30.useContext(ThemeContext));
       if (serialized.name.indexOf("-") === -1) {
         var labelFromStack = props[labelPropName];
         if (labelFromStack) {
@@ -42089,11 +42089,11 @@ var require_emotion_element_35a1554b_browser_cjs = __commonJS({
       }
       newProps.ref = ref;
       newProps.className = className;
-      return /* @__PURE__ */ React20.createElement(React20.Fragment, null, /* @__PURE__ */ React20.createElement(Insertion, {
+      return /* @__PURE__ */ React30.createElement(React30.Fragment, null, /* @__PURE__ */ React30.createElement(Insertion, {
         cache,
         serialized,
         isStringTag: typeof WrappedComponent === "string"
-      }), /* @__PURE__ */ React20.createElement(WrappedComponent, newProps));
+      }), /* @__PURE__ */ React30.createElement(WrappedComponent, newProps));
     });
     if (true) {
       Emotion.displayName = "EmotionCssPropInternal";
@@ -42117,7 +42117,7 @@ var require_emotion_react_browser_cjs = __commonJS({
   "node_modules/@emotion/react/dist/emotion-react.browser.cjs.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    var React20 = require_react();
+    var React30 = require_react();
     require_emotion_cache_browser_cjs();
     var emotionElement = require_emotion_element_35a1554b_browser_cjs();
     require_extends();
@@ -42146,7 +42146,7 @@ var require_emotion_react_browser_cjs = __commonJS({
       n["default"] = e;
       return Object.freeze(n);
     }
-    var React__namespace = /* @__PURE__ */ _interopNamespace(React20);
+    var React__namespace = /* @__PURE__ */ _interopNamespace(React30);
     var pkg = {
       name: "@emotion/react",
       version: "11.9.0",
@@ -42226,7 +42226,7 @@ var require_emotion_react_browser_cjs = __commonJS({
     var jsx = function jsx2(type, props) {
       var args = arguments;
       if (props == null || !emotionElement.hasOwnProperty.call(props, "css")) {
-        return React20.createElement.apply(void 0, args);
+        return React30.createElement.apply(void 0, args);
       }
       var argsLength = args.length;
       var createElementArgArray = new Array(argsLength);
@@ -42235,9 +42235,9 @@ var require_emotion_react_browser_cjs = __commonJS({
       for (var i = 2; i < argsLength; i++) {
         createElementArgArray[i] = args[i];
       }
-      return React20.createElement.apply(null, createElementArgArray);
+      return React30.createElement.apply(null, createElementArgArray);
     };
-    var useInsertionEffect = React__namespace["useInsertionEffect"] ? React__namespace["useInsertionEffect"] : React20.useLayoutEffect;
+    var useInsertionEffect = React__namespace["useInsertionEffect"] ? React__namespace["useInsertionEffect"] : React30.useLayoutEffect;
     var warnedAboutCssPropForGlobal = false;
     var Global = /* @__PURE__ */ emotionElement.withEmotionCache(function(props, cache) {
       if (!warnedAboutCssPropForGlobal && (props.className || props.css)) {
@@ -42245,8 +42245,8 @@ var require_emotion_react_browser_cjs = __commonJS({
         warnedAboutCssPropForGlobal = true;
       }
       var styles = props.styles;
-      var serialized = serialize.serializeStyles([styles], void 0, React20.useContext(emotionElement.ThemeContext));
-      var sheetRef = React20.useRef();
+      var serialized = serialize.serializeStyles([styles], void 0, React30.useContext(emotionElement.ThemeContext));
+      var sheetRef = React30.useRef();
       useInsertionEffect(function() {
         var key = cache.key + "-global";
         var sheet = new cache.sheet.constructor({
@@ -42394,11 +42394,11 @@ var require_emotion_react_browser_cjs = __commonJS({
       var content = {
         css: css2,
         cx,
-        theme: React20.useContext(emotionElement.ThemeContext)
+        theme: React30.useContext(emotionElement.ThemeContext)
       };
       var ele = props.children(content);
       hasRendered = true;
-      return /* @__PURE__ */ React20.createElement(React20.Fragment, null, /* @__PURE__ */ React20.createElement(Insertion, {
+      return /* @__PURE__ */ React30.createElement(React30.Fragment, null, /* @__PURE__ */ React30.createElement(Insertion, {
         cache,
         serializedArr
       }), ele);
@@ -42444,7 +42444,7 @@ var require_emotion_styled_base_browser_cjs = __commonJS({
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var _extends = require_extends();
-    var React20 = require_react();
+    var React30 = require_react();
     var isPropValid = require_emotion_is_prop_valid_browser_cjs();
     var react = require_emotion_react_browser_cjs();
     var utils = require_emotion_utils_browser_cjs();
@@ -42473,7 +42473,7 @@ var require_emotion_styled_base_browser_cjs = __commonJS({
       return Object.freeze(n);
     }
     var _extends__default = /* @__PURE__ */ _interopDefault(_extends);
-    var React__namespace = /* @__PURE__ */ _interopNamespace(React20);
+    var React__namespace = /* @__PURE__ */ _interopNamespace(React30);
     var isPropValid__default = /* @__PURE__ */ _interopDefault(isPropValid);
     var testOmitPropsOnStringTag = isPropValid__default["default"];
     var testOmitPropsOnComponent = function testOmitPropsOnComponent2(key) {
@@ -42562,7 +42562,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
             for (var key in props) {
               mergedProps[key] = props[key];
             }
-            mergedProps.theme = React20.useContext(react.ThemeContext);
+            mergedProps.theme = React30.useContext(react.ThemeContext);
           }
           if (typeof props.className === "string") {
             className = utils.getRegisteredStyles(cache.registered, classInterpolations, props.className);
@@ -42585,11 +42585,11 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
           }
           newProps.className = className;
           newProps.ref = ref;
-          return /* @__PURE__ */ React20.createElement(React20.Fragment, null, /* @__PURE__ */ React20.createElement(Insertion, {
+          return /* @__PURE__ */ React30.createElement(React30.Fragment, null, /* @__PURE__ */ React30.createElement(Insertion, {
             cache,
             serialized,
             isStringTag: typeof FinalTag === "string"
-          }), /* @__PURE__ */ React20.createElement(FinalTag, newProps));
+          }), /* @__PURE__ */ React30.createElement(FinalTag, newProps));
         });
         Styled.displayName = identifierName !== void 0 ? identifierName : "Styled(" + (typeof baseTag === "string" ? baseTag : baseTag.displayName || baseTag.name || "Component") + ")";
         Styled.defaultProps = tag.defaultProps;
@@ -42782,7 +42782,7 @@ var require_StyledEngineProvider = __commonJS({
       value: true
     });
     exports.default = StyledEngineProvider;
-    var React20 = _interopRequireWildcard(require_react());
+    var React30 = _interopRequireWildcard(require_react());
     var _propTypes = _interopRequireDefault(require_prop_types());
     var _react2 = require_emotion_react_browser_cjs();
     var _cache = _interopRequireDefault(require_emotion_cache_browser_cjs());
@@ -42873,7 +42873,7 @@ var require_GlobalStyles = __commonJS({
       value: true
     });
     exports.default = GlobalStyles;
-    var React20 = _interopRequireWildcard(require_react());
+    var React30 = _interopRequireWildcard(require_react());
     var _propTypes = _interopRequireDefault(require_prop_types());
     var _react2 = require_emotion_react_browser_cjs();
     var _jsxRuntime = require_jsx_runtime();
@@ -44564,7 +44564,7 @@ var require_ThemeContext = __commonJS({
       value: true
     });
     exports.default = void 0;
-    var React20 = _interopRequireWildcard(require_react());
+    var React30 = _interopRequireWildcard(require_react());
     function _getRequireWildcardCache(nodeInterop) {
       if (typeof WeakMap !== "function")
         return null;
@@ -44603,7 +44603,7 @@ var require_ThemeContext = __commonJS({
       }
       return newObj;
     }
-    var ThemeContext = /* @__PURE__ */ React20.createContext(null);
+    var ThemeContext = /* @__PURE__ */ React30.createContext(null);
     if (true) {
       ThemeContext.displayName = "ThemeContext";
     }
@@ -44621,7 +44621,7 @@ var require_useTheme = __commonJS({
       value: true
     });
     exports.default = useTheme;
-    var React20 = _interopRequireWildcard(require_react());
+    var React30 = _interopRequireWildcard(require_react());
     var _ThemeContext = _interopRequireDefault(require_ThemeContext());
     function _getRequireWildcardCache(nodeInterop) {
       if (typeof WeakMap !== "function")
@@ -44662,9 +44662,9 @@ var require_useTheme = __commonJS({
       return newObj;
     }
     function useTheme() {
-      const theme = React20.useContext(_ThemeContext.default);
+      const theme = React30.useContext(_ThemeContext.default);
       if (true) {
-        React20.useDebugValue(theme);
+        React30.useDebugValue(theme);
       }
       return theme;
     }
@@ -44713,7 +44713,7 @@ var require_ThemeProvider = __commonJS({
     });
     exports.default = void 0;
     var _extends2 = _interopRequireDefault(require_extends());
-    var React20 = _interopRequireWildcard(require_react());
+    var React30 = _interopRequireWildcard(require_react());
     var _propTypes = _interopRequireDefault(require_prop_types());
     var _utils = require_utils();
     var _ThemeContext = _interopRequireDefault(require_ThemeContext());
@@ -44781,7 +44781,7 @@ var require_ThemeProvider = __commonJS({
           console.error(["MUI: You are providing a theme function prop to the ThemeProvider component:", "<ThemeProvider theme={outerTheme => outerTheme} />", "", "However, no outer theme is present.", "Make sure a theme is already injected higher in the React tree or provide a theme object."].join("\n"));
         }
       }
-      const theme = React20.useMemo(() => {
+      const theme = React30.useMemo(() => {
         const output = outerTheme === null ? localTheme : mergeOuterLocalTheme(outerTheme, localTheme);
         if (output != null) {
           output[_nested.default] = outerTheme !== null;
@@ -44964,7 +44964,7 @@ var require_createBox = __commonJS({
     exports.default = createBox;
     var _extends2 = _interopRequireDefault(require_extends());
     var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require_objectWithoutPropertiesLoose());
-    var React20 = _interopRequireWildcard(require_react());
+    var React30 = _interopRequireWildcard(require_react());
     var _propTypes = _interopRequireDefault(require_prop_types());
     var _clsx = _interopRequireDefault(require_clsx());
     var _styledEngine = _interopRequireDefault(require_node3());
@@ -45018,7 +45018,7 @@ var require_createBox = __commonJS({
         styleFunctionSx = _styleFunctionSx.default
       } = options;
       const BoxRoot = (0, _styledEngine.default)("div")(styleFunctionSx);
-      const Box = /* @__PURE__ */ React20.forwardRef(function Box2(inProps, ref) {
+      const Box = /* @__PURE__ */ React30.forwardRef(function Box2(inProps, ref) {
         const theme = (0, _useTheme.default)(defaultTheme);
         const _extendSxProp = (0, _styleFunctionSx.extendSxProp)(inProps), {
           className,
@@ -45580,7 +45580,7 @@ var require_ThemeProvider3 = __commonJS({
       value: true
     });
     exports.default = void 0;
-    var React20 = _interopRequireWildcard(require_react());
+    var React30 = _interopRequireWildcard(require_react());
     var _propTypes = _interopRequireDefault(require_prop_types());
     var _privateTheming = require_node4();
     var _utils = require_utils();
@@ -45775,7 +45775,7 @@ var require_getInitColorSchemeScript = __commonJS({
     });
     exports.DEFAULT_MODE_STORAGE_KEY = exports.DEFAULT_COLOR_SCHEME_STORAGE_KEY = exports.DEFAULT_ATTRIBUTE = void 0;
     exports.default = getInitColorSchemeScript;
-    var React20 = _interopRequireWildcard(require_react());
+    var React30 = _interopRequireWildcard(require_react());
     var _jsxRuntime = require_jsx_runtime();
     function _getRequireWildcardCache(nodeInterop) {
       if (typeof WeakMap !== "function")
@@ -45872,7 +45872,7 @@ var require_useCurrentColorScheme = __commonJS({
     exports.getColorScheme = getColorScheme;
     exports.getSystemMode = getSystemMode;
     var _extends2 = _interopRequireDefault(require_extends());
-    var React20 = _interopRequireWildcard(require_react());
+    var React30 = _interopRequireWildcard(require_react());
     var _getInitColorSchemeScript = require_getInitColorSchemeScript();
     function _getRequireWildcardCache(nodeInterop) {
       if (typeof WeakMap !== "function")
@@ -45963,7 +45963,7 @@ var require_useCurrentColorScheme = __commonJS({
         colorSchemeStorageKey = _getInitColorSchemeScript.DEFAULT_COLOR_SCHEME_STORAGE_KEY
       } = options;
       const joinedColorSchemes = supportedColorSchemes.join(",");
-      const [state, setState] = React20.useState(() => {
+      const [state, setState] = React30.useState(() => {
         const initialMode = resolveValue(modeStorageKey, defaultMode);
         return {
           mode: initialMode,
@@ -45973,7 +45973,7 @@ var require_useCurrentColorScheme = __commonJS({
         };
       });
       const colorScheme = getColorScheme(state);
-      const setMode = React20.useCallback((mode) => {
+      const setMode = React30.useCallback((mode) => {
         setState((currentState) => {
           const newMode = !mode ? defaultMode : mode;
           if (typeof localStorage !== "undefined") {
@@ -45985,7 +45985,7 @@ var require_useCurrentColorScheme = __commonJS({
           });
         });
       }, [modeStorageKey, defaultMode]);
-      const setColorScheme = React20.useCallback((value) => {
+      const setColorScheme = React30.useCallback((value) => {
         if (!value || typeof value === "string") {
           if (value && !supportedColorSchemes.includes(value)) {
             console.error(`\`${value}\` does not exist in \`theme.colorSchemes\`.`);
@@ -46030,23 +46030,23 @@ var require_useCurrentColorScheme = __commonJS({
           }
         }
       }, [colorSchemeStorageKey, supportedColorSchemes, defaultLightColorScheme, defaultDarkColorScheme]);
-      const handleMediaQuery = React20.useCallback((e) => {
+      const handleMediaQuery = React30.useCallback((e) => {
         if (state.mode === "system") {
           setState((currentState) => (0, _extends2.default)({}, currentState, {
             systemMode: e.matches ? "dark" : "light"
           }));
         }
       }, [state.mode]);
-      const mediaListener = React20.useRef(handleMediaQuery);
+      const mediaListener = React30.useRef(handleMediaQuery);
       mediaListener.current = handleMediaQuery;
-      React20.useEffect(() => {
+      React30.useEffect(() => {
         const handler = (...args) => mediaListener.current(...args);
         const media = window.matchMedia("(prefers-color-scheme: dark)");
         media.addListener(handler);
         handler(media);
         return () => media.removeListener(handler);
       }, []);
-      React20.useEffect(() => {
+      React30.useEffect(() => {
         if (state.mode) {
           localStorage.setItem(modeStorageKey, state.mode);
         }
@@ -46059,7 +46059,7 @@ var require_useCurrentColorScheme = __commonJS({
           }
         });
       }, [state, colorSchemeStorageKey, modeStorageKey]);
-      React20.useEffect(() => {
+      React30.useEffect(() => {
         const handleStorage = (event) => {
           const value = event.newValue;
           if (typeof event.key === "string" && event.key.startsWith(colorSchemeStorageKey) && (!value || joinedColorSchemes.match(value))) {
@@ -46130,7 +46130,7 @@ var require_createCssVarsProvider = __commonJS({
     var _extends2 = _interopRequireDefault(require_extends());
     var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require_objectWithoutPropertiesLoose());
     var _utils = require_utils();
-    var React20 = _interopRequireWildcard(require_react());
+    var React30 = _interopRequireWildcard(require_react());
     var _propTypes = _interopRequireDefault(require_prop_types());
     var _styledEngine = require_node3();
     var _createSpacing = _interopRequireDefault(require_createSpacing());
@@ -46201,9 +46201,9 @@ var require_createCssVarsProvider = __commonJS({
       if (!baseTheme.colorSchemes || typeof designSystemColorScheme === "string" && !baseTheme.colorSchemes[designSystemColorScheme] || typeof designSystemColorScheme === "object" && !baseTheme.colorSchemes[designSystemColorScheme == null ? void 0 : designSystemColorScheme.light] || typeof designSystemColorScheme === "object" && !baseTheme.colorSchemes[designSystemColorScheme == null ? void 0 : designSystemColorScheme.dark]) {
         console.error(`MUI: \`${designSystemColorScheme}\` does not exist in \`theme.colorSchemes\`.`);
       }
-      const ColorSchemeContext = /* @__PURE__ */ React20.createContext(void 0);
+      const ColorSchemeContext = /* @__PURE__ */ React30.createContext(void 0);
       const useColorScheme = () => {
-        const value = React20.useContext(ColorSchemeContext);
+        const value = React30.useContext(ColorSchemeContext);
         if (!value) {
           throw new Error(true ? `MUI: \`useColorScheme\` must be called under <CssVarsProvider />` : (0, _utils.formatMuiErrorMessage)(19));
         }
@@ -46226,7 +46226,7 @@ var require_createCssVarsProvider = __commonJS({
         const {
           colorSchemes: colorSchemesProp = {}
         } = themeProp, restThemeProp = (0, _objectWithoutPropertiesLoose2.default)(themeProp, _excluded2);
-        const hasMounted = React20.useRef(false);
+        const hasMounted = React30.useRef(false);
         let _deepmerge = (0, _utils.deepmerge)(restBaseTheme, restThemeProp), {
           components = {}
         } = _deepmerge, mergedTheme = (0, _objectWithoutPropertiesLoose2.default)(_deepmerge, _excluded3);
@@ -46306,7 +46306,7 @@ var require_createCssVarsProvider = __commonJS({
             styleSheet[`[${attribute}="${key}"]`] = css;
           }
         });
-        React20.useEffect(() => {
+        React30.useEffect(() => {
           if (colorScheme) {
             document.documentElement.setAttribute(attribute, colorScheme);
           }
@@ -46325,7 +46325,7 @@ var require_createCssVarsProvider = __commonJS({
             document.documentElement.style.setProperty("color-scheme", priorColorScheme);
           };
         }, [mode, systemMode, enableColorScheme]);
-        React20.useEffect(() => {
+        React30.useEffect(() => {
           let timer;
           if (disableTransitionOnChange && hasMounted.current) {
             const css = document.createElement("style");
@@ -46340,7 +46340,7 @@ var require_createCssVarsProvider = __commonJS({
             clearTimeout(timer);
           };
         }, [colorScheme, disableTransitionOnChange]);
-        React20.useEffect(() => {
+        React30.useEffect(() => {
           hasMounted.current = true;
           return () => {
             hasMounted.current = false;
@@ -47810,7 +47810,7 @@ var require_SvgIcon = __commonJS({
     exports.default = void 0;
     var _extends2 = _interopRequireDefault(require_extends());
     var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require_objectWithoutPropertiesLoose());
-    var React20 = _interopRequireWildcard(require_react());
+    var React30 = _interopRequireWildcard(require_react());
     var _propTypes = _interopRequireDefault(require_prop_types());
     var _clsx = _interopRequireDefault(require_clsx());
     var _base = require_node2();
@@ -47906,7 +47906,7 @@ var require_SvgIcon = __commonJS({
         }[ownerState.color]
       };
     });
-    var SvgIcon = /* @__PURE__ */ React20.forwardRef(function SvgIcon2(inProps, ref) {
+    var SvgIcon = /* @__PURE__ */ React30.forwardRef(function SvgIcon2(inProps, ref) {
       const props = (0, _useThemeProps.default)({
         props: inProps,
         name: "MuiSvgIcon"
@@ -48058,9 +48058,9 @@ var require_createSvgIcon = __commonJS({
     Object.defineProperty(exports, "__esModule", {
       value: true
     });
-    exports.default = createSvgIcon;
+    exports.default = createSvgIcon2;
     var _extends2 = _interopRequireDefault(require_extends());
-    var React20 = _interopRequireWildcard(require_react());
+    var React30 = _interopRequireWildcard(require_react());
     var _SvgIcon = _interopRequireDefault(require_SvgIcon2());
     var _jsxRuntime = require_jsx_runtime();
     function _getRequireWildcardCache(nodeInterop) {
@@ -48101,7 +48101,7 @@ var require_createSvgIcon = __commonJS({
       }
       return newObj;
     }
-    function createSvgIcon(path, displayName) {
+    function createSvgIcon2(path, displayName) {
       const Component = (props, ref) => /* @__PURE__ */ (0, _jsxRuntime.jsx)(_SvgIcon.default, (0, _extends2.default)({
         "data-testid": `${displayName}Icon`,
         ref
@@ -48112,7 +48112,7 @@ var require_createSvgIcon = __commonJS({
         Component.displayName = `${displayName}Icon`;
       }
       Component.muiName = _SvgIcon.default.muiName;
-      return /* @__PURE__ */ React20.memo(/* @__PURE__ */ React20.forwardRef(Component));
+      return /* @__PURE__ */ React30.memo(/* @__PURE__ */ React30.forwardRef(Component));
     }
   }
 });
@@ -48791,19 +48791,15 @@ var import_obsidian3 = __toModule(require("obsidian"));
 
 // src/NLTTable.tsx
 var import_obsidian2 = __toModule(require("obsidian"));
-var import_react19 = __toModule(require_react());
+var import_react29 = __toModule(require_react());
 var import_react_dom = __toModule(require_react_dom());
 
-// src/app/services/hooks/index.ts
-var import_react = __toModule(require_react());
-var useForceUpdate = () => {
-  const [, setValue] = (0, import_react.useState)(0);
-  return (0, import_react.useCallback)(() => setValue((value) => value + 1), []);
-};
-var AppContext = import_react.default.createContext(void 0);
-
 // src/app/App.tsx
-var import_react18 = __toModule(require_react());
+var import_react28 = __toModule(require_react());
+
+// src/app/components/EditableTd/index.tsx
+var import_react20 = __toModule(require_react());
+var import_obsidian = __toModule(require("obsidian"));
 
 // node_modules/uuid/dist/esm-browser/rng.js
 var getRandomValues;
@@ -48860,60 +48856,8 @@ function v4(options, buf, offset) {
 }
 var v4_default = v4;
 
-// src/app/components/EditableTd/index.tsx
-var import_react9 = __toModule(require_react());
-var import_obsidian = __toModule(require("obsidian"));
-
-// src/app/components/CellEditMenu/index.tsx
-var import_react6 = __toModule(require_react());
-
-// src/app/components/Menu/index.tsx
-var import_react2 = __toModule(require_react());
-function Menu({
-  isOpen,
-  style,
-  children,
-  onTabPress,
-  onOutsideClick
-}) {
-  const menuRef = (0, import_react2.useRef)(null);
-  (0, import_react2.useEffect)(() => {
-    const handleClick = (e) => {
-      if (menuRef.current && !menuRef.current.contains(e.target))
-        onOutsideClick(e);
-    };
-    function handleKeyUp(e) {
-      if (e.key === "Enter")
-        onOutsideClick(null);
-      if (e.key === "Tab")
-        onTabPress();
-    }
-    if (isOpen) {
-      document.addEventListener("mousedown", handleClick);
-      document.addEventListener("keyup", handleKeyUp);
-    }
-    return () => {
-      document.removeEventListener("mousedown", handleClick);
-      document.removeEventListener("keyup", handleKeyUp);
-    };
-  }, [menuRef, onOutsideClick, isOpen]);
-  if (!isOpen) {
-    style = __spreadProps(__spreadValues({}, style), { display: "none" });
-  }
-  return /* @__PURE__ */ import_react2.default.createElement("div", {
-    className: "NLT__menu",
-    ref: menuRef
-  }, /* @__PURE__ */ import_react2.default.createElement("div", {
-    className: "NLT__menu-container",
-    style
-  }, children));
-}
-
-// src/app/components/TagMenuContent/index.tsx
-var import_react5 = __toModule(require_react());
-
-// src/app/components/TagCell/index.tsx
-var import_react4 = __toModule(require_react());
+// src/app/components/TextCell/index.tsx
+var import_react = __toModule(require_react());
 
 // node_modules/html-react-parser/index.mjs
 var import_index = __toModule(require_html_react_parser());
@@ -48923,11 +48867,105 @@ var attributesToProps = import_index.default.attributesToProps;
 var Element2 = import_index.default.Element;
 var html_react_parser_default = import_index.default;
 
-// src/app/components/TagCell/index.tsx
-var import_Close = __toModule(require_Close());
+// src/app/services/string/toLink/index.ts
+var toExternalLink = (url) => {
+  return `<a tabIndex={-1} href="${url}" target="_blank" rel="noopener">${url}</a>`;
+};
+var toFileLink = (fileName) => {
+  return `<a tabIndex={-1} data-href="${fileName}" href="${fileName}" class="internal-link" target="_blank" rel="noopener">${fileName}</a>`;
+};
+var toTagLink = (tagName) => {
+  return `<a tabIndex={-1} href="${tagName}" class="tag" target="_blank" rel="noopener">${tagName}</a>`;
+};
+
+// src/app/services/string/strippers/index.ts
+var stripLink = (input) => {
+  const replaceWithSquareBrackets = (input.match(/class="internal-link"/) || []).length !== 0;
+  return input.replace(/&lt;a.*?&gt;/, replaceWithSquareBrackets ? "[[" : "").replace(/&lt;\/a&gt;/, replaceWithSquareBrackets ? "]]" : "");
+};
+var stripLinks = (input) => {
+  const matches = input.match(/&lt;a.*?&gt;.*?&lt;\/a&gt;/g) || [];
+  matches.forEach((match) => {
+    input = input.replace(match, stripLink(match));
+  });
+  return input;
+};
+var stripSquareBrackets = (input) => {
+  input = input.replace(/^\[\[/, "");
+  input = input.replace(/]]$/, "");
+  return input;
+};
+var sanitizeHTML = (innerHTML) => {
+  const temp = document.createElement("div");
+  temp.textContent = innerHTML;
+  return temp.innerHTML;
+};
+
+// src/app/services/string/regex/index.ts
+var MARKDOWN_CELLS_REGEX = new RegExp(/[ \t]{0,}[^|\r\n]+[ \t]{0,}\|/g);
+var MARKDOWN_ROWS_REGEX = new RegExp(/(\|[ ]{0,}.*[ ]{0,}\|){1,}/g);
+var TAG_REGEX = new RegExp(/^[#]{0,1}[^\s]+$/);
+var MARKDOWN_HYPHEN_CELL_REGEX = new RegExp(/[ \t]{0,}[-]{3,}[ \t]{0,}\|/);
+var NUMBER_REGEX = new RegExp(/^\d+$/);
+var EXTERNAL_LINK_REGEX = new RegExp(/https{0,1}:\/\/[^\s]*/g);
+var TAGS_REGEX = new RegExp(/#[^ \t]+/g);
+var FILE_LINK_REGEX = new RegExp(/\[\[[^\n\r\]]+]]/g);
+var TABLE_ID_REGEX = new RegExp(/^table-id-[a-zA-Z0-9-]{1,}$/);
+var ROW_ID_REGEX = new RegExp(/^row-id-[a-zA-Z0-9-]{1,}$/);
+var COLUMN_ID_REGEX = new RegExp(/^column-id-[a-zA-Z0-9-]{1,}$/);
+var LINE_BREAK_CHARACTER_REGEX = (flags) => new RegExp(/&lt;br&gt;/, flags);
+var AMPERSAND_CHARACTER_REGEX = (flags) => new RegExp(/&amp;amp;/, flags);
+var BOLD_CHARACTER_STRONG_REGEX = (flags) => new RegExp(/&lt;strong&gt;.{1,}?;\/strong&gt;/, flags);
+var BOLD_CHARACTER_B_REGEX = (flags) => new RegExp(/&lt;b&gt;.{1,}?;\/b&gt;/, flags);
+var BOLD_CHARACTER_STRONG_PIECES_REGEX = new RegExp(/(&lt;strong&gt;).{1,}?(&lt;\/strong&gt;)/);
+var BOLD_CHARACTER_B_PIECES_REGEX = new RegExp(/(&lt;b&gt;).{1,}?(&lt;\/b&gt;)/);
+var ITALIC_CHARACTER_EM_REGEX = (flags) => new RegExp(/&lt;em&gt;.{1,}?&lt;\/em&gt;/, flags);
+var ITALIC_CHARACTER_I_REGEX = (flags) => new RegExp(/&lt;i&gt;.{1,}?&lt;\/i&gt;/, flags);
+var ITALIC_CHARACTER_EM_PIECES_REGEX = new RegExp(/(&lt;em&gt;).{1,}?(&lt;\/em&gt;)/);
+var ITALIC_CHARACTER_I_PIECES_REGEX = new RegExp(/(&lt;i&gt;).{1,}?(&lt;\/i&gt;)/);
+var HIGHLIGHT_CHARACTER_REGEX = (flags) => new RegExp(/&lt;mark&gt;.{1,}?&lt;\/mark&gt;/, flags);
+var HIGHLIGHT_CHARACTER_PIECES_REGEX = new RegExp(/(&lt;mark&gt;).{1,}?(&lt;\/mark&gt;)/);
+var UNDERLINE_CHARACTER_REGEX = (flags) => new RegExp(/&lt;u&gt;.{1,}?&lt;\/u&gt;/, flags);
+var UNDERLINE_CHARACTER_PIECES_REGEX = new RegExp(/(&lt;u&gt;).{1,}?(&lt;\/u&gt;)/);
+var BOLD_MARKDOWN_REGEX = (flags) => new RegExp(/\*\*.{1,}?\*\*/, flags);
+var ITALIC_MARKDOWN_REGEX = (flags) => new RegExp(/\*.{1,}?\*/, flags);
+var HIGHLIGHT_MARKDOWN_REGEX = (flags) => new RegExp(/==.{1,}?==/, flags);
+var BOLD_MARKDOWN_PIECES_REGEX = new RegExp(/(\*\*).{1,}(\*\*)/);
+var ITALIC_MARKDOWN_PIECES_REGEX = new RegExp(/(\*).{1,}(\*)/);
+var HIGHLIGHT_MARKDOWN_PIECES_REGEX = new RegExp(/(==).{1,}(==)/);
+var DATE_REGEX = new RegExp(/^\d{2}\/\d{2}\/\d{4}$/);
+var CHECKBOX_REGEX = new RegExp(/^\[[x ]{0,1}\]$/);
+var CHECKBOX_CHECKED_REGEX = new RegExp(/^\[[x]\]$/);
 
 // src/app/constants.ts
-var DEBUG = false;
+var DEBUG = {
+  LOAD_APP_DATA: {
+    DATA: true,
+    IDS: false,
+    TYPES: false,
+    PARSED_TABLE: false
+  },
+  APP: {
+    HANDLER: false
+  },
+  SAVE_APP_DATA: {
+    APP_DATA: false,
+    TABLE_REGEX: false,
+    UPDATED_CONTENT: false
+  },
+  EDITABLE_TD: {
+    HANDLER: false,
+    USE_EFFECT: false
+  },
+  FOCUS_PROVIDER: {
+    HANDLER: false,
+    USE_EFFECT: false
+  },
+  MENU_PROVIDER: {
+    HANDLER: false,
+    USE_EFFECT: false
+  }
+};
 var TABBABLE_ELEMENT_TYPE = {
   UNFOCUSED: "unfocused",
   BUTTON: "button",
@@ -48938,16 +48976,22 @@ var CELL_TYPE = {
   TEXT: "text",
   NUMBER: "number",
   TAG: "tag",
+  DATE: "date",
+  CHECKBOX: "checkbox",
   MULTI_TAG: "multi-tag",
   ERROR: "error"
 };
-var CELL_COLOR = {
-  YELLOW: "yellow",
-  RED: "red",
-  PINK: "pink",
-  ORANGE: "orange",
+var COLOR = {
+  LIGHT_GRAY: "light gray",
   GRAY: "gray",
-  PURPLE: "purple"
+  BROWN: "brown",
+  ORANGE: "orange",
+  YELLOW: "yellow",
+  GREEN: "green",
+  BLUE: "blue",
+  PURPLE: "purple",
+  PINK: "pink",
+  RED: "red"
 };
 var ICON = {
   KEYBOARD_ARROW_UP: "KeyboardArrowUp",
@@ -48965,441 +49009,164 @@ var ICON = {
   MOVE_UP: "MoveUp",
   MOVE_DOWN: "MoveDown",
   TEXT_SNIPPET: "TextSnippet",
-  EDIT: "Edit"
+  EDIT: "Edit",
+  MORE_HORIZ: "MoreHoriz"
 };
+var MENU_LEVEL = {
+  ONE: 1,
+  TWO: 2,
+  THREE: 3
+};
+var BREAK_LINE_TAG = "<br>";
+var AMPERSAND = "&";
+var BOLD_TAG_MARKDOWN = "**";
+var ITALIC_TAG_MARKDOWN = "*";
+var HIGHLIGHT_TAG_MARKDOWN = "==";
+var UNDERLINE_TAG_START = "<u>";
+var UNDERLINE_TAG_CLOSE = "</u>";
+var ITALIC_TAG_START = "<i>";
+var ITALIC_TAG_CLOSE = "</i>";
+var BOLD_TAG_START = "<b>";
+var BOLD_TAG_CLOSE = "</b>";
+var HIGHLIGHT_TAG_START = "<mark>";
+var HIGHLIGHT_TAG_CLOSE = "</mark>";
 
-// src/app/services/utils/index.tsx
-var import_react3 = __toModule(require_react());
-var import_MoreVert = __toModule(require_MoreVert());
-var import_Delete = __toModule(require_Delete());
-var import_Sort = __toModule(require_Sort());
-var import_KeyboardArrowDown = __toModule(require_KeyboardArrowDown());
-var import_KeyboardArrowUp = __toModule(require_KeyboardArrowUp());
-var import_KeyboardDoubleArrowUp = __toModule(require_KeyboardDoubleArrowUp());
-var import_KeyboardDoubleArrowDown = __toModule(require_KeyboardDoubleArrowDown());
-var import_KeyboardArrowLeft = __toModule(require_KeyboardArrowLeft());
-var import_KeyboardArrowRight = __toModule(require_KeyboardArrowRight());
-var import_KeyboardDoubleArrowLeft = __toModule(require_KeyboardDoubleArrowLeft());
-var import_KeyboardDoubleArrowRight = __toModule(require_KeyboardDoubleArrowRight());
-var import_KeyboardBackspace = __toModule(require_KeyboardBackspace());
-var import_MoveUp = __toModule(require_MoveUp());
-var import_MoveDown = __toModule(require_MoveDown());
-var import_TextSnippet = __toModule(require_TextSnippet());
-var import_Edit = __toModule(require_Edit());
-
-// src/app/components/HeaderMenu/constants.ts
-var SUBMENU = {
-  EDIT: {
-    name: "edit",
-    content: "Edit",
-    icon: ICON.EDIT
-  },
-  SORT: {
-    name: "sort",
-    content: "Sort",
-    icon: ICON.SORT
-  },
-  MOVE: {
-    name: "move",
-    content: "Move",
-    icon: ICON.MOVE_UP
-  },
-  INSERT: {
-    name: "insert",
-    content: "Insert",
-    icon: ICON.KEYBOARD_DOUBLE_ARROW_RIGHT
-  },
-  PROPERTY_TYPE: {
-    name: "prop-type",
-    content: "Property Type",
-    icon: ICON.TEXT_SNIPPET
+// src/app/services/string/validators/index.ts
+var isNumber = (input) => {
+  return (input.match(NUMBER_REGEX) || []).length !== 0;
+};
+var isDate = (input) => {
+  return (input.match(DATE_REGEX) || []).length !== 0;
+};
+var isCheckBox = (input) => {
+  return (input.match(CHECKBOX_REGEX) || []).length !== 0;
+};
+var isTag = (input) => {
+  return (input.match(TAG_REGEX) || []).length !== 0;
+};
+var isCheckBoxChecked = (input) => {
+  return (input.match(CHECKBOX_CHECKED_REGEX) || []).length !== 0;
+};
+var hasValidHeaderRow = (parsedTable) => {
+  const row = parsedTable[0];
+  if (row) {
+    if (row[row.length - 1] === "")
+      return true;
   }
+  return false;
 };
-var PROPERTY_TYPE_ITEMS = [
-  { name: "text", content: "Text", type: CELL_TYPE.TEXT },
-  { name: "number", content: "Number", type: CELL_TYPE.NUMBER },
-  { name: "tag", content: "Tag", type: CELL_TYPE.TAG }
-];
-var SORT = {
-  DEFAULT: {
-    name: "default",
-    content: "Default",
-    icon: ICON.SORT
-  },
-  ASC: {
-    name: "asc",
-    content: "Ascending",
-    icon: ICON.KEYBOARD_ARROW_UP
-  },
-  DESC: {
-    name: "desc",
-    content: "Descending",
-    icon: ICON.KEYBOARD_ARROW_DOWN
-  }
-};
-
-// src/app/services/state/index.ts
-var DEFAULT_SETTINGS = {
-  appData: {},
-  focusedElement: { id: "-1", type: TABBABLE_ELEMENT_TYPE.UNFOCUSED }
-};
-var initialHeader = (content) => {
-  return {
-    id: v4_default(),
-    content,
-    sortName: SORT.DEFAULT.name,
-    width: "100px",
-    type: CELL_TYPE.TEXT
-  };
-};
-var initialRow = (id, creationTime) => {
-  return {
-    id,
-    creationTime
-  };
-};
-var initialCell = (id, rowId, headerId, type, content, expectedType = null) => {
-  return {
-    id,
-    rowId,
-    headerId,
-    type,
-    content,
-    expectedType
-  };
-};
-var initialTag = (headerId, cellId, content, color) => {
-  return {
-    id: v4_default(),
-    headerId,
-    content,
-    color,
-    selected: [cellId]
-  };
-};
-var initialHeaderMenuState = {
-  left: 0,
-  top: 0,
-  id: "",
-  index: 0,
-  content: "",
-  type: CELL_TYPE.TEXT
-};
-
-// src/app/services/utils/index.tsx
-var findIcon = (icon, className) => {
-  switch (icon) {
-    case ICON.KEYBOARD_ARROW_UP:
-      return /* @__PURE__ */ import_react3.default.createElement(import_KeyboardArrowUp.default, {
-        className
-      });
-    case ICON.KEYBOARD_ARROW_DOWN:
-      return /* @__PURE__ */ import_react3.default.createElement(import_KeyboardArrowDown.default, {
-        className
-      });
-    case ICON.KEYBOARD_DOUBLE_ARROW_UP:
-      return /* @__PURE__ */ import_react3.default.createElement(import_KeyboardDoubleArrowUp.default, {
-        className
-      });
-    case ICON.KEYBOARD_DOUBLE_ARROW_DOWN:
-      return /* @__PURE__ */ import_react3.default.createElement(import_KeyboardDoubleArrowDown.default, {
-        className
-      });
-    case ICON.KEYBOARD_ARROW_LEFT:
-      return /* @__PURE__ */ import_react3.default.createElement(import_KeyboardArrowLeft.default, {
-        className
-      });
-    case ICON.KEYBOARD_ARROW_RIGHT:
-      return /* @__PURE__ */ import_react3.default.createElement(import_KeyboardArrowRight.default, {
-        className
-      });
-    case ICON.KEYBOARD_DOUBLE_ARROW_LEFT:
-      return /* @__PURE__ */ import_react3.default.createElement(import_KeyboardDoubleArrowLeft.default, {
-        className
-      });
-    case ICON.KEYBOARD_DOUBLE_ARROW_RIGHT:
-      return /* @__PURE__ */ import_react3.default.createElement(import_KeyboardDoubleArrowRight.default, {
-        className
-      });
-    case ICON.DELETE:
-      return /* @__PURE__ */ import_react3.default.createElement(import_Delete.default, {
-        className
-      });
-    case ICON.MORE_VERT:
-      return /* @__PURE__ */ import_react3.default.createElement(import_MoreVert.default, {
-        className
-      });
-    case ICON.SORT:
-      return /* @__PURE__ */ import_react3.default.createElement(import_Sort.default, {
-        className
-      });
-    case ICON.KEYBOARD_BACKSPACE:
-      return /* @__PURE__ */ import_react3.default.createElement(import_KeyboardBackspace.default, {
-        className
-      });
-    case ICON.MOVE_UP:
-      return /* @__PURE__ */ import_react3.default.createElement(import_MoveUp.default, {
-        className
-      });
-    case ICON.MOVE_DOWN:
-      return /* @__PURE__ */ import_react3.default.createElement(import_MoveDown.default, {
-        className
-      });
-    case ICON.TEXT_SNIPPET:
-      return /* @__PURE__ */ import_react3.default.createElement(import_TextSnippet.default, {
-        className
-      });
-    case ICON.EDIT:
-      return /* @__PURE__ */ import_react3.default.createElement(import_Edit.default, {
-        className
-      });
-    default:
-      return "";
-  }
-};
-var randomColor = () => {
-  const index = Math.floor(Math.random() * Object.keys(CELL_COLOR).length);
-  return Object.values(CELL_COLOR)[index];
-};
-var getCurrentTimeWithOffset = () => {
-  return Math.round(Date.now() - Math.random() * 1e3);
-};
-var randomTableId = () => {
-  return Math.random().toString(36).replace("0.", "").substring(0, 6);
-};
-var sanitizeHTML = (innerHTML) => {
-  var temp = document.createElement("div");
-  temp.textContent = innerHTML;
-  return temp.innerHTML;
-};
-var createEmptyTable = (uuid) => {
-  const rows = [];
-  rows[0] = "| Column 1 |";
-  rows[1] = "| -------- |";
-  rows[2] = `| ${uuid} |`;
-  rows[3] = "| text |";
-  return rows.join("\n");
-};
-var findTableRegex = (tableId, headers, rows) => {
-  const regex = [];
-  regex[0] = "\\|.*\\|";
-  regex[1] = "\\|.*\\|";
-  regex[2] = `\\|[\\t ]+${tableId}[\\t ]+\\|`;
-  for (let i = 1; i < headers.length; i++)
-    regex[2] += ".*\\|";
-  for (let i = 3; i < rows.length + 4; i++)
-    regex[i] = "\\|.*\\|";
-  const expression = new RegExp(regex.join("\n"));
-  return expression;
-};
-var appDataToMarkdown = (tableId, data) => {
-  const columnCharLengths = calcColumnCharLengths(tableId, data.headers, data.cells, data.tags);
-  const buffer = new AppDataStringBuffer();
-  buffer.createRow();
-  data.headers.forEach((header, i) => buffer.writeColumn(header.content, columnCharLengths[i]));
-  buffer.createRow();
-  data.headers.forEach((_header, i) => {
-    const content = Array(columnCharLengths[i]).fill("-").join("");
-    buffer.writeColumn(content, columnCharLengths[i]);
-  });
-  buffer.createRow();
-  data.headers.forEach((_header, i) => {
-    buffer.writeColumn(i === 0 ? tableId : "", columnCharLengths[i]);
-  });
-  buffer.createRow();
-  data.headers.forEach((header, i) => {
-    buffer.writeColumn(header.type, columnCharLengths[i]);
-  });
-  data.rows.forEach((row) => {
-    buffer.createRow();
-    for (let i = 0; i < data.headers.length; i++) {
-      const cell = data.cells.find((cell2) => cell2.rowId === row.id && cell2.headerId === data.headers[i].id);
-      if (cell.type === CELL_TYPE.TAG || cell.type === CELL_TYPE.MULTI_TAG) {
-        const tags = data.tags.filter((tag) => tag.selected.includes(cell.id));
-        let content = "";
-        tags.forEach((tag, j) => {
-          if (tag.content === "")
-            return;
-          if (j === 0)
-            content += addPound(tag.content);
-          else
-            content += " " + addPound(tag.content);
-        });
-        buffer.writeColumn(content, columnCharLengths[i]);
+var hasValidTypeDefinitionRow = (parsedTable) => {
+  const row = parsedTable[1];
+  if (row) {
+    for (let i = 0; i < row.length; i++) {
+      const cell = row[i];
+      if (i === row.length - 1) {
+        if (cell !== "")
+          return false;
       } else {
-        buffer.writeColumn(cell.content, columnCharLengths[i]);
+        if (!Object.values(CELL_TYPE).includes(cell))
+          return false;
       }
     }
-  });
-  return buffer.toString();
+    return true;
+  }
+  return false;
 };
-var AppDataStringBuffer = class {
-  constructor() {
-    this.string = "";
-  }
-  createRow() {
-    if (this.string !== "")
-      this.string += "\n";
-    this.string += "|";
-  }
-  writeColumn(content, columnCharLength) {
-    this.string += " ";
-    this.string += content;
-    const numWhiteSpace = columnCharLength - content.length;
-    for (let i = 0; i < numWhiteSpace; i++)
-      this.string += " ";
-    this.string += " ";
-    this.string += "|";
-  }
-  toString() {
-    return this.string;
+var hasValidColumnIds = (parsedTable) => {
+  const ids = [];
+  const row = parsedTable[2];
+  if (row) {
+    for (let i = 0; i < row.length - 1; i++) {
+      const cell = row[i];
+      if (!cell.match(COLUMN_ID_REGEX))
+        return false;
+      const id = cell.split("column-id-")[1];
+      if (ids.includes(id))
+        return false;
+      ids.push(id);
+    }
+    return true;
+  } else {
+    return false;
   }
 };
-var calcColumnCharLengths = (tableId, headers, cells, tags) => {
-  const columnCharLengths = [];
-  headers.forEach((header, i) => {
-    columnCharLengths[i] = header.content.length;
-  });
-  if (columnCharLengths[0] < tableId.length)
-    columnCharLengths[0] = tableId.length;
-  headers.forEach((header, i) => {
-    if (columnCharLengths[i] < header.type.length)
-      columnCharLengths[i] = header.type.length;
-  });
-  cells.forEach((cell) => {
-    const index = headers.findIndex((header) => header.id === cell.headerId);
-    if (cell.type === CELL_TYPE.TAG || cell.type === CELL_TYPE.MULTI_TAG) {
-      const arr = tags.filter((tag) => tag.selected.includes(cell.id));
-      let content = "";
-      arr.forEach((tag, i) => {
-        if (tag.content !== "") {
-          if (i === 0)
-            content += addPound(tag.content);
-          else
-            content += " " + addPound(tag.content);
-        }
-      });
-      if (columnCharLengths[index] < content.length)
-        columnCharLengths[index] = content.length;
-    } else {
-      if (columnCharLengths[index] < cell.content.length)
-        columnCharLengths[index] = cell.content.length;
-    }
-  });
-  return columnCharLengths;
-};
-var mergeAppData = (oldAppData, newAppData) => {
-  const merged = __spreadValues({}, newAppData);
-  oldAppData.headers.forEach((header, i) => {
-    merged.headers[i].sortName = header.sortName;
-    merged.headers[i].width = header.width;
-  });
-  newAppData.cells.forEach((cell, i) => {
-    if (oldAppData.cells.length >= i + 1) {
-      merged.cells[i].id = oldAppData.cells[i].id;
-    } else {
-      merged.cells[i].id = cell.id;
-    }
-  });
-  newAppData.rows.forEach((row, i) => {
-    if (oldAppData.rows.length >= i + 1) {
-      merged.rows[i].creationTime = oldAppData.rows[i].creationTime;
-    } else {
-      merged.rows[i].creationTime = row.creationTime;
-    }
-  });
-  oldAppData.tags.forEach((tag, i) => {
-    const index = merged.tags.findIndex((t) => t.content === tag.content);
-    if (index !== -1) {
-      merged.tags[index].id = tag.id;
-      merged.tags[index].selected = tag.selected;
-      merged.tags[index].color = tag.color;
-    }
-  });
-  return merged;
-};
-var HEADER_ROW_INDEX = 0;
-var TABLE_ID_ROW_INDEX = 1;
-var TYPE_DEFINITION_ROW_INDEX = 2;
-var findAppData = (parsedTable) => {
-  const headers = [];
-  const rows = [];
-  const cells = [];
-  const tags = [];
-  parsedTable.forEach((row, i) => {
-    if (i === HEADER_ROW_INDEX) {
-      row.forEach((th) => {
-        headers.push(initialHeader(th));
-      });
-    } else if (i === TYPE_DEFINITION_ROW_INDEX) {
-      row.forEach((td, j) => {
-        headers[j].type = td;
-      });
-    } else if (i !== TABLE_ID_ROW_INDEX) {
-      const rowId = v4_default();
-      rows.push(initialRow(rowId, getCurrentTimeWithOffset()));
-      row.forEach((td, j) => {
-        const cellId = v4_default();
-        let cellType = "";
-        if (i === 1) {
-          cellType = td;
-          headers[j].type = cellType;
-          return;
-        } else {
-          cellType = findCellType(td, headers[j].type);
-        }
-        if (cellType !== headers[j].type) {
-          cells.push(initialCell(cellId, rowId, headers[j].id, CELL_TYPE.ERROR, td, headers[j].type));
-          return;
-        }
-        if (cellType === CELL_TYPE.TAG) {
-          cells.push(initialCell(cellId, rowId, headers[j].id, CELL_TYPE.TAG, ""));
-          let content = stripPound(td);
-          const index = tags.findIndex((tag) => tag.content === content);
-          if (index !== -1) {
-            tags[index].selected.push(cellId);
-          } else {
-            tags.push(initialTag(headers[j].id, cellId, content, randomColor()));
-          }
-        } else if (cellType === CELL_TYPE.NUMBER) {
-          cells.push(initialCell(cellId, rowId, headers[j].id, CELL_TYPE.NUMBER, td));
-        } else if (cellType === CELL_TYPE.TEXT) {
-          cells.push(initialCell(cellId, rowId, headers[j].id, CELL_TYPE.TEXT, td));
-        }
-      });
-    }
-  });
-  return {
-    headers,
-    rows,
-    cells,
-    tags,
-    updateTime: 0
-  };
-};
-var findTableId = (parsedTable) => {
-  if (parsedTable.length < 2)
-    return null;
-  const row = parsedTable[1];
-  const id = row[0];
-  if (!Object.values(CELL_TYPE).every((type) => type !== id))
-    return null;
-  if (id == "")
-    return null;
-  return id;
-};
-var validTypeDefinitionRow = (parsedTable) => {
+var hasValidRowIds = (parsedTable) => {
+  const ids = [];
   if (parsedTable.length < 3)
     return false;
-  const row = parsedTable[2];
-  let valid = true;
-  for (let i = 0; i < row.length; i++) {
-    const cell = row[i];
-    const didntMatch = Object.values(CELL_TYPE).every((type) => type !== cell);
-    if (didntMatch)
-      valid = false;
+  for (let i = 3; i < parsedTable.length; i++) {
+    const row = parsedTable[i];
+    const cell = row[row.length - 1];
+    if (!cell.match(ROW_ID_REGEX))
+      return false;
+    const id = cell.split("row-id-")[1];
+    if (ids.includes(id))
+      return false;
+    ids.push(id);
   }
-  return valid;
+  return true;
+};
+
+// src/app/services/string/matchers/index.ts
+var matchBoldMarkdown = (input) => {
+  return input.match(BOLD_MARKDOWN_REGEX("g")) || [];
+};
+var matchItalicMarkdown = (input) => {
+  return input.match(ITALIC_MARKDOWN_REGEX("g")) || [];
+};
+var matchHighlightMarkdown = (input) => {
+  return input.match(HIGHLIGHT_MARKDOWN_REGEX("g")) || [];
+};
+var matchBoldMarkdownPieces = (input) => {
+  return input.match(BOLD_MARKDOWN_PIECES_REGEX) || [];
+};
+var matchItalicMarkdownPieces = (input) => {
+  return input.match(ITALIC_MARKDOWN_PIECES_REGEX) || [];
+};
+var matchHighlightMarkdownPieces = (input) => {
+  return input.match(HIGHLIGHT_MARKDOWN_PIECES_REGEX) || [];
+};
+var matchBoldTags = (input) => {
+  return [
+    ...input.match(BOLD_CHARACTER_B_REGEX("g")) || [],
+    ...input.match(BOLD_CHARACTER_STRONG_REGEX("g")) || []
+  ];
+};
+var matchBoldTagBPieces = (input) => {
+  return input.match(BOLD_CHARACTER_B_PIECES_REGEX);
+};
+var matchBoldTagStrongPieces = (input) => {
+  return input.match(BOLD_CHARACTER_STRONG_PIECES_REGEX);
+};
+var matchItalicTags = (input) => {
+  return [
+    ...input.match(ITALIC_CHARACTER_I_REGEX("g")) || [],
+    ...input.match(ITALIC_CHARACTER_EM_REGEX("g")) || []
+  ];
+};
+var matchItalicTagEmPieces = (input) => {
+  return input.match(ITALIC_CHARACTER_EM_PIECES_REGEX) || [];
+};
+var matchItalicTagIPieces = (input) => {
+  return input.match(ITALIC_CHARACTER_I_PIECES_REGEX) || [];
+};
+var matchHighlightTags = (input) => {
+  return input.match(HIGHLIGHT_CHARACTER_REGEX("g")) || [];
+};
+var matchHighlightTagPieces = (input) => {
+  return input.match(HIGHLIGHT_CHARACTER_PIECES_REGEX) || [];
+};
+var matchUnderlineTags = (input) => {
+  return input.match(UNDERLINE_CHARACTER_REGEX("g")) || [];
+};
+var matchUnderlineTagPieces = (input) => {
+  return input.match(UNDERLINE_CHARACTER_PIECES_REGEX) || [];
+};
+var matchURLs = (input) => {
+  return input.match(EXTERNAL_LINK_REGEX) || [];
+};
+var matchFileLinks = (input) => {
+  return input.match(FILE_LINK_REGEX) || [];
 };
 var findCellType = (textContent, expectedType) => {
   if (textContent === "")
@@ -49412,50 +49179,24 @@ var findCellType = (textContent, expectedType) => {
   } else if (expectedType === CELL_TYPE.TAG) {
     if (isTag(textContent))
       return CELL_TYPE.TAG;
+  } else if (expectedType === CELL_TYPE.DATE) {
+    if (isDate(textContent))
+      return CELL_TYPE.DATE;
+  } else if (expectedType === CELL_TYPE.CHECKBOX) {
+    if (isCheckBox(textContent))
+      return CELL_TYPE.CHECKBOX;
   }
   return CELL_TYPE.ERROR;
 };
-var parseTableFromEl = (el) => {
-  const table = [];
-  const tr = el.getElementsByTagName("tr");
-  const th = tr[0].getElementsByTagName("th");
-  let row = [];
-  for (let i = 0; i < th.length; i++)
-    row.push(th[i].textContent);
-  table.push(row);
-  for (let i = 1; i < tr.length; i++) {
-    const td = tr[i].getElementsByTagName("td");
-    row = [];
-    for (let j = 0; j < td.length; j++) {
-      let sanitized = sanitizeHTML(td[j].innerHTML);
-      sanitized = stripLinks(sanitized);
-      row.push(sanitized);
-    }
-    table.push(row);
-  }
-  return table;
-};
-var markdownHyphenCellRegex = new RegExp(/[ \t]{0,}[-]{3,}[ \t]{0,}\|/);
-var NUMBER_REGEX = new RegExp(/^\d+$/);
-var isNumber = (input) => {
-  return input.match(NUMBER_REGEX) ? true : false;
-};
-var TAG_REGEX = new RegExp(/^#.[^\s]+$/);
-var isTag = (input) => {
-  return input.match(TAG_REGEX) ? true : false;
-};
-var markdownCellsRegex = new RegExp(/[ \t]{0,}[^|\r\n]+[ \t]{0,}\|/g);
-var markdownRowsRegex = new RegExp(/(\|[ ]{0,}.*[ ]{0,}\|){1,}/g);
+
+// src/app/services/string/parsers/index.ts
 var parseFileLinks = (input) => {
-  const matches = input.match(/\[\[[^\n\r\]]+]]/g) || [];
+  const matches = matchFileLinks(input);
   matches.forEach((match) => {
     const replacement = toFileLink(stripSquareBrackets(match));
     input = input.replace(match, replacement);
   });
   return input;
-};
-var matchURLs = (input) => {
-  return input.match(/https{0,1}:\/\/[^\s]*/g) || [];
 };
 var parseURLs = (input) => {
   const matches = matchURLs(input);
@@ -49465,38 +49206,173 @@ var parseURLs = (input) => {
   });
   return input;
 };
-var stripSquareBrackets = (input) => {
-  input = input.replace(/^\[\[/, "");
-  input = input.replace(/]]$/, "");
-  return input;
-};
-var stripLinks = (input) => {
-  const matches = input.match(/&lt;a.*?&gt;.*?&lt;\/a&gt;/g) || [];
+var parseBoldMarkdown = (input) => {
+  const matches = matchBoldMarkdown(input);
   matches.forEach((match) => {
-    input = input.replace(match, stripLink(match));
+    let replacement = match;
+    const pieces = matchBoldMarkdownPieces(match);
+    if (pieces.length >= 3) {
+      replacement = replacement.replace(pieces[1], BOLD_TAG_START);
+      replacement = replacement.replace(pieces[2], BOLD_TAG_CLOSE);
+    }
+    input = input.replace(match, replacement);
   });
   return input;
 };
-var stripLink = (input) => {
-  const replaceWithSquareBrackets = (input.match(/class=\"internal-link\"/) || []).length !== 0;
-  return input.replace(/&lt;a.*?&gt;/, replaceWithSquareBrackets ? "[[" : "").replace(/&lt;\/a&gt;/, replaceWithSquareBrackets ? "]]" : "");
+var parseItalicMarkdown = (input) => {
+  const matches = matchItalicMarkdown(input);
+  matches.forEach((match) => {
+    let replacement = match;
+    const pieces = matchItalicMarkdownPieces(match);
+    if (pieces.length >= 3) {
+      replacement = replacement.replace(pieces[1], ITALIC_TAG_START);
+      replacement = replacement.replace(pieces[2], ITALIC_TAG_CLOSE);
+    }
+    input = input.replace(match, replacement);
+  });
+  return input;
 };
-var stripPound = (input) => {
-  return input.replace("#", "");
+var parseHighlightMarkdown = (input) => {
+  const matches = matchHighlightMarkdown(input);
+  matches.forEach((match) => {
+    let replacement = match;
+    const pieces = matchHighlightMarkdownPieces(match);
+    if (pieces.length >= 3) {
+      replacement = replacement.replace(pieces[1], HIGHLIGHT_TAG_START);
+      replacement = replacement.replace(pieces[2], HIGHLIGHT_TAG_CLOSE);
+    }
+    input = input.replace(match, replacement);
+  });
+  return input;
 };
-var addPound = (input) => {
-  return `#${input}`;
+var parseBoldTags = (input) => {
+  const matches = matchBoldTags(input);
+  matches.forEach((match) => {
+    let replacement = match;
+    let pieces = [];
+    if (match.includes("&lt;strong")) {
+      pieces = matchBoldTagStrongPieces(match);
+      if (pieces.length >= 3) {
+        replacement = replacement.replace(pieces[1], BOLD_TAG_MARKDOWN);
+        replacement = replacement.replace(pieces[2], BOLD_TAG_MARKDOWN);
+      }
+    } else {
+      pieces = matchBoldTagBPieces(match);
+      if (pieces.length >= 3) {
+        replacement = replacement.replace(pieces[1], BOLD_TAG_START);
+        replacement = replacement.replace(pieces[2], BOLD_TAG_CLOSE);
+      }
+    }
+    input = input.replace(match, replacement);
+  });
+  return input;
 };
-var toExternalLink = (url) => {
-  return `<a tabIndex={-1} href="${url}" target="_blank" rel="noopener">${url}</a>`;
+var parseItalicTags = (input) => {
+  const matches = matchItalicTags(input);
+  matches.forEach((match) => {
+    let replacement = match;
+    let pieces = [];
+    if (match.includes("&lt;em")) {
+      pieces = matchItalicTagEmPieces(match);
+      if (pieces.length >= 3) {
+        replacement = replacement.replace(pieces[1], ITALIC_TAG_MARKDOWN);
+        replacement = replacement.replace(pieces[2], ITALIC_TAG_MARKDOWN);
+      }
+    } else {
+      pieces = matchItalicTagIPieces(match);
+      if (pieces.length >= 3) {
+        replacement = replacement.replace(pieces[1], ITALIC_TAG_START);
+        replacement = replacement.replace(pieces[2], ITALIC_TAG_CLOSE);
+      }
+    }
+    input = input.replace(match, replacement);
+  });
+  return input;
 };
-var toFileLink = (fileName) => {
-  return `<a tabIndex={-1} data-href="${fileName}" href="${fileName}" class="internal-link" target="_blank" rel="noopener">${fileName}</a>`;
+var parseHighlightTags = (input) => {
+  const matches = matchHighlightTags(input);
+  matches.forEach((match) => {
+    let replacement = match;
+    const pieces = matchHighlightTagPieces(match);
+    if (pieces.length >= 3) {
+      replacement = replacement.replace(pieces[1], HIGHLIGHT_TAG_MARKDOWN);
+      replacement = replacement.replace(pieces[2], HIGHLIGHT_TAG_MARKDOWN);
+    }
+    input = input.replace(match, replacement);
+  });
+  return input;
 };
-var toTagLink = (tagName) => {
-  if (tagName.startsWith("#"))
-    throw "tagName cannot start with pound symbol";
-  return `<a tabIndex={-1} href="#${tagName}" class="tag" target="_blank" rel="noopener">#${tagName}</a>`;
+var parseUnderlineTags = (input) => {
+  const matches = matchUnderlineTags(input);
+  matches.forEach((match) => {
+    let replacement = match;
+    const pieces = matchUnderlineTagPieces(match);
+    if (pieces.length >= 3) {
+      replacement = replacement.replace(pieces[1], UNDERLINE_TAG_START);
+      replacement = replacement.replace(pieces[2], UNDERLINE_TAG_CLOSE);
+    }
+    input = input.replace(match, replacement);
+  });
+  return input;
+};
+var parseInputDate = (date) => {
+  return new Date(date.replace(/-/g, "/"));
+};
+var parseDateForInput = (date) => {
+  let d = null;
+  if (date == "") {
+    d = new Date();
+  } else {
+    d = new Date(date);
+  }
+  const day = ("0" + d.getDate()).slice(-2);
+  const month = ("0" + (d.getMonth() + 1)).slice(-2);
+  const year = d.getFullYear();
+  return `${year}-${month}-${day}`;
+};
+
+// src/app/components/TextCell/index.tsx
+function TextCell({ text }) {
+  text = parseURLs(text);
+  text = parseFileLinks(text);
+  text = parseBoldMarkdown(text);
+  text = parseItalicMarkdown(text);
+  text = parseHighlightMarkdown(text);
+  return /* @__PURE__ */ import_react.default.createElement("p", {
+    className: "NLT__p"
+  }, html_react_parser_default(text));
+}
+
+// src/app/components/TagCell/index.tsx
+var import_react2 = __toModule(require_react());
+var import_Close = __toModule(require_Close());
+
+// src/app/services/color/index.ts
+var findColorClass = (color) => {
+  switch (color) {
+    case COLOR.LIGHT_GRAY:
+      return "NLT__color--light-gray";
+    case COLOR.GRAY:
+      return "NLT__color--gray";
+    case COLOR.BROWN:
+      return "NLT__color--brown";
+    case COLOR.ORANGE:
+      return "NLT__color--orange";
+    case COLOR.YELLOW:
+      return "NLT__color--yellow";
+    case COLOR.GREEN:
+      return "NLT__color--green";
+    case COLOR.BLUE:
+      return "NLT__color--blue";
+    case COLOR.PURPLE:
+      return "NLT__color--purple";
+    case COLOR.PINK:
+      return "NLT__color--pink";
+    case COLOR.RED:
+      return "NLT__color--red";
+    default:
+      return "";
+  }
 };
 
 // src/app/components/TagCell/index.tsx
@@ -49514,27 +49390,17 @@ function TagCell({
   onClick
 }) {
   let tagClass = "NLT__tag";
-  if (color === CELL_COLOR.RED) {
-    tagClass += " NLT__tag--red";
-  } else if (color === CELL_COLOR.YELLOW) {
-    tagClass += " NLT__tag--yellow";
-  } else if (color === CELL_COLOR.ORANGE) {
-    tagClass += " NLT__tag--orange";
-  } else if (color === CELL_COLOR.PINK) {
-    tagClass += " NLT__tag--pink";
-  } else if (color === CELL_COLOR.PURPLE) {
-    tagClass += " NLT__tag--purple";
-  } else if (color === CELL_COLOR.GRAY) {
-    tagClass += " NLT__tag--gray";
-  }
+  tagClass += " " + findColorClass(color);
   let cellClass = "NLT__tag-cell";
   if (selectable)
     cellClass += " NLT__selectable";
   if (content === "")
-    return /* @__PURE__ */ import_react4.default.createElement(import_react4.default.Fragment, null);
-  if (showLink)
-    content = toTagLink(content);
-  return /* @__PURE__ */ import_react4.default.createElement("div", {
+    return /* @__PURE__ */ import_react2.default.createElement(import_react2.default.Fragment, null);
+  if (showLink) {
+    if (content.startsWith("#"))
+      content = toTagLink(content);
+  }
+  return /* @__PURE__ */ import_react2.default.createElement("div", {
     className: cellClass,
     style,
     onClick: (e) => {
@@ -49542,11 +49408,11 @@ function TagCell({
         e.stopPropagation();
       onClick && onClick(id);
     }
-  }, isCreate && /* @__PURE__ */ import_react4.default.createElement("div", null, "Create\xA0"), /* @__PURE__ */ import_react4.default.createElement("div", {
+  }, isCreate && /* @__PURE__ */ import_react2.default.createElement("div", null, "Create\xA0"), /* @__PURE__ */ import_react2.default.createElement("div", {
     className: tagClass
-  }, /* @__PURE__ */ import_react4.default.createElement("div", {
+  }, /* @__PURE__ */ import_react2.default.createElement("div", {
     className: "NLT__tag-content"
-  }, html_react_parser_default(content)), showRemove && /* @__PURE__ */ import_react4.default.createElement(import_Close.default, {
+  }, html_react_parser_default(content)), showRemove && /* @__PURE__ */ import_react2.default.createElement(import_Close.default, {
     className: "NLT__icon--md NLT__margin-left NLT__icon--selectable",
     onClick: (e) => {
       e.stopPropagation();
@@ -49555,44 +49421,588 @@ function TagCell({
   })));
 }
 
-// src/app/components/TagMenuContent/index.tsx
-function TagMenuContent({
-  cellId,
-  tags = [],
-  color = "",
-  inputText,
+// src/app/components/ErrorCell/index.tsx
+var import_react3 = __toModule(require_react());
+function ErrorCell({ type }) {
+  return /* @__PURE__ */ import_react3.default.createElement("div", {
+    className: "NLT__error"
+  }, "Invalid data. Expected type: ", type);
+}
+
+// src/app/components/CheckboxCell/index.tsx
+var import_react4 = __toModule(require_react());
+function CheckboxCell({ isChecked, onCheckboxChange }) {
+  return /* @__PURE__ */ import_react4.default.createElement("div", {
+    style: { width: "100%" },
+    onClick: () => onCheckboxChange(!isChecked)
+  }, /* @__PURE__ */ import_react4.default.createElement("input", {
+    className: "task-list-item-checkbox",
+    type: "checkbox",
+    checked: isChecked,
+    onChange: (e) => {
+      e.stopPropagation();
+      onCheckboxChange(!isChecked);
+    }
+  }));
+}
+
+// src/app/components/DateCell/index.tsx
+var import_react5 = __toModule(require_react());
+function DateCell({ date }) {
+  return /* @__PURE__ */ import_react5.default.createElement("p", {
+    className: "NLT__p"
+  }, date);
+}
+
+// src/app/components/NumberCell/index.tsx
+var import_react6 = __toModule(require_react());
+function DateCell2({ number }) {
+  return /* @__PURE__ */ import_react6.default.createElement("p", {
+    className: "NLT__p",
+    style: { textAlign: "right" }
+  }, number);
+}
+
+// src/app/components/DateCellEdit/index.tsx
+var import_react8 = __toModule(require_react());
+
+// src/app/components/Menu/index.tsx
+var import_react7 = __toModule(require_react());
+function Menu({
+  id,
   isOpen,
-  onTagClick,
-  onAddTag,
-  onTextChange,
-  onRemoveTagClick
+  top,
+  left,
+  children,
+  width,
+  height
 }) {
-  const forceUpdate = useForceUpdate();
-  (0, import_react5.useEffect)(() => {
-    forceUpdate();
-  }, [forceUpdate]);
-  const inputRef = (0, import_react5.useCallback)((node) => {
+  return /* @__PURE__ */ import_react7.default.createElement(import_react7.default.Fragment, null, isOpen && /* @__PURE__ */ import_react7.default.createElement("div", {
+    className: "NLT__menu",
+    id,
+    onMouseDown: (e) => e.preventDefault()
+  }, /* @__PURE__ */ import_react7.default.createElement("div", {
+    className: "NLT__menu-container",
+    style: {
+      top: `${top}px`,
+      left: `${left}px`,
+      width: width ? width : "fit-content",
+      height: height ? height : "fit-content"
+    }
+  }, children)));
+}
+
+// src/app/components/DateCellEdit/index.tsx
+function DateCellEdit({
+  menuId,
+  isOpen,
+  top,
+  left,
+  width,
+  height,
+  inputText,
+  onInputChange
+}) {
+  const inputRef = (0, import_react8.useCallback)((node) => {
     if (node) {
-      if (node instanceof HTMLElement) {
-        if (isOpen) {
+      if (isOpen) {
+        setTimeout(() => {
+          node.focus();
+        }, 1);
+      }
+    }
+  }, [isOpen]);
+  return /* @__PURE__ */ import_react8.default.createElement(Menu, {
+    id: menuId,
+    isOpen,
+    top,
+    left,
+    width,
+    height
+  }, /* @__PURE__ */ import_react8.default.createElement("input", {
+    ref: inputRef,
+    className: "NLT__input NLT__input--no-border",
+    type: "date",
+    autoFocus: true,
+    value: inputText,
+    onChange: (e) => onInputChange(e.target.value)
+  }));
+}
+
+// src/app/components/NumberCellEdit/index.tsx
+var import_react9 = __toModule(require_react());
+function NumberCellEdit({
+  menuId,
+  isOpen,
+  top,
+  left,
+  width,
+  height,
+  inputText,
+  onInputChange
+}) {
+  const inputRef = (0, import_react9.useCallback)((node) => {
+    if (node) {
+      if (isOpen) {
+        setTimeout(() => {
+          node.focus();
+        }, 1);
+      }
+    }
+  }, [isOpen]);
+  return /* @__PURE__ */ import_react9.default.createElement(Menu, {
+    id: menuId,
+    isOpen,
+    top,
+    left,
+    width,
+    height
+  }, /* @__PURE__ */ import_react9.default.createElement("input", {
+    ref: inputRef,
+    className: "NLT__input NLT__input--number NLT__input--no-border",
+    type: "number",
+    autoFocus: true,
+    value: inputText,
+    onChange: (e) => onInputChange(e.target.value)
+  }));
+}
+
+// src/app/components/TextCellEdit/index.tsx
+var import_react10 = __toModule(require_react());
+function TextCellEdit({
+  menuId,
+  isOpen,
+  top,
+  left,
+  width,
+  height,
+  inputText,
+  onInputChange
+}) {
+  const textAreaRef = (0, import_react10.useCallback)((node) => {
+    if (node) {
+      if (isOpen) {
+        node.selectionStart = inputText.length;
+        node.selectionEnd = inputText.length;
+        if (node instanceof HTMLElement) {
           setTimeout(() => {
             node.focus();
           }, 1);
         }
+        if (node instanceof HTMLElement) {
+          node.style.height = "auto";
+          node.style.height = node.scrollHeight + "px";
+        }
+      }
+    }
+  }, [isOpen, inputText.length]);
+  return /* @__PURE__ */ import_react10.default.createElement(Menu, {
+    id: menuId,
+    isOpen,
+    top,
+    left,
+    width,
+    height
+  }, /* @__PURE__ */ import_react10.default.createElement("textarea", {
+    className: "NLT__input NLT__input--textarea NLT__input--no-border",
+    ref: textAreaRef,
+    autoFocus: true,
+    value: inputText,
+    onChange: (e) => onInputChange(e.target.value.replace("\n", ""))
+  }));
+}
+
+// src/app/components/TagCellEdit/index.tsx
+var import_react19 = __toModule(require_react());
+
+// src/app/components/TagCellEdit/component/SelectableTag/index.tsx
+var import_react18 = __toModule(require_react());
+
+// src/app/components/IconButton/index.tsx
+var import_react13 = __toModule(require_react());
+
+// src/app/services/icon/index.tsx
+var import_react11 = __toModule(require_react());
+var import_MoreVert = __toModule(require_MoreVert());
+var import_Delete = __toModule(require_Delete());
+var import_Sort = __toModule(require_Sort());
+var import_KeyboardArrowDown = __toModule(require_KeyboardArrowDown());
+var import_KeyboardArrowUp = __toModule(require_KeyboardArrowUp());
+var import_KeyboardDoubleArrowUp = __toModule(require_KeyboardDoubleArrowUp());
+var import_KeyboardDoubleArrowDown = __toModule(require_KeyboardDoubleArrowDown());
+var import_KeyboardArrowLeft = __toModule(require_KeyboardArrowLeft());
+var import_KeyboardArrowRight = __toModule(require_KeyboardArrowRight());
+var import_KeyboardDoubleArrowLeft = __toModule(require_KeyboardDoubleArrowLeft());
+var import_KeyboardDoubleArrowRight = __toModule(require_KeyboardDoubleArrowRight());
+var import_KeyboardBackspace = __toModule(require_KeyboardBackspace());
+var import_MoveUp = __toModule(require_MoveUp());
+var import_MoveDown = __toModule(require_MoveDown());
+var import_TextSnippet = __toModule(require_TextSnippet());
+var import_Edit = __toModule(require_Edit());
+
+// node_modules/@mui/icons-material/esm/utils/createSvgIcon.js
+var import_utils = __toModule(require_utils4());
+
+// node_modules/@mui/icons-material/esm/MoreHoriz.js
+var import_jsx_runtime = __toModule(require_jsx_runtime());
+var MoreHoriz_default = (0, import_utils.createSvgIcon)(/* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", {
+  d: "M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+}), "MoreHoriz");
+
+// src/app/services/icon/index.tsx
+var findIcon = (icon, className) => {
+  switch (icon) {
+    case ICON.KEYBOARD_ARROW_UP:
+      return /* @__PURE__ */ import_react11.default.createElement(import_KeyboardArrowUp.default, {
+        className
+      });
+    case ICON.KEYBOARD_ARROW_DOWN:
+      return /* @__PURE__ */ import_react11.default.createElement(import_KeyboardArrowDown.default, {
+        className
+      });
+    case ICON.KEYBOARD_DOUBLE_ARROW_UP:
+      return /* @__PURE__ */ import_react11.default.createElement(import_KeyboardDoubleArrowUp.default, {
+        className
+      });
+    case ICON.KEYBOARD_DOUBLE_ARROW_DOWN:
+      return /* @__PURE__ */ import_react11.default.createElement(import_KeyboardDoubleArrowDown.default, {
+        className
+      });
+    case ICON.KEYBOARD_ARROW_LEFT:
+      return /* @__PURE__ */ import_react11.default.createElement(import_KeyboardArrowLeft.default, {
+        className
+      });
+    case ICON.KEYBOARD_ARROW_RIGHT:
+      return /* @__PURE__ */ import_react11.default.createElement(import_KeyboardArrowRight.default, {
+        className
+      });
+    case ICON.KEYBOARD_DOUBLE_ARROW_LEFT:
+      return /* @__PURE__ */ import_react11.default.createElement(import_KeyboardDoubleArrowLeft.default, {
+        className
+      });
+    case ICON.KEYBOARD_DOUBLE_ARROW_RIGHT:
+      return /* @__PURE__ */ import_react11.default.createElement(import_KeyboardDoubleArrowRight.default, {
+        className
+      });
+    case ICON.DELETE:
+      return /* @__PURE__ */ import_react11.default.createElement(import_Delete.default, {
+        className
+      });
+    case ICON.MORE_VERT:
+      return /* @__PURE__ */ import_react11.default.createElement(import_MoreVert.default, {
+        className
+      });
+    case ICON.SORT:
+      return /* @__PURE__ */ import_react11.default.createElement(import_Sort.default, {
+        className
+      });
+    case ICON.KEYBOARD_BACKSPACE:
+      return /* @__PURE__ */ import_react11.default.createElement(import_KeyboardBackspace.default, {
+        className
+      });
+    case ICON.MOVE_UP:
+      return /* @__PURE__ */ import_react11.default.createElement(import_MoveUp.default, {
+        className
+      });
+    case ICON.MOVE_DOWN:
+      return /* @__PURE__ */ import_react11.default.createElement(import_MoveDown.default, {
+        className
+      });
+    case ICON.TEXT_SNIPPET:
+      return /* @__PURE__ */ import_react11.default.createElement(import_TextSnippet.default, {
+        className
+      });
+    case ICON.EDIT:
+      return /* @__PURE__ */ import_react11.default.createElement(import_Edit.default, {
+        className
+      });
+    case ICON.MORE_HORIZ:
+      return /* @__PURE__ */ import_react11.default.createElement(MoreHoriz_default, {
+        className
+      });
+    default:
+      return "";
+  }
+};
+
+// src/app/components/Button/index.tsx
+var import_react12 = __toModule(require_react());
+function Button({ id, children, noPadding, onClick }) {
+  let className = "NLT__button";
+  if (noPadding)
+    className += " NLT__button--reset";
+  const buttonId = id !== "" ? id : "";
+  return /* @__PURE__ */ import_react12.default.createElement("button", {
+    id: buttonId,
+    className,
+    tabIndex: -1,
+    "aria-hidden": "true",
+    onClick: (e) => onClick(e)
+  }, children);
+}
+
+// src/app/components/IconButton/index.tsx
+function IconButton({ id, icon, onClick }) {
+  return /* @__PURE__ */ import_react13.default.createElement(Button, {
+    id,
+    onClick,
+    noPadding: true
+  }, findIcon(icon, "NLT__icon--md"));
+}
+
+// src/app/components/TagColorMenu/index.tsx
+var import_react15 = __toModule(require_react());
+
+// src/app/components/TagColorMenu/components/ColorItem/index.tsx
+var import_react14 = __toModule(require_react());
+
+// src/app/services/string/adders/index.ts
+var uppercaseFirst = (input) => {
+  return input.charAt(0).toUpperCase() + input.slice(1);
+};
+
+// src/app/components/TagColorMenu/components/ColorItem/index.tsx
+function ColorItem({ color, isSelected, onColorClick }) {
+  let containerClass = "NLT__color-item NLT__selectable";
+  if (isSelected)
+    containerClass += " NLT__selected";
+  const colorClass = findColorClass(color);
+  let squareClass = "NLT__color-item-square";
+  squareClass += " " + colorClass;
+  return /* @__PURE__ */ import_react14.default.createElement("div", {
+    className: containerClass,
+    onClick: (e) => {
+      e.stopPropagation();
+      onColorClick(color);
+    }
+  }, /* @__PURE__ */ import_react14.default.createElement("div", {
+    className: squareClass
+  }), /* @__PURE__ */ import_react14.default.createElement("div", null, uppercaseFirst(color)));
+}
+
+// src/app/components/TagColorMenu/index.tsx
+function TagColorMenu({
+  menuId,
+  isOpen,
+  top,
+  left,
+  selectedColor,
+  onColorClick
+}) {
+  return /* @__PURE__ */ import_react15.default.createElement(Menu, {
+    id: menuId,
+    isOpen,
+    top,
+    left
+  }, /* @__PURE__ */ import_react15.default.createElement("div", {
+    className: "NLT__tag-color-menu"
+  }, /* @__PURE__ */ import_react15.default.createElement("div", {
+    className: "NLT__tag-color-menu-title"
+  }, "Colors"), /* @__PURE__ */ import_react15.default.createElement("div", {
+    className: "NLT__tag-color-container"
+  }, Object.values(COLOR).map((color) => /* @__PURE__ */ import_react15.default.createElement(ColorItem, {
+    key: color,
+    color,
+    onColorClick,
+    isSelected: selectedColor === color
+  })))));
+}
+
+// src/app/components/MenuProvider/index.tsx
+var import_react17 = __toModule(require_react());
+
+// src/app/components/FocusProvider/index.tsx
+var import_react16 = __toModule(require_react());
+var FocusContext = import_react16.default.createContext(false);
+var useTableFocus = () => {
+  return (0, import_react16.useContext)(FocusContext);
+};
+function FocusProvider({
+  children,
+  plugin,
+  tableId,
+  sourcePath
+}) {
+  const [isFocused, setFocus] = (0, import_react16.useState)(false);
+  function handleFocus() {
+    if (DEBUG.FOCUS_PROVIDER.HANDLER) {
+      console.log("[FocusProvider]: handleFocus()");
+    }
+    setFocus(true);
+    plugin.focusTable(tableId, sourcePath);
+  }
+  function handleBlur() {
+    if (DEBUG.FOCUS_PROVIDER.HANDLER) {
+      console.log("[FocusProvider]: handleBlur()");
+    }
+    setFocus(false);
+    plugin.blurTable();
+  }
+  const divRef = (0, import_react16.useCallback)((node) => {
+    if (node) {
+      if (plugin.focused) {
+        if (plugin.focused.sourcePath === sourcePath && plugin.focused.tableId === tableId) {
+          setTimeout(() => {
+            handleFocus();
+          }, 1);
+        }
+      }
+    }
+  }, []);
+  return /* @__PURE__ */ import_react16.default.createElement("div", {
+    ref: divRef,
+    onFocus: () => handleFocus(),
+    onBlur: () => handleBlur()
+  }, /* @__PURE__ */ import_react16.default.createElement(FocusContext.Provider, {
+    value: isFocused
+  }, children));
+}
+
+// src/app/components/MenuProvider/index.tsx
+var MenuContext = import_react17.default.createContext({});
+var useMenu = () => {
+  return (0, import_react17.useContext)(MenuContext);
+};
+function MenuProvider({ children }) {
+  const [openMenus, setOpenMenus] = (0, import_react17.useState)([]);
+  const isFocused = useTableFocus();
+  function openMenu(id, level) {
+    const menu = { id, level };
+    if (DEBUG.MENU_PROVIDER.HANDLER) {
+      console.log(`[MenuProvider]: openMenu("${id}", ${level})`);
+    }
+    setOpenMenus((prevState) => [...prevState, menu]);
+  }
+  function isMenuOpen(id) {
+    return openMenus.find((menu) => menu.id === id) || false;
+  }
+  function closeAllMenus() {
+    if (DEBUG.MENU_PROVIDER.HANDLER) {
+      console.log("[MenuProvider]: closeAllMenus()");
+    }
+    setOpenMenus([]);
+  }
+  const closeMenu = (id) => {
+    if (DEBUG.MENU_PROVIDER.HANDLER) {
+      console.log(`[MenuProvider]: closeMenu(${id})`);
+    }
+    setOpenMenus((prevState) => prevState.filter((menu) => menu.id !== id));
+  };
+  function handleClick(e) {
+    if (isFocused && openMenus.length !== 0) {
+      if (e.target instanceof HTMLElement) {
+        let el = e.target;
+        while (el.id === "" && el.className !== "NLT__app") {
+          el = el.parentElement;
+        }
+        const topMenu = findTopMenu();
+        if (el.id !== topMenu.id)
+          closeMenu(topMenu.id);
+      }
+    }
+  }
+  function handleKeyUp(e) {
+    if (isFocused && openMenus.length !== 0) {
+      if (e.key === "Enter") {
+        const topMenu = findTopMenu();
+        closeMenu(topMenu.id);
+      }
+    }
+  }
+  function findTopMenu() {
+    let topMenu = openMenus[0];
+    openMenus.forEach((menu) => {
+      if (menu.level > topMenu.level)
+        topMenu = menu;
+    });
+    return topMenu;
+  }
+  (0, import_react17.useEffect)(() => {
+    if (!isFocused)
+      closeAllMenus();
+  }, [isFocused]);
+  return /* @__PURE__ */ import_react17.default.createElement("div", {
+    onKeyUp: handleKeyUp,
+    onMouseDown: handleClick
+  }, /* @__PURE__ */ import_react17.default.createElement(MenuContext.Provider, {
+    value: { isMenuOpen, openMenu, closeMenu }
+  }, children));
+}
+
+// src/app/components/TagCellEdit/component/SelectableTag/index.tsx
+function SelectableTag({
+  id,
+  content,
+  color,
+  onClick,
+  onColorChange
+}) {
+  const { openMenu, closeMenu, isMenuOpen } = useMenu();
+  const [menuId] = (0, import_react18.useState)(v4_default());
+  let tagClass = "NLT__tag";
+  tagClass += " " + findColorClass(color);
+  function handleColorChange(color2) {
+    onColorChange(id, color2);
+    closeMenu(menuId);
+  }
+  return /* @__PURE__ */ import_react18.default.createElement("div", {
+    className: "NLT__tag-cell NLT__selectable-tag NLT__selectable",
+    onClick: () => onClick(id)
+  }, /* @__PURE__ */ import_react18.default.createElement("div", {
+    className: tagClass
+  }, /* @__PURE__ */ import_react18.default.createElement("div", {
+    className: "NLT__tag-content"
+  }, html_react_parser_default(content))), /* @__PURE__ */ import_react18.default.createElement(IconButton, {
+    icon: ICON.MORE_HORIZ,
+    onClick: (e) => {
+      e.stopPropagation();
+      openMenu(menuId, MENU_LEVEL.TWO);
+    }
+  }), /* @__PURE__ */ import_react18.default.createElement(TagColorMenu, {
+    menuId,
+    isOpen: isMenuOpen(menuId),
+    selectedColor: color,
+    top: -100,
+    left: -120,
+    onColorClick: (color2) => handleColorChange(color2)
+  }));
+}
+
+// src/app/components/TagCellEdit/index.tsx
+function TagCellEdit({
+  menuId,
+  isOpen,
+  top,
+  left,
+  width,
+  height,
+  color,
+  inputText,
+  cellId,
+  tags,
+  onInputChange,
+  onTagClick,
+  onAddTag,
+  onColorChange,
+  onRemoveTagClick
+}) {
+  const inputRef = (0, import_react19.useCallback)((node) => {
+    if (node) {
+      if (node instanceof HTMLElement) {
+        if (isOpen)
+          node.focus();
       }
     }
   }, [isOpen]);
   function handleTextChange(e) {
-    if (e.target.value.match("#"))
-      return;
     if (e.target.value.match(/\s/))
       return;
-    onTextChange(e);
+    onInputChange(e.target.value);
   }
   function renderSelectableTags() {
     const filteredTags = tags.filter((tag) => tag.content.includes(inputText));
     const found = tags.find((tag) => tag.content === inputText);
-    return /* @__PURE__ */ import_react5.default.createElement(import_react5.default.Fragment, null, !found && inputText !== "" && /* @__PURE__ */ import_react5.default.createElement(TagCell, {
+    return /* @__PURE__ */ import_react19.default.createElement(import_react19.default.Fragment, null, !found && inputText !== "" && /* @__PURE__ */ import_react19.default.createElement(TagCell, {
       key: "new-tag",
       content: inputText,
       color,
@@ -49600,21 +50010,29 @@ function TagMenuContent({
       isCreate: true,
       selectable: true,
       onClick: () => onAddTag(inputText)
-    }), filteredTags.map((tag) => /* @__PURE__ */ import_react5.default.createElement(TagCell, {
+    }), filteredTags.map((tag) => /* @__PURE__ */ import_react19.default.createElement(SelectableTag, {
       key: tag.id,
       id: tag.id,
-      hideLink: true,
       color: tag.color,
       content: tag.content,
-      selectable: true,
+      onColorChange,
       onClick: onTagClick
     })));
   }
-  return /* @__PURE__ */ import_react5.default.createElement("div", {
+  return /* @__PURE__ */ import_react19.default.createElement(Menu, {
+    id: menuId,
+    isOpen,
+    top,
+    left,
+    width,
+    height
+  }, /* @__PURE__ */ import_react19.default.createElement("div", {
+    className: "NLT__tag-menu"
+  }, /* @__PURE__ */ import_react19.default.createElement("div", {
     className: "NLT__tag-menu-container"
-  }, /* @__PURE__ */ import_react5.default.createElement("div", {
+  }, /* @__PURE__ */ import_react19.default.createElement("div", {
     className: "NLT__tag-menu-top"
-  }, tags.filter((tag) => tag.selected.includes(cellId) === true).map((tag) => /* @__PURE__ */ import_react5.default.createElement(TagCell, {
+  }, tags.filter((tag) => tag.selected.includes(cellId) === true).map((tag) => /* @__PURE__ */ import_react19.default.createElement(TagCell, {
     key: tag.id,
     cellId,
     id: tag.id,
@@ -49623,165 +50041,71 @@ function TagMenuContent({
     content: tag.content,
     showRemove: true,
     onRemoveClick: onRemoveTagClick
-  })), /* @__PURE__ */ import_react5.default.createElement("input", {
+  })), /* @__PURE__ */ import_react19.default.createElement("input", {
     className: "NLT__tag-menu-input",
     ref: inputRef,
     type: "text",
     value: inputText,
     onChange: handleTextChange
-  })), /* @__PURE__ */ import_react5.default.createElement("div", {
+  })), /* @__PURE__ */ import_react19.default.createElement("div", {
     className: "NLT__tag-menu-bottom"
-  }, /* @__PURE__ */ import_react5.default.createElement("p", {
+  }, /* @__PURE__ */ import_react19.default.createElement("p", {
     className: "NLT__tag-menu-text"
-  }, "Select an option or create one"), /* @__PURE__ */ import_react5.default.createElement("div", null, renderSelectableTags())));
+  }, "Select an option or create one"), /* @__PURE__ */ import_react19.default.createElement("div", null, renderSelectableTags())))));
 }
 
-// src/app/components/CellEditMenu/index.tsx
-function CellEditMenu({
-  isOpen,
-  cellType,
-  cellId,
-  tags,
-  inputText,
-  tagColor,
-  style,
-  onInputChange,
-  onTabPress,
-  onRemoveTagClick,
-  onAddTag,
-  onTagClick,
-  onOutsideClick
-}) {
-  const [textareaHeight, setTextareaHeight] = (0, import_react6.useState)("auto");
-  const textAreaRef = (0, import_react6.useCallback)((node) => {
-    if (node) {
-      if (isOpen) {
-        node.selectionStart = inputText.length;
-        node.selectionEnd = inputText.length;
-        setTimeout(() => {
-          node.focus();
-          if (node instanceof HTMLElement) {
-            setTextareaHeight(`${node.scrollHeight}px`);
-          }
-        }, 1);
-      }
-    }
-  }, [isOpen]);
-  const inputRef = (0, import_react6.useCallback)((node) => {
-    if (node) {
-      if (isOpen) {
-        setTimeout(() => {
-          node.focus();
-        }, 1);
-      }
-    }
-  }, [isOpen]);
-  function renderContent() {
-    switch (cellType) {
-      case CELL_TYPE.TEXT:
-        return /* @__PURE__ */ import_react6.default.createElement("textarea", {
-          className: "NLT__input NLT__input--textarea",
-          ref: textAreaRef,
-          style: {
-            height: textareaHeight
-          },
-          autoFocus: true,
-          value: inputText,
-          onChange: (e) => onInputChange(e.target.value.replace("\n", ""))
-        });
-      case CELL_TYPE.NUMBER:
-        return /* @__PURE__ */ import_react6.default.createElement("input", {
-          ref: inputRef,
-          className: "NLT__input NLT__input--number",
-          type: "number",
-          autoFocus: true,
-          value: inputText,
-          onChange: (e) => onInputChange(e.target.value)
-        });
-      case CELL_TYPE.TAG:
-        return /* @__PURE__ */ import_react6.default.createElement(TagMenuContent, {
-          isOpen,
-          cellId,
-          tags,
-          color: tagColor,
-          inputText,
-          onAddTag,
-          onTextChange: (e) => onInputChange(e.target.value),
-          onRemoveTagClick,
-          onTagClick
-        });
-      default:
-        return /* @__PURE__ */ import_react6.default.createElement(import_react6.default.Fragment, null);
-    }
-  }
-  return /* @__PURE__ */ import_react6.default.createElement(Menu, {
-    isOpen,
-    style,
-    onTabPress,
-    onOutsideClick
-  }, /* @__PURE__ */ import_react6.default.createElement("div", {
-    className: "NLT__cell-edit-menu"
-  }, renderContent()));
-}
-
-// src/app/components/TextCell/index.tsx
-var import_react7 = __toModule(require_react());
-function TextCell({ content }) {
-  content = parseURLs(content);
-  content = parseFileLinks(content);
-  return /* @__PURE__ */ import_react7.default.createElement("p", {
-    className: "NLT__p"
-  }, html_react_parser_default(content));
-}
-
-// src/app/components/ErrorCell/index.tsx
-var import_react8 = __toModule(require_react());
-function ErrorCell({ type }) {
-  return /* @__PURE__ */ import_react8.default.createElement("div", {
-    className: "NLT__error"
-  }, "Invalid data. Expected type: ", type);
-}
+// src/app/services/random/index.ts
+var randomColor = () => {
+  const index = Math.floor(Math.random() * Object.keys(COLOR).length);
+  return Object.values(COLOR)[index];
+};
+var getCurrentTimeWithOffset = () => {
+  return Math.round(Date.now() - Math.random() * 1e3);
+};
+var randomId = () => {
+  return Math.random().toString(36).replace("0.", "").substring(0, 6);
+};
+var randomTableId = () => {
+  return `table-id-${randomId()}`;
+};
+var randomCellId = () => {
+  return `cell-id-${randomId()}`;
+};
+var randomRowId = () => {
+  return `row-id-${randomId()}`;
+};
+var randomColumnId = () => {
+  return `column-id-${randomId()}`;
+};
+var randomTagId = () => {
+  return `tag-id-${randomId()}`;
+};
 
 // src/app/components/EditableTd/index.tsx
 function EditableTd({
-  cellId,
-  headerId,
+  cell,
   width,
-  content,
-  isFocused,
   tags,
-  type,
-  expectedType,
-  onOutsideClick,
   onRemoveTagClick,
+  onColorChange,
   onTagClick,
-  onFocusClick,
   onContentChange,
   onAddTag
 }) {
-  const [inputText, setInputText] = (0, import_react9.useState)("");
-  const closingMenu = (0, import_react9.useRef)(false);
-  const initialCellMenuState = {
-    isOpen: false,
-    top: 0,
-    left: 0,
-    width: "",
-    height: "",
-    tagColor: ""
-  };
-  const [cellMenu, setCellMenu] = (0, import_react9.useState)(initialCellMenuState);
-  (0, import_react9.useEffect)(() => {
-    if (isFocused) {
-      if (cellMenu.isOpen)
-        return;
-      openMenu();
-    } else {
-      if (!cellMenu.isOpen)
-        return;
-      closeMenu();
-    }
-  }, [isFocused, cellMenu.isOpen]);
-  const tdRef = (0, import_react9.useCallback)((node) => {
+  const [inputText, setInputText] = (0, import_react20.useState)("");
+  const [cellMenu, setCellMenu] = (0, import_react20.useState)({
+    top: -4,
+    left: -11,
+    width: "0px",
+    height: "0px",
+    tagColor: randomColor()
+  });
+  const { isMenuOpen, openMenu } = useMenu();
+  const [menuId] = (0, import_react20.useState)(v4_default());
+  const content = cell.toString();
+  const { id, headerId, type, expectedType } = cell;
+  const didMount = (0, import_react20.useRef)(false);
+  const tdRef = (0, import_react20.useCallback)((node) => {
     if (node) {
       if (node instanceof HTMLElement) {
         setTimeout(() => {
@@ -49789,10 +50113,9 @@ function EditableTd({
             const { width: width2, height } = node.getBoundingClientRect();
             function findWidth() {
               switch (type) {
+                case CELL_TYPE.DATE:
                 case CELL_TYPE.TAG:
                   return "fit-content";
-                case CELL_TYPE.TEXT:
-                  return `${width2}px`;
                 default:
                   return `${width2}px`;
               }
@@ -49816,19 +50139,13 @@ function EditableTd({
         }, 1);
       }
     }
-  }, [inputText, cellMenu.isOpen]);
-  function handleTabPress() {
-    updateContent(true);
-  }
+  }, [inputText.length, isMenuOpen(menuId)]);
   function handleCellContextClick(e) {
     return __async(this, null, function* () {
+      if (DEBUG.EDITABLE_TD.HANDLER)
+        console.log("[EditableTd] handleCellContextClick()");
       try {
-        let text = content;
-        if (type === CELL_TYPE.TAG) {
-          const tag = tags.find((tag2) => tag2.selected.includes(cellId));
-          text = addPound(tag.content);
-        }
-        yield navigator.clipboard.writeText(text);
+        yield navigator.clipboard.writeText(content);
         new import_obsidian.Notice("Cell text copied");
       } catch (err) {
         console.log(err);
@@ -49836,197 +50153,237 @@ function EditableTd({
     });
   }
   function handleCellClick(e) {
+    if (DEBUG.EDITABLE_TD.HANDLER)
+      console.log("[EditableTd] handleCellClick()");
     const el = e.target;
     if (el.nodeName === "A")
       return;
     if (type === CELL_TYPE.ERROR)
       return;
-    onFocusClick(cellId);
-  }
-  function closeMenu() {
-    setCellMenu(initialCellMenuState);
-  }
-  function openMenu() {
-    setCellMenu((prevState) => {
-      return __spreadProps(__spreadValues({}, prevState), {
-        isOpen: true,
-        left: -10,
-        top: -5,
-        tagColor: randomColor()
-      });
-    });
-    setInputText(content);
+    openMenu(menuId, MENU_LEVEL.ONE);
   }
   function handleAddTag(text) {
-    onAddTag(cellId, headerId, text, cellMenu.tagColor);
+    if (DEBUG.EDITABLE_TD.HANDLER)
+      console.log(`[EditableTd] handleAddTag("${text}")`);
+    onAddTag(id, headerId, text, cellMenu.tagColor);
     setInputText("");
-    onOutsideClick();
   }
-  function handleTagClick(id) {
-    onTagClick(cellId, id);
-    onOutsideClick();
+  function handleTagClick(tagId) {
+    if (DEBUG.EDITABLE_TD.HANDLER)
+      console.log(`[EditableTd] handleTagClick("${tagId}")`);
+    onTagClick(id, tagId);
   }
-  function updateContent(shouldLock) {
-    if (content !== inputText) {
+  function updateContent(updated) {
+    if (content !== updated) {
       switch (type) {
         case CELL_TYPE.TEXT:
-          onContentChange(cellId, inputText, shouldLock);
-          setInputText("");
+          onContentChange(id, inputText);
           break;
         case CELL_TYPE.NUMBER:
-          onContentChange(cellId, inputText, shouldLock);
-          setInputText("");
+          onContentChange(id, parseInt(inputText));
           break;
-        case CELL_TYPE.TAG:
+        case CELL_TYPE.DATE:
+          onContentChange(id, parseInputDate(inputText));
+          break;
+        case CELL_TYPE.TAG: {
           const tag = tags.find((tag2) => tag2.content === inputText);
           if (tag) {
-            onTagClick(cellId, tag.id);
+            onTagClick(id, tag.id);
           } else {
-            onAddTag(cellId, headerId, inputText, cellMenu.tagColor);
+            onAddTag(id, headerId, inputText, cellMenu.tagColor);
           }
           setInputText("");
           break;
+        }
         default:
           break;
       }
     }
   }
-  function handleOutsideClick() {
-    closingMenu.current = true;
-    onOutsideClick();
+  function handleCheckboxChange(isChecked) {
+    if (DEBUG.EDITABLE_TD.HANDLER)
+      console.log(`[EditableTd] handleCheckboxChange("${isChecked}")`);
+    onContentChange(id, isChecked);
   }
-  (0, import_react9.useEffect)(() => {
-    if (closingMenu.current && !isFocused) {
-      closingMenu.current = false;
-      updateContent(false);
-    }
-  }, [isFocused, closingMenu.current]);
   function renderCell() {
     switch (type) {
       case CELL_TYPE.TEXT:
+        return /* @__PURE__ */ import_react20.default.createElement(TextCell, {
+          text: content
+        });
       case CELL_TYPE.NUMBER:
-        return /* @__PURE__ */ import_react9.default.createElement(TextCell, {
-          content
+        return /* @__PURE__ */ import_react20.default.createElement(DateCell2, {
+          number: content
         });
       case CELL_TYPE.TAG: {
-        const tag = tags.find((tag2) => tag2.selected.includes(cellId));
+        const tag = tags.find((tag2) => tag2.selected.includes(id));
         if (tag)
-          return /* @__PURE__ */ import_react9.default.createElement(TagCell, {
+          return /* @__PURE__ */ import_react20.default.createElement(TagCell, {
             style: { overflow: "hidden" },
             content: tag.content,
             color: tag.color,
             showLink: true
           });
-        return /* @__PURE__ */ import_react9.default.createElement(import_react9.default.Fragment, null);
+        return /* @__PURE__ */ import_react20.default.createElement(import_react20.default.Fragment, null);
       }
+      case CELL_TYPE.DATE:
+        return /* @__PURE__ */ import_react20.default.createElement(DateCell, {
+          date: content
+        });
+      case CELL_TYPE.CHECKBOX:
+        return /* @__PURE__ */ import_react20.default.createElement(CheckboxCell, {
+          isChecked: content.includes("x"),
+          onCheckboxChange: handleCheckboxChange
+        });
       case CELL_TYPE.ERROR:
-        return /* @__PURE__ */ import_react9.default.createElement(ErrorCell, {
+        return /* @__PURE__ */ import_react20.default.createElement(ErrorCell, {
           type: expectedType
         });
       default:
-        return /* @__PURE__ */ import_react9.default.createElement(import_react9.default.Fragment, null);
+        return /* @__PURE__ */ import_react20.default.createElement(import_react20.default.Fragment, null);
     }
   }
-  let tdClassName = "NLT__td";
-  if (type === CELL_TYPE.NUMBER)
-    tdClassName += " NLT__td--number";
-  return /* @__PURE__ */ import_react9.default.createElement("td", {
-    className: tdClassName,
+  function handleInputChange(value) {
+    if (DEBUG.EDITABLE_TD.HANDLER)
+      console.log(`[EditableTd] handleInputChange("${value}")`);
+    setInputText(value);
+  }
+  function renderCellMenu() {
+    switch (type) {
+      case CELL_TYPE.TEXT:
+        return /* @__PURE__ */ import_react20.default.createElement(TextCellEdit, {
+          menuId,
+          isOpen: isMenuOpen(menuId),
+          top: cellMenu.top,
+          left: cellMenu.left,
+          width: cellMenu.width,
+          height: cellMenu.height,
+          inputText,
+          onInputChange: handleInputChange
+        });
+      case CELL_TYPE.NUMBER:
+        return /* @__PURE__ */ import_react20.default.createElement(NumberCellEdit, {
+          menuId,
+          isOpen: isMenuOpen(menuId),
+          top: cellMenu.top,
+          left: cellMenu.left,
+          width: cellMenu.width,
+          height: cellMenu.height,
+          inputText,
+          onInputChange: handleInputChange
+        });
+      case CELL_TYPE.TAG:
+        return /* @__PURE__ */ import_react20.default.createElement(TagCellEdit, {
+          cellId: id,
+          tags,
+          menuId,
+          isOpen: isMenuOpen(menuId),
+          top: cellMenu.top,
+          left: cellMenu.left,
+          width: cellMenu.width,
+          height: cellMenu.height,
+          inputText,
+          color: cellMenu.tagColor,
+          onInputChange: handleInputChange,
+          onColorChange,
+          onAddTag: handleAddTag,
+          onRemoveTagClick,
+          onTagClick: handleTagClick
+        });
+      case CELL_TYPE.DATE:
+        return /* @__PURE__ */ import_react20.default.createElement(DateCellEdit, {
+          menuId,
+          isOpen: isMenuOpen(menuId),
+          top: cellMenu.top,
+          left: cellMenu.left,
+          width: cellMenu.width,
+          height: cellMenu.height,
+          inputText,
+          onInputChange: handleInputChange
+        });
+      default:
+        return /* @__PURE__ */ import_react20.default.createElement(import_react20.default.Fragment, null);
+    }
+  }
+  (0, import_react20.useEffect)(() => {
+    if (!didMount.current) {
+      didMount.current = true;
+    } else {
+      if (!isMenuOpen(menuId)) {
+        if (DEBUG.EDITABLE_TD.USE_EFFECT)
+          console.log(`[EditableTd] useEffect(updateContent("${inputText}"))`);
+        updateContent(inputText);
+      }
+    }
+  }, [didMount.current, isMenuOpen(menuId)]);
+  (0, import_react20.useEffect)(() => {
+    if (DEBUG.EDITABLE_TD.USE_EFFECT)
+      console.log(`[EditableTd] useEffect(setInputText("${content}"))`);
+    if (type === CELL_TYPE.DATE) {
+      if (content != "") {
+        setInputText(parseDateForInput(content));
+      } else {
+        setInputText("");
+      }
+    } else {
+      setInputText(content);
+    }
+  }, []);
+  (0, import_react20.useEffect)(() => {
+    didMount.current = true;
+  }, []);
+  return /* @__PURE__ */ import_react20.default.createElement("td", {
+    className: "NLT__td",
     ref: tdRef,
     onClick: handleCellClick,
     onContextMenu: handleCellContextClick
-  }, /* @__PURE__ */ import_react9.default.createElement(CellEditMenu, {
-    style: {
-      minWidth: type === CELL_TYPE.TAG ? "15rem" : "100px",
-      height: cellMenu.height,
-      width: cellMenu.width,
-      top: `${cellMenu.top}px`,
-      left: `${cellMenu.left}px`
-    },
-    isOpen: cellMenu.isOpen,
-    cellType: type,
-    tags,
-    cellId,
-    tagColor: cellMenu.tagColor,
-    inputText,
-    onInputChange: setInputText,
-    onOutsideClick: handleOutsideClick,
-    onTabPress: handleTabPress,
-    onAddTag: handleAddTag,
-    onRemoveTagClick,
-    onTagClick: handleTagClick
-  }), /* @__PURE__ */ import_react9.default.createElement("div", {
+  }, renderCellMenu(), /* @__PURE__ */ import_react20.default.createElement("div", {
     className: "NLT__td-content-container",
     style: { width }
   }, renderCell()));
 }
 
 // src/app/components/Table/index.tsx
-var import_react10 = __toModule(require_react());
+var import_react21 = __toModule(require_react());
 function Table({ headers, rows, onAddColumn, onAddRow }) {
-  return /* @__PURE__ */ import_react10.default.createElement("table", null, /* @__PURE__ */ import_react10.default.createElement("thead", null, /* @__PURE__ */ import_react10.default.createElement("tr", null, headers.map((header) => /* @__PURE__ */ import_react10.default.createElement(import_react10.default.Fragment, {
+  return /* @__PURE__ */ import_react21.default.createElement("table", null, /* @__PURE__ */ import_react21.default.createElement("thead", null, /* @__PURE__ */ import_react21.default.createElement("tr", null, headers.map((header) => /* @__PURE__ */ import_react21.default.createElement(import_react21.default.Fragment, {
     key: header.id
-  }, header.component)), /* @__PURE__ */ import_react10.default.createElement("th", {
+  }, header.component)), /* @__PURE__ */ import_react21.default.createElement("th", {
     className: "NLT__th"
-  }, /* @__PURE__ */ import_react10.default.createElement("button", {
-    tabIndex: -1,
-    className: "NLT__button NLT__button--sm",
+  }, /* @__PURE__ */ import_react21.default.createElement(Button, {
     onClick: () => onAddColumn()
-  }, "New")))), /* @__PURE__ */ import_react10.default.createElement("tbody", null, rows.map((row) => /* @__PURE__ */ import_react10.default.createElement("tr", {
+  }, "New")))), /* @__PURE__ */ import_react21.default.createElement("tbody", null, rows.map((row) => /* @__PURE__ */ import_react21.default.createElement("tr", {
     key: row.id
-  }, row.component))), /* @__PURE__ */ import_react10.default.createElement("tfoot", null, /* @__PURE__ */ import_react10.default.createElement("tr", null, /* @__PURE__ */ import_react10.default.createElement("td", {
+  }, row.component))), /* @__PURE__ */ import_react21.default.createElement("tfoot", null, /* @__PURE__ */ import_react21.default.createElement("tr", null, /* @__PURE__ */ import_react21.default.createElement("td", {
     className: "NLT__td"
-  }, /* @__PURE__ */ import_react10.default.createElement("button", {
-    tabIndex: -1,
-    className: "NLT__button NLT__button--sm",
+  }, /* @__PURE__ */ import_react21.default.createElement(Button, {
     onClick: () => onAddRow()
-  }, "New")), headers.map((header) => /* @__PURE__ */ import_react10.default.createElement("td", {
+  }, "New")), headers.map((header) => /* @__PURE__ */ import_react21.default.createElement("td", {
     key: header.id,
     className: "NLT__td"
   })))));
 }
 
 // src/app/components/DragMenu/index.tsx
-var import_react14 = __toModule(require_react());
-
-// src/app/components/IconButton/index.tsx
-var import_react11 = __toModule(require_react());
-var IconButton = (0, import_react11.forwardRef)(({ id = "", selected, icon, onClick }, ref) => {
-  let className = "NLT__button NLT__button--reset";
-  if (selected)
-    className += " NLT__selected";
-  return /* @__PURE__ */ import_react11.default.createElement("button", {
-    tabIndex: -1,
-    id: id !== "" ? id : "",
-    className,
-    ref,
-    onClick: (e) => onClick(e)
-  }, icon !== "" && findIcon(icon, "NLT__icon--md"));
-});
-var IconButton_default = IconButton;
+var import_react24 = __toModule(require_react());
 
 // src/app/components/DragMenu/components/DragMenuItem/index.tsx
-var import_react13 = __toModule(require_react());
+var import_react23 = __toModule(require_react());
 
 // src/app/components/IconText/index.tsx
-var import_react12 = __toModule(require_react());
+var import_react22 = __toModule(require_react());
 function IconText({ iconText, icon }) {
-  return /* @__PURE__ */ import_react12.default.createElement("div", {
+  return /* @__PURE__ */ import_react22.default.createElement("div", {
     className: "NLT__icon-text NLT__selectable"
-  }, icon !== "" && findIcon(icon, "NLT__icon--md NLT__margin-right"), /* @__PURE__ */ import_react12.default.createElement("p", null, iconText));
+  }, icon !== "" && findIcon(icon, "NLT__icon--md NLT__margin-right"), /* @__PURE__ */ import_react22.default.createElement("p", null, iconText));
 }
 
 // src/app/components/DragMenu/components/DragMenuItem/index.tsx
 function DragMenuItem({ icon, iconText, onClick }) {
-  function handleKeyUp(e) {
-    if (e.key === "Enter")
-      onClick();
-  }
-  return /* @__PURE__ */ import_react13.default.createElement("div", {
-    onKeyUp: handleKeyUp,
-    onClick,
+  return /* @__PURE__ */ import_react23.default.createElement("div", {
+    onClick: () => onClick(),
     className: "NLT__drag-menu-item"
-  }, /* @__PURE__ */ import_react13.default.createElement(IconText, {
+  }, /* @__PURE__ */ import_react23.default.createElement(IconText, {
     icon,
     iconText
   }));
@@ -50072,66 +50429,53 @@ function DragMenu({
   onDeleteClick,
   onInsertRowClick
 }) {
-  const initialdragMenu = {
+  const [menuId] = (0, import_react24.useState)(v4_default());
+  const [buttonId] = (0, import_react24.useState)(v4_default());
+  const [menuPosition, setMenuPosition] = (0, import_react24.useState)({
     top: 0,
-    left: 0,
-    isOpen: false
-  };
-  const [dragMenu, setDragMenu] = (0, import_react14.useState)(initialdragMenu);
-  const [buttonId] = (0, import_react14.useState)(v4_default());
-  const buttonRef = (0, import_react14.useRef)();
+    left: 0
+  });
+  const { isMenuOpen, openMenu, closeMenu } = useMenu();
   function handleButtonClick(e) {
-    if (dragMenu.isOpen)
+    if (isMenuOpen(menuId))
       return;
-    e.stopPropagation();
-    openMenu();
-  }
-  function handleOutsideClick(e) {
-    if (e !== null)
-      closeMenu();
-  }
-  function openMenu() {
-    if (dragMenu.isOpen) {
-      setDragMenu(initialdragMenu);
-      return;
-    }
-    if (buttonRef.current) {
-      const { width, height } = buttonRef.current.getBoundingClientRect();
-      setDragMenu({
-        left: -width - 62,
-        top: -height,
-        isOpen: true
-      });
-    }
-  }
-  function closeMenu() {
-    setDragMenu(initialdragMenu);
+    openMenu(menuId, MENU_LEVEL.ONE);
   }
   function handleDeleteClick(id) {
     onDeleteClick(id);
-    closeMenu();
+    closeMenu(menuId);
   }
   function handleInsertRowClick(id, insertBelow) {
     onInsertRowClick(id, insertBelow);
-    closeMenu();
+    closeMenu(menuId);
   }
   function handleMoveRowClick(id, moveBelow) {
     onMoveRowClick(id, moveBelow);
-    closeMenu();
+    closeMenu(menuId);
   }
-  return /* @__PURE__ */ import_react14.default.createElement(import_react14.default.Fragment, null, /* @__PURE__ */ import_react14.default.createElement(IconButton_default, {
+  const divRef = (0, import_react24.useCallback)((node) => {
+    if (node) {
+      if (node instanceof HTMLElement) {
+        const { width, height } = node.getBoundingClientRect();
+        setMenuPosition({
+          top: -height,
+          left: -width - 62
+        });
+      }
+    }
+  }, []);
+  return /* @__PURE__ */ import_react24.default.createElement("div", {
+    ref: divRef
+  }, /* @__PURE__ */ import_react24.default.createElement(IconButton, {
     id: buttonId,
     icon: ICON.MORE_VERT,
-    ref: buttonRef,
     onClick: handleButtonClick
-  }), /* @__PURE__ */ import_react14.default.createElement(Menu, {
-    isOpen: dragMenu.isOpen,
-    style: {
-      top: `${dragMenu.top}px`,
-      left: `${dragMenu.left}px`
-    },
-    onOutsideClick: handleOutsideClick
-  }, /* @__PURE__ */ import_react14.default.createElement("div", {
+  }), /* @__PURE__ */ import_react24.default.createElement(Menu, {
+    id: menuId,
+    isOpen: isMenuOpen(menuId),
+    top: menuPosition.top,
+    left: menuPosition.left
+  }, /* @__PURE__ */ import_react24.default.createElement("div", {
     className: "NLT__drag-menu"
   }, Object.values(DRAG_MENU_ITEM).map((item) => {
     if (item.name === DRAG_MENU_ITEM.MOVE_UP.name) {
@@ -50142,7 +50486,7 @@ function DragMenu({
       if (isLastRow)
         return;
     }
-    return /* @__PURE__ */ import_react14.default.createElement(DragMenuItem, {
+    return /* @__PURE__ */ import_react24.default.createElement(DragMenuItem, {
       key: item.name,
       icon: item.icon,
       iconText: item.content,
@@ -50170,13 +50514,66 @@ function DragMenu({
 }
 
 // src/app/components/EditableTh/index.tsx
-var import_react17 = __toModule(require_react());
+var import_react27 = __toModule(require_react());
 
 // src/app/components/HeaderMenu/index.tsx
-var import_react16 = __toModule(require_react());
+var import_react26 = __toModule(require_react());
+
+// src/app/components/HeaderMenu/constants.ts
+var SUBMENU = {
+  EDIT: {
+    name: "edit",
+    content: "Edit",
+    icon: ICON.EDIT
+  },
+  SORT: {
+    name: "sort",
+    content: "Sort",
+    icon: ICON.SORT
+  },
+  MOVE: {
+    name: "move",
+    content: "Move",
+    icon: ICON.MOVE_UP
+  },
+  INSERT: {
+    name: "insert",
+    content: "Insert",
+    icon: ICON.KEYBOARD_DOUBLE_ARROW_RIGHT
+  },
+  TYPE: {
+    name: "type",
+    content: "Type",
+    icon: ICON.TEXT_SNIPPET
+  }
+};
+var TYPE_ITEMS = [
+  { name: "text", content: "Text", type: CELL_TYPE.TEXT },
+  { name: "number", content: "Number", type: CELL_TYPE.NUMBER },
+  { name: "tag", content: "Tag", type: CELL_TYPE.TAG },
+  { name: "date", content: "Date", type: CELL_TYPE.DATE },
+  { name: "checkbox", content: "Checkbox", type: CELL_TYPE.CHECKBOX }
+];
+var SORT = {
+  DEFAULT: {
+    name: "default",
+    content: "Default",
+    icon: ICON.SORT
+  },
+  ASC: {
+    name: "asc",
+    content: "Ascending",
+    icon: ICON.KEYBOARD_ARROW_UP
+  },
+  DESC: {
+    name: "desc",
+    content: "Descending",
+    icon: ICON.KEYBOARD_ARROW_DOWN
+  }
+};
 
 // src/app/components/HeaderMenu/components/HeaderMenuItem/index.tsx
-var import_react15 = __toModule(require_react());
+var import_react25 = __toModule(require_react());
 function HeaderMenuItem({
   icon = "",
   iconText,
@@ -50186,20 +50583,10 @@ function HeaderMenuItem({
   let className = "NLT__header-menu-item NLT__selectable";
   if (selected)
     className += " NLT__selected";
-  function handleKeyUp(e) {
-    if (e.key === "Enter") {
-      e.stopPropagation();
-      onClick();
-    }
-  }
-  return /* @__PURE__ */ import_react15.default.createElement("li", {
+  return /* @__PURE__ */ import_react25.default.createElement("li", {
     className,
-    onClick: (e) => {
-      e.stopPropagation();
-      onClick();
-    },
-    onKeyUp: handleKeyUp
-  }, /* @__PURE__ */ import_react15.default.createElement(IconText, {
+    onClick: () => onClick()
+  }, /* @__PURE__ */ import_react25.default.createElement(IconText, {
     iconText,
     icon
   }));
@@ -50208,8 +50595,10 @@ function HeaderMenuItem({
 // src/app/components/HeaderMenu/index.tsx
 function HeaderMenu({
   isOpen,
-  style,
+  top,
+  left,
   id,
+  menuId,
   content,
   type,
   sortName,
@@ -50223,14 +50612,12 @@ function HeaderMenu({
   onMoveColumnClick,
   onClose
 }) {
-  const [inputText, setInputText] = (0, import_react16.useState)("");
-  const [submenu, setSubmenu] = (0, import_react16.useState)(null);
-  (0, import_react16.useEffect)(() => {
-    setInputText(content);
-  }, [content]);
-  function renderPropertyTypeItems() {
-    return PROPERTY_TYPE_ITEMS.map((item) => {
-      return /* @__PURE__ */ import_react16.default.createElement(HeaderMenuItem, {
+  const [inputText, setInputText] = (0, import_react26.useState)("");
+  const [submenu, setSubmenu] = (0, import_react26.useState)(null);
+  const lastLength = (0, import_react26.useRef)(0);
+  function renderTypeItems() {
+    return TYPE_ITEMS.map((item) => {
+      return /* @__PURE__ */ import_react26.default.createElement(HeaderMenuItem, {
         key: item.name,
         icon: "",
         iconText: item.content,
@@ -50240,9 +50627,9 @@ function HeaderMenu({
     });
   }
   function renderSortItems() {
-    return /* @__PURE__ */ import_react16.default.createElement("ul", {
+    return /* @__PURE__ */ import_react26.default.createElement("ul", {
       className: "NLT__header-menu-ul"
-    }, Object.values(SORT).map((item) => /* @__PURE__ */ import_react16.default.createElement(HeaderMenuItem, {
+    }, Object.values(SORT).map((item) => /* @__PURE__ */ import_react26.default.createElement(HeaderMenuItem, {
       key: item.name,
       icon: item.icon,
       iconText: `Sort ${item.content}`,
@@ -50251,40 +50638,41 @@ function HeaderMenu({
     })));
   }
   function renderInsertItems() {
-    return /* @__PURE__ */ import_react16.default.createElement("ul", {
+    return /* @__PURE__ */ import_react26.default.createElement("ul", {
       className: "NLT__header-menu-ul"
-    }, /* @__PURE__ */ import_react16.default.createElement(HeaderMenuItem, {
+    }, /* @__PURE__ */ import_react26.default.createElement(HeaderMenuItem, {
       icon: ICON.KEYBOARD_DOUBLE_ARROW_LEFT,
       iconText: "Insert Left",
       onClick: () => handleInsertColumnClick(id, false)
-    }), /* @__PURE__ */ import_react16.default.createElement(HeaderMenuItem, {
+    }), /* @__PURE__ */ import_react26.default.createElement(HeaderMenuItem, {
       icon: ICON.KEYBOARD_DOUBLE_ARROW_RIGHT,
       iconText: "Insert Right",
       onClick: () => handleInsertColumnClick(id, true)
     }));
   }
   function renderMoveItems() {
-    return /* @__PURE__ */ import_react16.default.createElement("ul", {
+    return /* @__PURE__ */ import_react26.default.createElement("ul", {
       className: "NLT__header-menu-ul"
-    }, !inFirstHeader && /* @__PURE__ */ import_react16.default.createElement(HeaderMenuItem, {
+    }, !inFirstHeader && /* @__PURE__ */ import_react26.default.createElement(HeaderMenuItem, {
       icon: ICON.KEYBOARD_DOUBLE_ARROW_LEFT,
       iconText: "Move Left",
       onClick: () => handleMoveColumnClick(id, false)
-    }), !inLastHeader && /* @__PURE__ */ import_react16.default.createElement(HeaderMenuItem, {
+    }), !inLastHeader && /* @__PURE__ */ import_react26.default.createElement(HeaderMenuItem, {
       icon: ICON.KEYBOARD_DOUBLE_ARROW_RIGHT,
       iconText: "Move Right",
       onClick: () => handleMoveColumnClick(id, true)
     }));
   }
   function renderEditItems() {
-    return /* @__PURE__ */ import_react16.default.createElement(import_react16.default.Fragment, null, /* @__PURE__ */ import_react16.default.createElement("div", null, /* @__PURE__ */ import_react16.default.createElement("input", {
+    return /* @__PURE__ */ import_react26.default.createElement(import_react26.default.Fragment, null, /* @__PURE__ */ import_react26.default.createElement("div", {
+      style: { marginBottom: "10px" }
+    }, /* @__PURE__ */ import_react26.default.createElement("input", {
+      className: "NLT__input NLT__header-menu-input",
       autoFocus: true,
       type: "text",
       value: inputText,
       onChange: (e) => setInputText(e.target.value)
-    })), /* @__PURE__ */ import_react16.default.createElement("button", {
-      tabIndex: -1,
-      className: "NLT__button NLT__header-menu-delete-button",
+    })), /* @__PURE__ */ import_react26.default.createElement(Button, {
       onClick: () => handleDeleteClick(id)
     }, "Delete"));
   }
@@ -50304,17 +50692,12 @@ function HeaderMenu({
     onTypeSelect(id2, type2);
     onClose();
   }
-  function handleOutsideClick(id2, text) {
-    if (text !== content)
-      onOutsideClick(id2, text);
-    onClose();
-  }
   function handleDeleteClick(id2) {
     onDeleteClick(id2);
     onClose();
   }
   function renderMenu() {
-    return Object.values(SUBMENU).map((item) => /* @__PURE__ */ import_react16.default.createElement(HeaderMenuItem, {
+    return Object.values(SUBMENU).map((item) => /* @__PURE__ */ import_react26.default.createElement(HeaderMenuItem, {
       key: item.name,
       iconText: item.content,
       icon: item.icon,
@@ -50332,28 +50715,43 @@ function HeaderMenu({
           return renderSortItems();
         case SUBMENU.MOVE.name:
           return renderMoveItems();
-        case SUBMENU.PROPERTY_TYPE.name:
-          return renderPropertyTypeItems();
+        case SUBMENU.TYPE.name:
+          return renderTypeItems();
         default:
-          return /* @__PURE__ */ import_react16.default.createElement(import_react16.default.Fragment, null);
+          return /* @__PURE__ */ import_react26.default.createElement(import_react26.default.Fragment, null);
       }
     }
-    return /* @__PURE__ */ import_react16.default.createElement("div", null, /* @__PURE__ */ import_react16.default.createElement("div", {
+    return /* @__PURE__ */ import_react26.default.createElement("div", null, /* @__PURE__ */ import_react26.default.createElement("div", {
       className: "NLT__header-menu-header-container"
-    }, /* @__PURE__ */ import_react16.default.createElement(IconButton_default, {
+    }, /* @__PURE__ */ import_react26.default.createElement(IconButton, {
       icon: ICON.KEYBOARD_BACKSPACE,
       onClick: () => setSubmenu(null)
-    }), /* @__PURE__ */ import_react16.default.createElement("div", {
+    }), /* @__PURE__ */ import_react26.default.createElement("div", {
       className: "NLT__header-menu-header"
     }, submenu.content)), renderSubmenuItems());
   }
-  return /* @__PURE__ */ import_react16.default.createElement(Menu, {
+  (0, import_react26.useEffect)(() => {
+    if (!isOpen) {
+      if (inputText.length !== lastLength.current) {
+        lastLength.current = inputText.length;
+        if (inputText !== content) {
+          onOutsideClick(id, inputText);
+        }
+      }
+      setSubmenu(null);
+    }
+  }, [isOpen, inputText.length, lastLength.current]);
+  (0, import_react26.useEffect)(() => {
+    setInputText(content);
+  }, [content]);
+  return /* @__PURE__ */ import_react26.default.createElement(Menu, {
     isOpen,
-    style,
-    onOutsideClick: () => handleOutsideClick(id, inputText)
-  }, /* @__PURE__ */ import_react16.default.createElement("div", {
+    id: menuId,
+    top,
+    left
+  }, /* @__PURE__ */ import_react26.default.createElement("div", {
     className: "NLT__header-menu"
-  }, submenu !== null ? /* @__PURE__ */ import_react16.default.createElement(Submenu, null) : renderMenu()));
+  }, submenu !== null ? /* @__PURE__ */ import_react26.default.createElement(Submenu, null) : renderMenu()));
 }
 
 // src/app/components/EditableTh/index.tsx
@@ -50374,47 +50772,33 @@ function EditableTh({
   onDeleteClick,
   onSaveClick
 }) {
-  const initialHeaderMenuState2 = {
-    isOpen: false,
+  const [headerPosition, setHeaderPosition] = (0, import_react27.useState)({
     top: 0,
     left: 0
-  };
-  const [headerMenu, setHeaderMenu] = (0, import_react17.useState)(initialHeaderMenuState2);
-  const dragRef = (0, import_react17.useRef)(false);
-  const thRef = (0, import_react17.useRef)(null);
-  const forceUpdate = useForceUpdate();
-  function handleKeyUp(e) {
-    if (e.key === "Enter")
-      openMenu();
-  }
+  });
+  const dragRef = (0, import_react27.useRef)(false);
+  const [menuId] = (0, import_react27.useState)(v4_default());
+  const { isMenuOpen, openMenu, closeMenu } = useMenu();
   function handleHeaderClick(e) {
-    e.stopPropagation();
     if (dragRef.current)
       return;
-    openMenu();
-  }
-  function openMenu() {
-    setHeaderMenu({
-      left: -10,
-      top: -5,
-      isOpen: true
-    });
+    if (isMenuOpen(menuId))
+      return;
+    openMenu(menuId, MENU_LEVEL.ONE);
   }
   function handleMouseMove(e) {
     const target = e.target;
     if (target instanceof HTMLElement) {
       dragRef.current = true;
-      const width2 = e.pageX - thRef.current.getBoundingClientRect().left - 17;
+      let width2 = e.pageX - headerPosition.left - 17;
+      width2 = parseInt(width2.toString());
       if (width2 < 100)
         return;
       onWidthChange(id, width2);
     }
   }
-  function closeMenu() {
-    setHeaderMenu(initialHeaderMenuState2);
-  }
   function handleClose() {
-    closeMenu();
+    closeMenu(menuId);
   }
   function removeEventListeners() {
     window.removeEventListener("mousemove", handleMouseMove);
@@ -50424,21 +50808,29 @@ function EditableTh({
       dragRef.current = false;
     }, 500);
   }
-  (0, import_react17.useEffect)(() => {
-    forceUpdate();
-  }, [forceUpdate]);
-  return /* @__PURE__ */ import_react17.default.createElement("th", {
+  const thRef = (0, import_react27.useCallback)((node) => {
+    if (node) {
+      if (node instanceof HTMLElement) {
+        setTimeout(() => {
+          const { top, left } = node.getBoundingClientRect();
+          setHeaderPosition({
+            top,
+            left
+          });
+        }, 1);
+      }
+    }
+  }, []);
+  return /* @__PURE__ */ import_react27.default.createElement("th", {
     className: "NLT__th NLT__selectable",
     ref: thRef,
-    onKeyUp: handleKeyUp,
     onClick: handleHeaderClick
-  }, /* @__PURE__ */ import_react17.default.createElement(HeaderMenu, {
-    isOpen: headerMenu.isOpen,
-    style: {
-      top: headerMenu.top,
-      left: headerMenu.left
-    },
+  }, /* @__PURE__ */ import_react27.default.createElement(HeaderMenu, {
+    isOpen: isMenuOpen(menuId),
+    top: -4,
+    left: -11,
     id,
+    menuId,
     content,
     index,
     sortName,
@@ -50452,14 +50844,14 @@ function EditableTh({
     onTypeSelect,
     onDeleteClick,
     onClose: handleClose
-  }), /* @__PURE__ */ import_react17.default.createElement("div", {
+  }), /* @__PURE__ */ import_react27.default.createElement("div", {
     className: "NLT__header-content-container",
     style: { width }
-  }, /* @__PURE__ */ import_react17.default.createElement("div", {
+  }, /* @__PURE__ */ import_react27.default.createElement("div", {
     className: "NLT__header-content"
-  }, content), /* @__PURE__ */ import_react17.default.createElement("div", {
+  }, content), /* @__PURE__ */ import_react27.default.createElement("div", {
     className: "NLT__header-resize-container"
-  }, /* @__PURE__ */ import_react17.default.createElement("div", {
+  }, /* @__PURE__ */ import_react27.default.createElement("div", {
     className: "NLT__header-resize",
     onMouseDown: () => {
       window.addEventListener("mousemove", handleMouseMove);
@@ -50469,54 +50861,412 @@ function EditableTh({
   }))));
 }
 
-// src/app/services/dataUtils/index.tsx
-var loadAppData = (plugin, settings, el, sourcePath) => {
-  const parsedTable = parseTableFromEl(el);
-  if (DEBUG) {
-    console.log("PARSING TABLE FROM ELEMENT");
-    console.log(parsedTable);
+// src/app/services/appData/state/header.ts
+var initialHeader = (id, content) => {
+  return {
+    id,
+    content,
+    sortName: SORT.DEFAULT.name,
+    width: "100px",
+    type: CELL_TYPE.TEXT
+  };
+};
+
+// src/app/services/appData/state/tag.ts
+var initialTag = (headerId, cellId, content, color) => {
+  return {
+    id: randomTagId(),
+    headerId,
+    content,
+    color,
+    selected: [cellId]
+  };
+};
+
+// src/app/services/appData/state/row.ts
+var initialRow = (id, creationTime) => {
+  return {
+    id,
+    creationTime
+  };
+};
+
+// src/app/services/appData/state/cell.ts
+var Cell = class {
+  constructor(id, rowId, headerId, type, expectedType) {
+    this.id = id;
+    this.rowId = rowId;
+    this.headerId = headerId;
+    this.type = type;
+    this.expectedType = expectedType;
   }
-  const tableId = findTableId(parsedTable);
-  if (!tableId) {
-    if (DEBUG)
-      console.log("Invalid table id");
-    return { tableId: null, data: null };
+  toString() {
+    return "";
   }
-  if (!validTypeDefinitionRow(parsedTable)) {
-    if (DEBUG)
-      console.log("Invalid type definition row");
-    return { tableId: null, data: null };
+  length() {
+    return 0;
   }
-  if (DEBUG) {
-    console.log("FOUND TABLE ID", tableId);
+};
+var ErrorCell2 = class extends Cell {
+  constructor(id, rowId, headerId, expectedType, content) {
+    super(id, rowId, headerId, CELL_TYPE.ERROR, expectedType);
+    this.content = content;
   }
-  if (settings.appData[sourcePath]) {
-    if (settings.appData[sourcePath][tableId]) {
-      if (DEBUG)
-        console.log("LOADING OLD DATA");
-      const newAppData = findAppData(parsedTable);
-      const merged = mergeAppData(settings.appData[sourcePath][tableId], newAppData);
-      settings.appData[sourcePath][tableId] = merged;
-      plugin.saveSettings();
-      return { tableId, data: merged };
+  toString() {
+    return this.content;
+  }
+};
+var TextCell2 = class extends Cell {
+  constructor(id, rowId, headerId, text = "") {
+    super(id, rowId, headerId, CELL_TYPE.TEXT, null);
+    this.text = text;
+  }
+  length() {
+    return this.text.length;
+  }
+  toString() {
+    return this.text;
+  }
+};
+var NumberCell = class extends Cell {
+  constructor(id, rowId, headerId, number = -1) {
+    super(id, rowId, headerId, CELL_TYPE.NUMBER, null);
+    this.number = number;
+  }
+  length() {
+    if (this.number === -1)
+      return 0;
+    return this.number.toString().length;
+  }
+  toString() {
+    if (this.number === -1)
+      return "";
+    return this.number.toString();
+  }
+};
+var TagCell2 = class extends Cell {
+  constructor(id, rowId, headerId) {
+    super(id, rowId, headerId, CELL_TYPE.TAG, null);
+  }
+};
+var CheckBoxCell = class extends Cell {
+  constructor(id, rowId, headerId, isChecked = false) {
+    super(id, rowId, headerId, CELL_TYPE.CHECKBOX, null);
+    this.isChecked = isChecked;
+  }
+  length() {
+    if (this.isChecked) {
+      return "[x]".length;
+    } else {
+      return "[ ]".length;
     }
   }
-  if (DEBUG)
-    console.log("LOADING NEW DATA");
-  return { tableId, data: findAppData(parsedTable) };
+  toString() {
+    if (this.isChecked) {
+      return "[x]";
+    } else {
+      return "[ ]";
+    }
+  }
 };
+var DateCell3 = class extends Cell {
+  constructor(id, rowId, headerId, date = null) {
+    super(id, rowId, headerId, CELL_TYPE.DATE, null);
+    this.date = date;
+  }
+  length() {
+    if (this.date === null)
+      return 0;
+    return "MM/DD/YY".length;
+  }
+  toString() {
+    if (this.date === null)
+      return "";
+    const day = ("0" + this.date.getDate()).slice(-2);
+    const month = ("0" + (this.date.getMonth() + 1)).slice(-2);
+    const year = this.date.getFullYear();
+    return `${month}/${day}/${year}`;
+  }
+};
+var initialCell = (id, rowId, headerId, type, content = void 0) => {
+  switch (type) {
+    case CELL_TYPE.TEXT:
+      return new TextCell2(id, rowId, headerId, content);
+    case CELL_TYPE.NUMBER:
+      return new NumberCell(id, rowId, headerId, content);
+    case CELL_TYPE.TAG:
+      return new TagCell2(id, rowId, headerId);
+    case CELL_TYPE.CHECKBOX:
+      return new CheckBoxCell(id, rowId, headerId, content);
+    case CELL_TYPE.DATE:
+      return new DateCell3(id, rowId, headerId, content);
+  }
+};
+
+// src/app/services/appData/external/saveUtils.ts
+var findAppData = (parsedTable) => {
+  const HEADER_ROW = 0;
+  const TYPE_DEFINITION_ROW = 1;
+  const COLUMN_ID_ROW = 2;
+  const headers = [];
+  const rows = [];
+  const cells = [];
+  const tags = [];
+  parsedTable.forEach((parsedRow, i) => {
+    if (i === HEADER_ROW) {
+      parsedRow.forEach((th, j) => {
+        if (j !== parsedRow.length - 1)
+          headers.push(initialHeader("", th));
+      });
+    } else if (i === TYPE_DEFINITION_ROW) {
+      parsedRow.forEach((td, j) => {
+        if (j !== parsedRow.length - 1)
+          headers[j].type = td;
+      });
+    } else if (i === COLUMN_ID_ROW) {
+      parsedRow.forEach((td, j) => {
+        if (j !== parsedRow.length - 1)
+          headers[j].id = td;
+      });
+    } else {
+      const row = initialRow(parsedRow[parsedRow.length - 1], getCurrentTimeWithOffset());
+      parsedRow.forEach((td, j) => {
+        if (j !== parsedRow.length - 1) {
+          const cellId = randomCellId();
+          const cellType = findCellType(td, headers[j].type);
+          if (cellType !== headers[j].type) {
+            cells.push(new ErrorCell2(cellId, row.id, headers[j].id, headers[j].type, td));
+            return;
+          }
+          if (cellType === CELL_TYPE.TEXT) {
+            let content = td;
+            content = content.replace(LINE_BREAK_CHARACTER_REGEX("g"), BREAK_LINE_TAG);
+            content = content.replace(AMPERSAND_CHARACTER_REGEX("g"), AMPERSAND);
+            content = parseBoldTags(content);
+            content = parseItalicTags(content);
+            content = parseHighlightTags(content);
+            content = parseUnderlineTags(content);
+            cells.push(new TextCell2(cellId, row.id, headers[j].id, content));
+          } else if (cellType === CELL_TYPE.NUMBER) {
+            const number = td === "" ? -1 : parseInt(td);
+            cells.push(new NumberCell(cellId, row.id, headers[j].id, number));
+          } else if (cellType === CELL_TYPE.DATE) {
+            const date = td === "" ? null : new Date(td);
+            cells.push(new DateCell3(cellId, row.id, headers[j].id, date));
+          } else if (cellType === CELL_TYPE.CHECKBOX) {
+            const isChecked = isCheckBoxChecked(td);
+            cells.push(new CheckBoxCell(cellId, row.id, headers[j].id, isChecked));
+          } else if (cellType === CELL_TYPE.TAG) {
+            cells.push(new TagCell2(cellId, row.id, headers[j].id));
+            if (td !== "") {
+              const content = td;
+              const index = tags.findIndex((tag) => tag.content === content);
+              if (index !== -1) {
+                tags[index].selected.push(cellId);
+              } else {
+                tags.push(initialTag(headers[j].id, cellId, content, randomColor()));
+              }
+            }
+          }
+        }
+      });
+      rows.push(row);
+    }
+  });
+  return {
+    headers,
+    rows,
+    cells,
+    tags,
+    updateTime: 0
+  };
+};
+var appDataToMarkdown = (tableId, data) => {
+  const columnCharLengths = calcColumnCharLengths(tableId, data);
+  const buffer = new AppDataStringBuffer();
+  buffer.createRow();
+  data.headers.forEach((header, i) => {
+    buffer.writeColumn(header.content, columnCharLengths[i]);
+  });
+  buffer.writeColumn("", columnCharLengths[data.headers.length]);
+  buffer.createRow();
+  for (let i = 0; i < data.headers.length + 1; i++) {
+    const content = Array(columnCharLengths[i]).fill("-").join("");
+    buffer.writeColumn(content, columnCharLengths[i]);
+  }
+  buffer.createRow();
+  data.headers.forEach((header, i) => {
+    buffer.writeColumn(header.type, columnCharLengths[i]);
+  });
+  buffer.writeColumn("", columnCharLengths[data.headers.length]);
+  buffer.createRow();
+  data.headers.forEach((header, i) => {
+    buffer.writeColumn(header.id, columnCharLengths[i]);
+  });
+  buffer.writeColumn(tableId, columnCharLengths[data.headers.length]);
+  data.rows.forEach((row) => {
+    buffer.createRow();
+    for (let i = 0; i < data.headers.length; i++) {
+      const cell = data.cells.find((cell2) => cell2.rowId === row.id && cell2.headerId === data.headers[i].id);
+      if (cell.type === CELL_TYPE.TAG) {
+        const tags = data.tags.filter((tag) => tag.selected.includes(cell.id));
+        let content = "";
+        tags.forEach((tag, j) => {
+          if (tag.content === "")
+            return;
+          if (j === 0)
+            content += tag.content;
+          else
+            content += " " + tag.content;
+        });
+        buffer.writeColumn(content, columnCharLengths[i]);
+      } else {
+        buffer.writeColumn(cell.toString(), columnCharLengths[i]);
+      }
+    }
+    buffer.writeColumn(row.id, columnCharLengths[data.headers.length]);
+  });
+  return buffer.toString();
+};
+var findTableRegex = (tableId, headers, rows) => {
+  const regex = [];
+  regex[0] = findHeaderRow(headers);
+  regex[1] = findHyphenRow(headers.length);
+  regex[2] = findTypeDefinitionRow(headers);
+  regex[3] = findColumnRow(tableId, headers);
+  for (let i = 0; i < rows.length; i++) {
+    regex[i + 4] = findRegexRow(headers.length);
+  }
+  const expression = new RegExp(regex.join("\n"));
+  return expression;
+};
+var findHeaderRow = (headers) => {
+  let regex = "\\|";
+  headers.forEach((header) => {
+    regex += `[ \\t]{0,}${header.content}[ \\t]{0,}\\|`;
+  });
+  regex += ".*\\|[ ]*";
+  return regex;
+};
+var findHyphenRow = (numColumns) => {
+  let regex = "\\|";
+  for (let i = 0; i < numColumns + 1; i++)
+    regex += "[ \\t]{0,}[-]{3,}[ \\t]{0,}\\|";
+  regex += "[ ]*";
+  return regex;
+};
+var findTypeDefinitionRow = (headers) => {
+  let regex = "\\|";
+  for (let i = 0; i < headers.length; i++)
+    regex += `[ \\t]{0,}${headers[i].type}[ \\t]{0,}\\|`;
+  regex += ".*\\|[ ]*";
+  return regex;
+};
+var findColumnRow = (tableId, headers) => {
+  let regex = "\\|";
+  for (let i = 0; i < headers.length; i++)
+    regex += `[ \\t]{0,}${headers[i].id}[ \\t]{0,}\\|`;
+  regex += `[ \\t]{0,}${tableId}[ \\t]{0,}\\|[ ]*`;
+  return regex;
+};
+var findRegexRow = (numColumns) => {
+  let regex = "\\|.*\\|";
+  for (let i = 0; i < numColumns; i++)
+    regex += ".*\\|";
+  regex += "[ ]*";
+  return regex;
+};
+var AppDataStringBuffer = class {
+  constructor() {
+    this.string = "";
+  }
+  createRow() {
+    if (this.string !== "")
+      this.string += "\n";
+    this.string += "|";
+  }
+  writeColumn(content, columnCharLength) {
+    this.string += " ";
+    this.string += content;
+    const numWhiteSpace = columnCharLength - content.length;
+    for (let i = 0; i < numWhiteSpace; i++)
+      this.string += " ";
+    this.string += " ";
+    this.string += "|";
+  }
+  toString() {
+    return this.string;
+  }
+};
+var calcColumnCharLengths = (tableId, data) => {
+  const columnCharLengths = [];
+  data.rows.forEach((row) => {
+    if (columnCharLengths[0] < row.id.length)
+      columnCharLengths[0] = row.id.length;
+  });
+  data.headers.forEach((header, i) => {
+    columnCharLengths[i] = header.content.length;
+    if (columnCharLengths[i] < header.type.length)
+      columnCharLengths[i] = header.type.length;
+    if (columnCharLengths[i] < header.id.length)
+      columnCharLengths[i] = header.id.length;
+  });
+  columnCharLengths[data.headers.length] = tableId.length;
+  data.cells.forEach((cell) => {
+    if (cell instanceof Cell) {
+      const index = data.headers.findIndex((header) => header.id === cell.headerId);
+      if (cell.type === CELL_TYPE.TAG) {
+        const arr = data.tags.filter((tag) => tag.selected.includes(cell.id));
+        let content = "";
+        arr.forEach((tag, i) => {
+          if (tag.content !== "") {
+            if (i === 0)
+              content += tag.content;
+            else
+              content += " " + tag.content;
+          }
+        });
+        if (columnCharLengths[index] < content.length)
+          columnCharLengths[index] = content.length;
+      } else {
+        if (columnCharLengths[index] < cell.length())
+          columnCharLengths[index] = cell.length();
+      }
+    }
+  });
+  return columnCharLengths;
+};
+var findTableId = (parsedTable) => {
+  const row = parsedTable[2];
+  if (row) {
+    const cell = row[row.length - 1];
+    if (!cell.match(TABLE_ID_REGEX))
+      return null;
+    return cell;
+  } else {
+    return null;
+  }
+};
+
+// src/app/services/appData/external/persist.ts
 var persistAppData = (plugin, settings, appData, sourcePath, tableId) => {
   if (!settings.appData[sourcePath])
     settings.appData[sourcePath] = {};
   settings.appData[sourcePath][tableId] = appData;
   plugin.saveData(settings);
 };
+
+// src/app/services/appData/external/save.ts
 var saveAppData = (plugin, settings, app2, oldAppData, newAppData, sourcePath, tableId) => __async(void 0, null, function* () {
-  const newData = appDataToMarkdown(tableId, newAppData);
+  const markdown = appDataToMarkdown(tableId, newAppData);
   try {
     const file = app2.workspace.getActiveFile();
     let content = yield app2.vault.cachedRead(file);
-    content = content.replace(findTableRegex(tableId, oldAppData.headers, oldAppData.rows), newData);
+    content = content.replace(findTableRegex(tableId, oldAppData.headers, oldAppData.rows), markdown);
+    if (DEBUG.SAVE_APP_DATA.APP_DATA) {
+      console.log("saveAppData - New app data:");
+      console.log(markdown);
+    }
     newAppData.updateTime = 0;
     persistAppData(plugin, settings, newAppData, sourcePath, tableId);
     yield app2.vault.modify(file, content);
@@ -50525,15 +51275,13 @@ var saveAppData = (plugin, settings, app2, oldAppData, newAppData, sourcePath, t
   }
 });
 
-// src/app/services/appDataUtils/index.ts
+// src/app/services/appData/internal/add.ts
 var addRow = (data) => {
-  const rowId = v4_default();
+  const rowId = randomRowId();
   const tags = [];
   const cells = data.headers.map((header, i) => {
-    const cellId = v4_default();
-    if (header.type === CELL_TYPE.TAG)
-      tags.push(initialTag(header.id, cellId, "", ""));
-    return initialCell(cellId, rowId, header.id, header.type, "");
+    const cellId = randomCellId();
+    return initialCell(cellId, rowId, header.id, header.type);
   });
   return __spreadProps(__spreadValues({}, data), {
     updateTime: Date.now(),
@@ -50543,10 +51291,10 @@ var addRow = (data) => {
   });
 };
 var addColumn = (data) => {
-  const header = initialHeader(`Column ${data.headers.length}`);
+  const header = initialHeader(randomColumnId(), "New Column");
   const cells = [...data.cells];
   data.rows.forEach((row) => {
-    cells.push(initialCell(v4_default(), row.id, header.id, CELL_TYPE.TEXT, ""));
+    cells.push(initialCell(randomCellId(), row.id, header.id, CELL_TYPE.TEXT));
   });
   return __spreadProps(__spreadValues({}, data), {
     updateTime: Date.now(),
@@ -50554,32 +51302,8 @@ var addColumn = (data) => {
     cells
   });
 };
-var findTabbableElement = (data, id) => {
-  const matrix = findTabbableElementMatrix(data);
-  const index = matrix.findIndex((obj) => obj.id === id);
-  return matrix[index];
-};
-var findNextTabbableElement = (data, id) => {
-  const matrix = findTabbableElementMatrix(data);
-  const index = matrix.findIndex((obj) => obj.id === id);
-  return matrix[(index + 1) % matrix.length];
-};
-var findTabbableElementMatrix = (data) => {
-  const tabbableElementMatrix = [];
-  data.rows.forEach((row, i) => {
-    data.headers.forEach((header) => {
-      const cell = data.cells.find((cell2) => cell2.rowId === row.id && cell2.headerId === header.id);
-      tabbableElementMatrix.push({
-        id: cell.id,
-        type: TABBABLE_ELEMENT_TYPE.CELL
-      });
-    });
-  });
-  return tabbableElementMatrix;
-};
 
 // src/app/App.tsx
-var INITIAL_FOCUSED_ELEMENT = { [-1]: TABBABLE_ELEMENT_TYPE.UNFOCUSED };
 function App({
   plugin,
   settings,
@@ -50587,22 +51311,25 @@ function App({
   sourcePath,
   tableId
 }) {
-  const [oldAppData] = (0, import_react18.useState)(data);
-  const [appData, setAppData] = (0, import_react18.useState)(data);
-  const [focusedElement, setFocusedElement] = (0, import_react18.useState)(INITIAL_FOCUSED_ELEMENT);
-  const saveLock = (0, import_react18.useRef)(false);
-  (0, import_react18.useEffect)(() => {
-    if (DEBUG)
-      console.log("[useEffect] Sorting rows.");
-    const element = settings.focusedElement;
-    setFocusedElement(element);
+  const [oldAppData] = (0, import_react28.useState)(data);
+  const [appData, setAppData] = (0, import_react28.useState)(data);
+  const [debounceUpdate, setDebounceUpdate] = (0, import_react28.useState)(0);
+  const saveLock = (0, import_react28.useRef)(false);
+  (0, import_react28.useEffect)(() => {
+    const tableData = settings.appData[sourcePath];
+    if (!tableData) {
+      settings.appData[sourcePath] = {};
+    } else if (!tableData[tableId]) {
+      settings.appData[sourcePath][tableId] = oldAppData;
+    }
+    plugin.saveSettings();
     for (let i = 0; i < appData.headers.length; i++) {
       const header = appData.headers[i];
       if (header.sortName !== SORT.DEFAULT.name)
         sortRows(header.id, header.type, header.sortName, false);
     }
   }, []);
-  (0, import_react18.useEffect)(() => {
+  (0, import_react28.useEffect)(() => {
     function handleUpdate() {
       return __async(this, null, function* () {
         if (app) {
@@ -50611,8 +51338,6 @@ function App({
           if (saveLock.current)
             return;
           try {
-            if (DEBUG)
-              console.log("SAVING DATA");
             yield saveAppData(plugin, settings, app, oldAppData, appData, sourcePath, tableId);
           } catch (err) {
             console.log(err);
@@ -50622,60 +51347,44 @@ function App({
     }
     handleUpdate();
   }, [appData.updateTime, saveLock.current]);
-  (0, import_react18.useEffect)(() => {
-    if (saveLock) {
-      saveLock.current = false;
+  (0, import_react28.useEffect)(() => {
+    let intervalId = null;
+    function startTimer() {
+      intervalId = setInterval(() => {
+        if (Date.now() - debounceUpdate < 250)
+          return;
+        clearInterval(intervalId);
+        setDebounceUpdate(0);
+        setAppData((prevState) => {
+          return __spreadProps(__spreadValues({}, prevState), {
+            updateTime: Date.now()
+          });
+        });
+      }, 100);
     }
-  }, [focusedElement]);
-  function resetFocusedElement() {
-    updateFocusedElement(INITIAL_FOCUSED_ELEMENT);
-  }
-  function updateFocusedElement(element) {
-    setFocusedElement(element);
-    settings.focusedElement = element;
-    plugin.saveSettings();
-  }
-  function handleCellFocusClick(id) {
-    const element = findTabbableElement(appData, id);
-    updateFocusedElement(element);
-  }
-  function handleFocus() {
-    plugin.focusTable(tableId, sourcePath);
-  }
-  function handleKeyUp(e) {
-    return __async(this, null, function* () {
-      if (DEBUG)
-        console.log("[handler] handleKeyUp called.");
-      if (e.key === "Tab") {
-        const prevElement = __spreadValues({}, focusedElement);
-        const nextElement = findNextTabbableElement(appData, prevElement.id);
-        updateFocusedElement(nextElement);
-      }
-    });
-  }
+    if (debounceUpdate !== 0)
+      startTimer();
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, [debounceUpdate]);
   function handleAddColumn() {
-    if (DEBUG)
-      console.log("[handler]: handleAddColumn called.");
     setAppData((prevState) => {
       return addColumn(prevState);
     });
   }
   function handleAddRow() {
-    if (DEBUG)
-      console.log("[handler]: handleAddRow called.");
     setAppData((prevState) => {
       const newData = addRow(prevState);
-      const focusedElement2 = {
+      const focusedElement = {
         id: newData.cells[newData.cells.length - newData.headers.length].id,
         type: TABBABLE_ELEMENT_TYPE.CELL
       };
-      settings.focusedElement = focusedElement2;
+      settings.focusedElement = focusedElement;
       return newData;
     });
   }
   function handleHeaderSave(id, updatedContent) {
-    if (DEBUG)
-      console.log("[handler]: handleHeaderSave called.");
     setAppData((prevState) => {
       return __spreadProps(__spreadValues({}, prevState), {
         updateTime: Date.now(),
@@ -50690,8 +51399,6 @@ function App({
     });
   }
   function handleHeaderSortSelect(id, type, sortName) {
-    if (DEBUG)
-      console.log("[handler]: handleHeaderSort called.");
     setAppData((prevState) => {
       return __spreadProps(__spreadValues({}, prevState), {
         updateTime: Date.now(),
@@ -50704,20 +51411,15 @@ function App({
     });
     sortRows(id, type, sortName);
   }
-  function handleCellContentChange(id, content, shouldLock) {
-    if (DEBUG)
-      console.log("[handler]: handleCellContentChange called.");
-    if (shouldLock) {
-      saveLock.current = true;
-    }
+  function handleCellContentChange(id, content) {
+    if (DEBUG.APP.HANDLER)
+      console.log(`[App]: handleCellContentChange("${id}", ${content}).`);
     setAppData((prevState) => {
       return __spreadProps(__spreadValues({}, prevState), {
         updateTime: Date.now(),
         cells: prevState.cells.map((cell) => {
           if (cell.id === id) {
-            return __spreadProps(__spreadValues({}, cell), {
-              content
-            });
+            return initialCell(cell.id, cell.rowId, cell.headerId, cell.type, content);
           }
           return cell;
         })
@@ -50725,8 +51427,6 @@ function App({
     });
   }
   function handleAddTag(cellId, headerId, content, color) {
-    if (DEBUG)
-      console.log("[handler]: handleAddTag called.");
     setAppData((prevState) => {
       return __spreadProps(__spreadValues({}, prevState), {
         updateTime: Date.now(),
@@ -50745,8 +51445,6 @@ function App({
     }).filter((tag) => tag.selected.length !== 0);
   }
   function handleTagClick(cellId, tagId) {
-    if (DEBUG)
-      console.log("[handler]: handleTagClick called.");
     const found = appData.tags.find((tag) => tag.id === tagId);
     if (found.selected.includes(cellId))
       return;
@@ -50767,8 +51465,6 @@ function App({
     });
   }
   function handleRemoveTagClick(cellId, tagId) {
-    if (DEBUG)
-      console.log("[handler]: handleRemoveTagClick called.");
     setAppData((prevState) => {
       return __spreadProps(__spreadValues({}, prevState), {
         updateTime: Date.now(),
@@ -50788,7 +51484,7 @@ function App({
             const tagB = appData.tags.find((tag) => tag.selected.includes(cellB.id));
             return tagA.content.localeCompare(tagB.content);
           } else {
-            return cellA.content.localeCompare(cellB.content);
+            return cellA.toString().localeCompare(cellB.toString());
           }
         } else if (sortName === SORT.DESC.name) {
           if (headerType === CELL_TYPE.TAG) {
@@ -50796,7 +51492,7 @@ function App({
             const tagB = appData.tags.find((tag) => tag.selected.includes(cellB.id));
             return tagB.content.localeCompare(tagA.content);
           } else {
-            return cellB.content.localeCompare(cellA.content);
+            return cellB.toString().localeCompare(cellA.toString());
           }
         } else {
           return a.creationTime - b.creationTime;
@@ -50809,8 +51505,6 @@ function App({
     });
   }
   function handleDeleteHeaderClick(id) {
-    if (DEBUG)
-      console.log("[handler]: handleDeleteHeaderClick called.");
     setAppData((prevState) => {
       return __spreadProps(__spreadValues({}, prevState), {
         updateTime: Date.now(),
@@ -50820,8 +51514,6 @@ function App({
     });
   }
   function handleDeleteRowClick(rowId) {
-    if (DEBUG)
-      console.log("[handler]: handleDeleteRowClick called.");
     setAppData((prevState) => {
       return __spreadProps(__spreadValues({}, prevState), {
         updateTime: Date.now(),
@@ -50831,8 +51523,6 @@ function App({
     });
   }
   function handleMoveRowClick(id, moveBelow) {
-    if (DEBUG)
-      console.log("[handler]: handleMoveRowClick called.");
     setAppData((prevState) => {
       const index = prevState.rows.findIndex((row) => row.id === id);
       const moveIndex = moveBelow ? index + 1 : index - 1;
@@ -50851,8 +51541,6 @@ function App({
     });
   }
   function handleWidthChange(id, newWidth) {
-    if (DEBUG)
-      console.log("[handler]: handleWidthChange called.");
     setAppData((prevState) => {
       return __spreadProps(__spreadValues({}, prevState), {
         headers: prevState.headers.map((header) => {
@@ -50862,14 +51550,12 @@ function App({
             });
           }
           return header;
-        }),
-        updateTime: Date.now()
+        })
       });
     });
+    setDebounceUpdate(Date.now());
   }
   function handleMoveColumnClick(id, moveRight) {
-    if (DEBUG)
-      console.log("[handler]: handleMoveColumnClick called.");
     setAppData((prevState) => {
       const index = prevState.headers.findIndex((header) => header.id === id);
       const moveIndex = moveRight ? index + 1 : index - 1;
@@ -50884,14 +51570,12 @@ function App({
     });
   }
   function handleInsertColumnClick(id, insertRight) {
-    if (DEBUG)
-      console.log("[handler]: handleInsertColumnClick called.");
     setAppData((prevState) => {
       const header = prevState.headers.find((header2) => header2.id === id);
       const index = prevState.headers.indexOf(header);
       const insertIndex = insertRight ? index + 1 : index;
-      const headerToInsert = initialHeader(`Column ${insertIndex + 1}`);
-      const cells = prevState.rows.map((row) => initialCell(v4_default(), row.id, headerToInsert.id, headerToInsert.type, ""));
+      const headerToInsert = initialHeader(randomColumnId(), "New Column");
+      const cells = prevState.rows.map((row) => initialCell(randomCellId(), row.id, headerToInsert.id, headerToInsert.type));
       const headers = [...prevState.headers];
       headers.splice(insertIndex, 0, headerToInsert);
       return __spreadProps(__spreadValues({}, prevState), {
@@ -50902,17 +51586,10 @@ function App({
     });
   }
   function handleInsertRowClick(id, insertBelow = false) {
-    if (DEBUG)
-      console.log("[handler]: handleHeaderInsertRowClick called.");
-    const rowId = v4_default();
+    const rowId = randomRowId();
     setAppData((prevState) => {
       const tags = [];
-      const cells = prevState.headers.map((header) => {
-        const cellId = v4_default();
-        if (header.type === CELL_TYPE.TAG)
-          tags.push(initialTag(header.id, cellId, "", ""));
-        return initialCell(cellId, rowId, header.id, header.type, "");
-      });
+      const cells = prevState.headers.map((header) => initialCell(randomCellId(), rowId, header.id, header.type));
       const rows = [...prevState.rows];
       const index = prevState.rows.findIndex((row) => row.id === id);
       const insertIndex = insertBelow ? index + 1 : index;
@@ -50926,8 +51603,6 @@ function App({
     });
   }
   function handleHeaderTypeSelect(id, cellType) {
-    if (DEBUG)
-      console.log("[handler]: handleHeaderTypeSelect called.");
     const header = appData.headers.find((header2) => header2.id === id);
     if (header.type === cellType)
       return;
@@ -50941,29 +51616,36 @@ function App({
         }),
         cells: prevState.cells.map((cell) => {
           if (cell.headerId === id) {
-            return __spreadProps(__spreadValues({}, cell), {
-              type: cellType,
-              content: ""
-            });
+            return initialCell(cell.id, cell.rowId, cell.headerId, cellType);
           }
           return cell;
         })
       });
     });
   }
-  function handleCellOutsideClick() {
-    resetFocusedElement();
+  function handleChangeColor(tagId, color) {
+    setAppData((prevState) => {
+      return __spreadProps(__spreadValues({}, prevState), {
+        tags: prevState.tags.map((tag) => {
+          if (tag.id === tagId) {
+            return __spreadProps(__spreadValues({}, tag), {
+              color
+            });
+          }
+          return tag;
+        }),
+        updateTime: Date.now()
+      });
+    });
   }
-  return /* @__PURE__ */ import_react18.default.createElement("div", {
+  return /* @__PURE__ */ import_react28.default.createElement("div", {
     className: "NLT__app",
-    tabIndex: 0,
-    onKeyUp: handleKeyUp,
-    onClick: handleFocus
-  }, /* @__PURE__ */ import_react18.default.createElement(Table, {
+    tabIndex: 0
+  }, /* @__PURE__ */ import_react28.default.createElement(Table, {
     headers: appData.headers.map((header, j) => {
       const { id, content, width, type, sortName } = header;
       return __spreadProps(__spreadValues({}, header), {
-        component: /* @__PURE__ */ import_react18.default.createElement(EditableTh, {
+        component: /* @__PURE__ */ import_react28.default.createElement(EditableTh, {
           key: id,
           id,
           width,
@@ -50985,34 +51667,22 @@ function App({
     }),
     rows: appData.rows.map((row, i) => {
       return __spreadProps(__spreadValues({}, row), {
-        component: /* @__PURE__ */ import_react18.default.createElement(import_react18.default.Fragment, null, appData.headers.map((header, j) => {
-          const {
-            id,
-            type,
-            headerId,
-            content,
-            expectedType
-          } = appData.cells.find((cell) => cell.rowId === row.id && cell.headerId === header.id);
-          return /* @__PURE__ */ import_react18.default.createElement(EditableTd, {
-            key: id,
-            headerId,
+        component: /* @__PURE__ */ import_react28.default.createElement(import_react28.default.Fragment, null, appData.headers.map((header, j) => {
+          const cell = appData.cells.find((cell2) => cell2.rowId === row.id && cell2.headerId === header.id);
+          return /* @__PURE__ */ import_react28.default.createElement(EditableTd, {
+            key: cell.id,
+            cell,
             width: header.width,
-            onFocusClick: handleCellFocusClick,
-            onOutsideClick: handleCellOutsideClick,
-            isFocused: focusedElement.id === id,
-            cellId: id,
-            type,
-            content,
-            expectedType,
             tags: appData.tags.filter((tag) => tag.headerId === header.id),
             onTagClick: handleTagClick,
             onRemoveTagClick: handleRemoveTagClick,
             onContentChange: handleCellContentChange,
+            onColorChange: handleChangeColor,
             onAddTag: handleAddTag
           });
-        }), /* @__PURE__ */ import_react18.default.createElement("td", {
+        }), /* @__PURE__ */ import_react28.default.createElement("td", {
           className: "NLT__td"
-        }, /* @__PURE__ */ import_react18.default.createElement(DragMenu, {
+        }, /* @__PURE__ */ import_react28.default.createElement(DragMenu, {
           rowId: row.id,
           isFirstRow: i === 0,
           isLastRow: i === appData.rows.length - 1,
@@ -51026,6 +51696,190 @@ function App({
     onAddRow: handleAddRow
   }));
 }
+
+// src/app/services/appData/external/loadUtils.ts
+var parseTableFromEl = (el) => {
+  const table = [];
+  const tr = el.getElementsByTagName("tr");
+  const th = tr[0].getElementsByTagName("th");
+  let row = [];
+  for (let i = 0; i < th.length; i++)
+    row.push(th[i].textContent);
+  table.push(row);
+  for (let i = 1; i < tr.length; i++) {
+    const td = tr[i].getElementsByTagName("td");
+    row = [];
+    for (let j = 0; j < td.length; j++) {
+      let sanitized = sanitizeHTML(td[j].innerHTML);
+      sanitized = stripLinks(sanitized);
+      row.push(sanitized);
+    }
+    table.push(row);
+  }
+  return table;
+};
+
+// src/app/services/appData/external/merge.ts
+var updateAppDataFromSavedState = (oldData, newData) => {
+  const updated = __spreadValues({}, newData);
+  newData.headers.forEach((header, i) => {
+    const oldHeader = oldData.headers.find((h) => h.id === header.id);
+    if (oldHeader) {
+      const { sortName, width } = oldHeader;
+      updated.headers[i].sortName = sortName;
+      updated.headers[i].width = width;
+    }
+  });
+  newData.rows.forEach((row, i) => {
+    const oldRow = oldData.rows.find((row2) => row2.id === row2.id);
+    if (oldRow) {
+      const { creationTime } = oldRow;
+      updated.rows[i].creationTime = creationTime;
+    }
+  });
+  newData.tags.forEach((tag, i) => {
+    const oldTag = oldData.tags.find((t) => t.headerId === tag.headerId && t.content === tag.content);
+    if (oldTag) {
+      const { color } = oldTag;
+      updated.tags[i].color = color;
+    }
+  });
+  return updated;
+};
+
+// src/app/services/appData/debug/index.ts
+var appDataIdsToMarkdown = (tableId, data) => {
+  const columnCharLengths = calcColumnCharLengths(tableId, data);
+  const buffer = new AppDataStringBuffer();
+  buffer.createRow();
+  data.headers.forEach((header, i) => {
+    buffer.writeColumn(header.content, columnCharLengths[i]);
+  });
+  buffer.writeColumn("", columnCharLengths[data.headers.length]);
+  buffer.createRow();
+  for (let i = 0; i < data.headers.length + 1; i++) {
+    const content = Array(columnCharLengths[i]).fill("-").join("");
+    buffer.writeColumn(content, columnCharLengths[i]);
+  }
+  buffer.createRow();
+  data.headers.forEach((header, i) => {
+    buffer.writeColumn(header.type, columnCharLengths[i]);
+  });
+  buffer.writeColumn("", columnCharLengths[data.headers.length]);
+  buffer.createRow();
+  data.headers.forEach((header, i) => {
+    buffer.writeColumn(header.id, columnCharLengths[i]);
+  });
+  buffer.writeColumn(tableId, columnCharLengths[data.headers.length]);
+  data.rows.forEach((row) => {
+    buffer.createRow();
+    for (let i = 0; i < data.headers.length; i++) {
+      const cell = data.cells.find((cell2) => cell2.rowId === row.id && cell2.headerId === data.headers[i].id);
+      if (cell.type === CELL_TYPE.TAG) {
+        const tagIds = data.tags.filter((tag) => tag.selected.includes(cell.id)).map((tag) => tag.id);
+        buffer.writeColumn(tagIds.join(", "), columnCharLengths[i]);
+      } else {
+        buffer.writeColumn(cell.id, columnCharLengths[i]);
+      }
+    }
+    buffer.writeColumn(row.id, columnCharLengths[data.headers.length]);
+  });
+  return buffer.toString();
+};
+var appDataTypesToMarkdown = (tableId, data) => {
+  const columnCharLengths = calcColumnCharLengths(tableId, data);
+  const buffer = new AppDataStringBuffer();
+  buffer.createRow();
+  data.headers.forEach((header, i) => {
+    buffer.writeColumn(header.content, columnCharLengths[i]);
+  });
+  buffer.writeColumn("", columnCharLengths[data.headers.length]);
+  buffer.createRow();
+  for (let i = 0; i < data.headers.length + 1; i++) {
+    const content = Array(columnCharLengths[i]).fill("-").join("");
+    buffer.writeColumn(content, columnCharLengths[i]);
+  }
+  buffer.createRow();
+  data.headers.forEach((header, i) => {
+    buffer.writeColumn(header.type, columnCharLengths[i]);
+  });
+  buffer.writeColumn("", columnCharLengths[data.headers.length]);
+  buffer.createRow();
+  data.headers.forEach((header, i) => {
+    buffer.writeColumn(header.id, columnCharLengths[i]);
+  });
+  buffer.writeColumn(tableId, columnCharLengths[data.headers.length]);
+  data.rows.forEach((row) => {
+    buffer.createRow();
+    for (let i = 0; i < data.headers.length; i++) {
+      const cell = data.cells.find((cell2) => cell2.rowId === row.id && cell2.headerId === data.headers[i].id);
+      buffer.writeColumn(cell.type, columnCharLengths[i]);
+    }
+    buffer.writeColumn(row.id, columnCharLengths[data.headers.length]);
+  });
+  return buffer.toString();
+};
+
+// src/app/services/appData/external/load.ts
+var loadAppData = (plugin, settings, el, sourcePath) => {
+  const parsedTable = parseTableFromEl(el);
+  if (DEBUG.LOAD_APP_DATA.PARSED_TABLE) {
+    console.log("[load][loadAppData]: parsedTableFromEl");
+    console.log(parsedTable);
+  }
+  const tableId = findTableId(parsedTable);
+  let isValidTable = true;
+  if (!tableId) {
+    console.log("NLT: Invalid table id");
+    isValidTable = false;
+  } else if (!hasValidHeaderRow(parsedTable)) {
+    console.log(`NLT: Invalid header row in ${tableId}`);
+    isValidTable = false;
+  } else if (!hasValidTypeDefinitionRow(parsedTable)) {
+    console.log(`NLT: Invalid type definition row in ${tableId}`);
+    isValidTable = false;
+  } else if (!hasValidColumnIds(parsedTable)) {
+    console.log(`NLT: Invalid column ids in ${tableId}`);
+    isValidTable = false;
+  } else if (!hasValidRowIds(parsedTable)) {
+    console.log(`NLT: Invalid row ids in ${tableId}`);
+    isValidTable = false;
+  }
+  if (!isValidTable) {
+    return { tableId: null, data: null };
+  }
+  if (settings.appData[sourcePath]) {
+    if (settings.appData[sourcePath][tableId]) {
+      if (settings.appData[sourcePath][tableId].headers) {
+        const oldData = settings.appData[sourcePath][tableId];
+        if (DEBUG.LOAD_APP_DATA.DATA) {
+          console.log("[load]: loadAppData");
+          console.log("Loading from cache.");
+          console.log(oldData);
+        }
+        const data2 = findAppData(parsedTable);
+        const updated = updateAppDataFromSavedState(oldData, data2);
+        plugin.saveSettings();
+        if (DEBUG.LOAD_APP_DATA.IDS)
+          console.log(appDataIdsToMarkdown(tableId, data2));
+        if (DEBUG.LOAD_APP_DATA.TYPES)
+          console.log(appDataTypesToMarkdown(tableId, data2));
+        return { tableId, data: updated };
+      }
+    }
+  }
+  const data = findAppData(parsedTable);
+  if (DEBUG.LOAD_APP_DATA.DATA) {
+    console.log("[load]: loadAppData");
+    console.log("Loading new app data.");
+    console.log(data);
+  }
+  if (DEBUG.LOAD_APP_DATA.IDS)
+    console.log(appDataIdsToMarkdown(tableId, data));
+  if (DEBUG.LOAD_APP_DATA.TYPES)
+    console.log(appDataTypesToMarkdown(tableId, data));
+  return { tableId, data };
+};
 
 // src/NLTTable.tsx
 var NLTTable = class extends import_obsidian2.MarkdownRenderChild {
@@ -51041,19 +51895,37 @@ var NLTTable = class extends import_obsidian2.MarkdownRenderChild {
       const { tableId, data } = loadAppData(this.plugin, this.settings, this.containerEl, this.sourcePath);
       if (data) {
         this.el = this.containerEl.createEl("div");
-        import_react_dom.default.render(/* @__PURE__ */ import_react19.default.createElement(AppContext.Provider, {
-          value: this.app
-        }, /* @__PURE__ */ import_react19.default.createElement(App, {
+        import_react_dom.default.render(/* @__PURE__ */ import_react29.default.createElement(FocusProvider, {
+          plugin: this.plugin,
+          sourcePath: this.sourcePath,
+          tableId
+        }, /* @__PURE__ */ import_react29.default.createElement(MenuProvider, null, /* @__PURE__ */ import_react29.default.createElement(App, {
           plugin: this.plugin,
           settings: this.settings,
           data,
           sourcePath: this.sourcePath,
           tableId
-        })), this.el);
+        }))), this.el);
         this.containerEl.children[0].replaceWith(this.el);
       }
     });
   }
+};
+
+// src/app/services/settings/index.ts
+var DEFAULT_SETTINGS = {
+  appData: {},
+  focusedElement: { id: "-1", type: TABBABLE_ELEMENT_TYPE.UNFOCUSED }
+};
+
+// src/app/services/appData/mock/index.ts
+var createEmptyMarkdownTable = (tableId, columnId) => {
+  const rows = [];
+  rows[0] = "| New Column       |                  |";
+  rows[1] = "| ---------------- | ---------------- |";
+  rows[2] = "| text             |                  |";
+  rows[3] = `| ${columnId} | ${tableId}  |`;
+  return rows.join("\n");
 };
 
 // main.ts
@@ -51066,6 +51938,9 @@ var NltPlugin = class extends import_obsidian3.Plugin {
         tableId,
         sourcePath
       };
+    };
+    this.blurTable = () => {
+      this.focused = null;
     };
   }
   onload() {
@@ -51099,7 +51974,7 @@ var NltPlugin = class extends import_obsidian3.Plugin {
       name: "Add table",
       hotkeys: [{ modifiers: ["Mod", "Shift"], key: "=" }],
       editorCallback: (editor) => {
-        editor.replaceSelection(createEmptyTable(randomTableId()));
+        editor.replaceSelection(createEmptyMarkdownTable(randomTableId(), randomColumnId()));
       }
     });
     this.addCommand({
@@ -51112,6 +51987,8 @@ var NltPlugin = class extends import_obsidian3.Plugin {
           const oldData = this.settings.appData[sourcePath][tableId];
           const newData = addColumn(oldData);
           yield saveAppData(this, this.settings, app, oldData, newData, sourcePath, tableId);
+        } else {
+          new import_obsidian3.Notice("No table focused. Please click a table to preform this operation.");
         }
       })
     });
@@ -51124,13 +52001,10 @@ var NltPlugin = class extends import_obsidian3.Plugin {
           const { tableId, sourcePath } = this.focused;
           const oldData = this.settings.appData[sourcePath][tableId];
           const newData = addRow(oldData);
-          const focusedElement = {
-            id: newData.cells[newData.cells.length - newData.headers.length].id,
-            type: TABBABLE_ELEMENT_TYPE.CELL
-          };
-          this.settings.focusedElement = focusedElement;
-          yield this.saveSettings();
+          console.log(appDataToMarkdown(tableId, newData));
           yield saveAppData(this, this.settings, app, oldData, newData, sourcePath, tableId);
+        } else {
+          new import_obsidian3.Notice("No table focused. Please click a table to preform this operation.");
         }
       })
     });
