@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Untitled.md",
+            "file": "Math/Discrete Math/Questions.md",
             "mode": "source",
             "source": false
           }
@@ -118,7 +118,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Untitled.md",
+                "file": "Math/Discrete Math/Questions.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -182,20 +182,19 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "active": "f45d27580ed81467",
   "lastOpenFiles": [
+    "Math/Discrete Math/Questions.md",
+    "Bond.Market.md",
+    "365 economy 2021.pdf.md",
     "Untitled.md",
     "Homework Template.md",
     "Math/Discrete Math/My methods.md",
     "Math/Discrete Math/Chapter 1 - Logic and Proofs/;1.4 - Predicate Logic/Subnotes/Logical Equivalences with Quantifiers.md",
     "Math/Discrete Math/Chapter 1 - Logic and Proofs/;1.4 - Predicate Logic/;1.4 - Predicate Logic.md",
     "Math/Discrete Math/Chapter 1 - Logic and Proofs/;1.4 - Predicate Logic/Subnotes/De Morgan’s Law for Quantifiers.md",
-    "Math/Discrete Math/Chapter 1 - Logic and Proofs/;1.4 - Predicate Logic/Untitled.md",
-    "Math/Discrete Math/Questions.md",
-    "Math/Discrete Math/Chapter 1 - Logic and Proofs/Chapter 1 - Logic and Proofs.md",
-    "Math/Discrete Math/Chapter 1 - Logic and Proofs/;1.4 - Predicate Logic/English To Logic With Quantifiers.md"
+    "Math/Discrete Math/Chapter 1 - Logic and Proofs/;1.4 - Predicate Logic/Untitled.md"
   ]
 }
