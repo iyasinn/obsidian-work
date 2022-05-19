@@ -224,6 +224,8 @@ development
 discount
 distribution
 de
+demorgan
+distirbute
 sentence
 stability
 society
@@ -410,6 +412,7 @@ synonyms
 speak
 specifications
 strong
+sometimes
 It
 Intersgniw
 IHDR
@@ -555,6 +558,7 @@ fit
 fits
 funny
 fujnny
+fasle
 that
 true
 their
@@ -1467,6 +1471,7 @@ awell
 applying
 asserts
 against
+arbitaryar
 urgent
 unknown
 used
@@ -1693,6 +1698,8 @@ person
 phrase
 program
 particularly
+predicat
+problem
 with
 will
 waht
@@ -1835,6 +1842,7 @@ Defining
 Dated
 DOING
 Distributing
+Define
 Engelbart
 Examples
 EA
@@ -2003,6 +2011,7 @@ Treasury
 TALK
 THEY
 Text
+Test
 Canada
 Cool
 Compound
@@ -2082,6 +2091,7 @@ COMMON
 COMPARE
 Carrol
 Conceptual
+Cases
 very
 variables
 values
@@ -2129,6 +2139,8 @@ view
 varying
 varaibles
 visited
+vlaues
+vHxSk
 logic
 letter
 logical
@@ -2500,6 +2512,7 @@ GGZ
 Gy
 Given
 Govt
+Graphs
 Variable
 Vw
 Vuv
@@ -2658,6 +2671,7 @@ required
 render
 russion
 russian
+representing
 Operators
 Operator
 Oy
@@ -2712,6 +2726,7 @@ Overview
 Objects
 One
 OBVIOUS
+Others
 Negation
 NOT
 NEW
@@ -2945,6 +2960,7 @@ Bills
 Binding
 Bound
 BACK
+Both
 just
 jvi
 jsviAQ
@@ -3284,6 +3300,7 @@ quantiifcation
 quantiifer
 quantifer
 quantified
+quantiifers
 QB
 QT
 Qc
@@ -3401,6 +3418,8 @@ Show
 Such
 System
 Summarize
+Showing
+Showring
 XH
 Xy
 XD

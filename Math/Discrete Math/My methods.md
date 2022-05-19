@@ -21,7 +21,10 @@ MAKE TEST CASES
 
 #### Equivalences
 
-- try going backwards. Like using reverse laws 
+- try going backwards. Like using reverse laws
+	- For example: -(-p V -q). You can do demorgan inside….or you can do demorgan outside. Both actually work out very well.  
+- Also sometimes you can distirbute one term out, or another term out. Do it in a way such that your problem is MOST simplified.
+- English 
 
 First translate very straightforwardly, then make it easy. 
 
@@ -39,8 +42,13 @@ First translate very straightforwardly, then make it easy.
 	- And by showing that if statement 2 is true, then statement 1 is true. 
 		- We could also potentially look at them being false
 	- This works because being logically equivalent implies that the $\leftrightarrow$ is a tautology. 
+- OR
+- When making a random domain and predicate, make your predicate be **directional**, liek P(x,y) = “x gave y money 
 
- ---
+
+
+
+- ---
 
 
 #### Problem Solving
@@ -65,7 +73,9 @@ I always given an answer the nmove on
 
 
 
-#### Proving something is a tautology 
+
+
+#### Proving something is a tautology or contradiction 
 - Logical equivalences to make it True 
 - Even easier, PROVE it can’t be false. Look at the secenario in which it might be false and prove it isn’t possible. 
 
@@ -80,6 +90,28 @@ WHEN DOING MATH PROBLEMS TALK ABOUT CONCEPTS YOU HAVE LEARNED, EVEN IF THEY ARE 
 
 
 #### Working with quantifiers 
+
+###### Test Cases 
+
+
+![[Drawing 2022-05-18 23.54.57.excalidraw]]
+
+![[Pasted image 20220519004442.png]]
+
+
+##### Showing that a for all is true/fasle
+- True: Show that it works for all vlaues
+- False: Show ONE counterexample 
+
+##### Showring that a exists is true /false
+- True: Show that it works for at least one value
+- False: Show that it doesn’t work for all values
+
+
+
+##### Others
+
+
 - Always write out the domain 
 - When trasnalting a restricted statement to english, using words like “who” works well. Everyone “who” is something, does semething else for example.
 - When universally the domain, say people, don’t do something, you can use words like “nobody”, “no person”
@@ -93,3 +125,4 @@ WHEN DOING MATH PROBLEMS TALK ABOUT CONCEPTS YOU HAVE LEARNED, EVEN IF THEY ARE 
 
 ###### Logical Equivalence testing
 - Define an arbitaryar domain and arbitaryar predicat (since equivalences works with all domains and all predicates) for quantiifers
+

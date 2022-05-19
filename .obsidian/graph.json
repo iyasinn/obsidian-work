@@ -4,9 +4,16 @@
   "showTags": false,
   "showAttachments": false,
   "hideUnresolved": false,
-  "showOrphans": true,
-  "collapse-color-groups": true,
+  "showOrphans": false,
+  "collapse-color-groups": false,
   "colorGroups": [
+    {
+      "query": "file:excalidraw",
+      "color": {
+        "a": 1,
+        "rgb": 16756224
+      }
+    },
     {
       "query": "file:;",
       "color": {
@@ -36,7 +43,7 @@
       }
     }
   ],
-  "collapse-display": false,
+  "collapse-display": true,
   "showArrow": true,
   "textFadeMultiplier": -1.2,
   "nodeSizeMultiplier": 1.08584971910112,
@@ -46,6 +53,6 @@
   "repelStrength": 20,
   "linkStrength": 1,
   "linkDistance": 500,
-  "scale": 0.05370320541266357,
+  "scale": 0.10555666007000329,
   "close": true
 }
