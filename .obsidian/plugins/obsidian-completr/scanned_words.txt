@@ -64,6 +64,7 @@ PROBLEMS
 Proving
 Programming
 Problems
+Propstions
 Logic
 Logical
 Linux
@@ -226,6 +227,7 @@ distribution
 de
 demorgan
 distirbute
+directional
 sentence
 stability
 society
@@ -476,6 +478,7 @@ India
 Instrument
 Indebtedness
 Insights
+INTEGERS
 fact
 false
 face
@@ -789,6 +792,7 @@ issues
 invest
 instantly
 insights
+integers
 either
 ever
 effectiveness
@@ -895,6 +899,7 @@ equiavlences
 enter
 exist
 entier
+exand
 or
 of
 out
@@ -1700,6 +1705,7 @@ program
 particularly
 predicat
 problem
+postivie
 with
 will
 waht
@@ -2214,6 +2220,7 @@ lower
 loans
 literally
 lbecome
+liek
 how
 haha
 hyuH
@@ -2340,6 +2347,7 @@ Well
 Watch
 Wealthy
 WHEN
+Works
 Any
 All
 Atomic
@@ -2399,6 +2407,7 @@ ARE
 Always
 Appraoch
 Approach
+Arithmetic
 not
 negation
 nh
@@ -2672,6 +2681,7 @@ render
 russion
 russian
 representing
+random
 Operators
 Operator
 Oy
@@ -2779,6 +2789,7 @@ NSC
 NO
 NRI
 Negate
+Neither
 you
 yT
 yj
@@ -2902,6 +2913,7 @@ Managers
 MATH
 Make
 MAKE
+Modular
 But
 BF
 BW
@@ -3342,6 +3354,7 @@ Qq
 Quantifiers
 Quantification
 Quantifier
+Quantificaiton
 Sf
 Sg
 SrP
@@ -3420,6 +3433,7 @@ System
 Summarize
 Showing
 Showring
+Split
 XH
 Xy
 XD

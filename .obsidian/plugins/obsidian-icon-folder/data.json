@@ -5,11 +5,11 @@
     "fontSize": 16,
     "iconColor": null,
     "recentlyUsedIcons": [
-      "RiBallPenLine",
-      "RiNumber1",
-      "RiInkBottleLine",
+      "FarChessQueen",
+      "RiCamera3Line",
       "RiQuillPenLine",
-      "RiCamera3Line"
+      "RiInkBottleLine",
+      "RiNumber1"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -26,5 +26,6 @@
   "Math/Discrete Math/Chapter 1 - Logic and Proofs": {
     "iconName": null,
     "inheritanceIcon": "RiQuillPenLine"
-  }
+  },
+  "Math/Discrete Math/Review.md": "FarChessQueen"
 }

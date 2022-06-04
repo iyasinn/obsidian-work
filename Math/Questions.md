@@ -1,6 +1,5 @@
 
-- Do we need to ever cite negation laws? 
-- Can we use associative law to add parentheses? What about remove parenthese? 
+- Why can we only expand under a finite domain? 
 
 
 

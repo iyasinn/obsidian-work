@@ -7,7 +7,6 @@
   "obsidian-icon-folder",
   "obsidian-latex-environments",
   "quick-latex",
-  "obsidian-completr",
   "obsidian-banners",
   "oz-clear-unused-images",
   "juggl",
@@ -25,5 +24,10 @@
   "obsidian-smart-typography",
   "obsidian-activity-history",
   "obsidian-git",
-  "obsidian-custom-frames"
+  "obsidian-custom-frames",
+  "obsidian-completr",
+  "chesser-obsidian",
+  "obsidian-pandoc",
+  "obsidian-style-settings",
+  "obsidian-reset-font-size"
 ]

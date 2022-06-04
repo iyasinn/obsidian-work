@@ -44,3 +44,5 @@ Exercise to you…the reader. :3
 
 ![[Logical Equivalences with Quantifiers 2022-05-17 19.15.51.excalidraw]]
 
+
+We can also prove this by assuming we have a finite domain and expanding! 
