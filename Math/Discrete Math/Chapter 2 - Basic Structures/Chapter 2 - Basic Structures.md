@@ -38,11 +38,9 @@ A lot of discrete math is devoted to the study of discrete structures, which can
 %% Begin Waypoint %%
 - **[[Chapter 2 - Basic Structures]]**
 	- **[[;2.1 - Sets]]**
-		- [[Cardinality]]
-		- [[Cartesian Product]]
-		- [[ordered n-tuple]]
-		- [[Power Set]]
 		- **Subnotes**
+			- [[Cardinality]]
+			- [[Cartesian Product]]
 			- [[Domain for Sets]]
 			- [[Empty Set]]
 			- [[Important Sets in Discrete Math]]
@@ -50,16 +48,18 @@ A lot of discrete math is devoted to the study of discrete structures, which can
 			- [[Intervals]]
 			- [[Introduction to Sets]]
 			- [[Membership Predicate]]
+			- [[ordered n-tuple]]
+			- [[Power Set]]
 			- [[Roster Method of Representing Sets]]
 			- [[Set Builder Notation]]
 			- [[Set]]
+			- [[Subset Proofs]]
+			- [[Subsets]]
+			- [[Truth Sets and Quantifiers]]
+			- [[Using Set Notation with Quantifiers]]
 			- [[Venn Diagrams]]
-		- [[Subset Proofs]]
-		- [[Subsets]]
-		- [[Truth Sets and Quantifiers]]
-		- [[Using Set Notation with Quantifiers]]
-	- [[;2.3 - Functions]]
-	- [[Functions]]
-	- [[Untitled]]
+	- **[[;2.3 - Functions]]**
+		- **Subnotes**
+			- [[Functions]]
 
 %% End Waypoint %%
