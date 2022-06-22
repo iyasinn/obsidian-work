@@ -182,6 +182,8 @@ Technically, yes.
 We can consider each mapping in a function as an orderd pair. 
 Furthermore, we will know than that a function is a [[Subsets]] of the [[Cartesian Product]] of the Domain X Co domain. Of course, many relatinos are subsets, but a function, which is a subset of all possible relations, exists. 
 
+![[Drawing 2022-06-22 01.06.01.excalidraw]]
+
 
 
 

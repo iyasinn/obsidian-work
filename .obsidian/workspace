@@ -4,12 +4,14 @@
     "type": "split",
     "children": [
       {
-        "id": "1335ba6c96dd33e8",
+        "id": "0fcaf2935c312727",
         "type": "leaf",
         "state": {
-          "type": "excalidraw",
+          "type": "markdown",
           "state": {
-            "file": "Excalidraw/Drawing 2022-06-22 01.06.01.excalidraw.md"
+            "file": "Math/Discrete Math/Chapter 2 - Basic Structures/Functions.md",
+            "mode": "source",
+            "source": false
           }
         }
       }
@@ -128,7 +130,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Excalidraw/Drawing 2022-06-22 01.06.01.excalidraw.md",
+                "file": "Math/Discrete Math/Chapter 2 - Basic Structures/Functions.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -187,17 +189,17 @@
     "width": 100,
     "collapsed": true
   },
-  "active": "1335ba6c96dd33e8",
+  "active": "0fcaf2935c312727",
   "lastOpenFiles": [
-    "Excalidraw/Drawing 2022-06-22 01.06.01.excalidraw.md",
     "Math/Discrete Math/Chapter 2 - Basic Structures/Functions.md",
     "Math/Discrete Math/Chapter 2 - Basic Structures/;2.3 - Functions.md",
     "Math/Discrete Math/Chapter 2 - Basic Structures/Chapter 2 - Basic Structures.md",
+    "Math/Discrete Math/Chapter 5 - Induction and Recursion/;5.1 - Mathematical Induction/;5.1 - Mathematical Induction.md",
+    "Math/Discrete Math/Chapter 5 - Induction and Recursion/Chapter 5 - Induction and Recursion.md",
+    "Excalidraw/Drawing 2022-06-22 01.06.01.excalidraw.md",
     "Math/Discrete Math/Discrete Math.md",
     "Math/Discrete Math/Chapter 1 - Logic and Proofs/Chapter 1 - Logic and Proofs.md",
     "Math/Math.md",
-    "Untitled.md",
-    "Math/Discrete Math/Chapter 5 - Induction and Recursion/Chapter 5 - Induction and Recursion.md",
-    "Math/Discrete Math/Chapter 2 - Basic Structures/Untitled.md"
+    "Untitled.md"
   ]
 }
