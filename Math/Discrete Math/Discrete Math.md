@@ -18,7 +18,21 @@ We are learning so much in eecs 203!
 
 
 Our study of Discrete Math will begin with understanding the **Foundations**. 
+ [[Chapter 1 - Logic and Proofs]]
+ 
+Sets incredibly important structures!
+[[Chapter 2 - Basic Structures]]
 
-This happens with [[Chapter 1 - Logic and Proofs]]
+Induction is an incredibly important technique that you must master!
+[[Chapter 5 - Induction and Recursion]]
+
+
+
+%% Begin Waypoint %%
+- **[[Discrete Math]]**
+	- **[[Chapter 1 - Logic and Proofs]]**
+	- **[[Chapter 2 - Basic Structures]]**
+	- **[[Chapter 5 - Induction and Recursion]]**
+	- [[My methods]]
 
 

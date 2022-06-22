@@ -14,12 +14,8 @@ Another way the englich connective **"or"** can be used is the [[Exclusive XOR]]
 ![[Pasted image 20220509003248.png]]
 
 
-#### Extra
->
->
->
-
-
+#### When is the disjunction true then? Say in an english statement? 
+It is true when you have for p V q, p, q, or both. That’s something you might need to consider at times. 
 
 ### Questions 
 

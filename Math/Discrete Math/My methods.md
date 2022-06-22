@@ -18,6 +18,9 @@
 		- 
 	- ![[Pasted image 20220603205825.png]]
 		- Note: Prime numbers also are included here. 5 is prime, and it is a multiple of 5 and 1, and since 5 is prime, then 5 is a multiple of itself, which counts. 
+	- 
+- Definition of a “multiple of"
+	- ![[Pasted image 20220604202038.png]]
 
 
 ## General
@@ -38,6 +41,8 @@ Also write some statements to understand the quesitons
 So checking your work is incredibly important!!!!!!!!!!
 I always given an answer the nmove on 
 
+- Always look at edge cases
+
 ---
 
 
@@ -50,16 +55,26 @@ I always given an answer the nmove on
 
 ---
 
+#### Tips
+
+When dealing with rationals, good edge cases are when you have the same rational like $\sqrt{2}$ 
+
+When considering cases for a and b, consider cases where they are the same but also different. 
+
+#### Working with proofs
+
+- When constructing a proof, keep two thigns in mind:
+	- Why does the proof work, why is the propostion itself true? 
+		- To do this, look at examples, make tentative assumptions, and break the problem down into cases. Bring out all of your mathematical training :D
+- Proof by contradiction lets you assume the most things (for a conditional) and so it is a powerful technique. 
+- Always remember the importance of definitions!
+- After you finish writing your proof, read over it. Does each statement follow logically. Are you leaving out cases/hidden assumptions?
+- Use **proof by contradiction** when you want to see if two statements are compatible or not. i
 
 
-#### Definitions
-
-![[Pasted image 20220526184858.png]]
-
-## Modular Arithmetic
-#### Solving inear congruences
-
-
+## Exam 1
+### Modular Arithmetic
+#### Solving linear congruence
 $ax \equiv b \pmod{m}$
 - Check if a and m are relatively prime
 	- **Unique solution**: Find the inverse of a, then solve. 
@@ -68,35 +83,63 @@ $ax \equiv b \pmod{m}$
 -  if b is not divisible by gcd(a, m)
 	- **no solutions**
 
+#### Further ideas when dealing with multiple solutions 
+$F * a \equiv b \pmod{m}$
+- Note, the solution of is going to be within {0, 1… m- 1}
+- So we can also just check ALL the remainders of F * a for all values of a in {0, 1… m-1}, which tells you all the values b can’t be. And if b isn’t any of these values, then that means you have no solution, too.
+- Remember though that if the inverse of F exists, then you don’t really need to do this and you can just directly solve for the solution.  
+- ***But the big idea to remember is that when we have a in a linear congruence, to solve for a means to find out what a is equivalent to. And a is just going to be equivalent to some number, or multiple numbers in {0, 1… m-1}***
+
+
 
 
 
 
 ---
 
+#### Cheat sheet of divisiblity
+- ![[Pasted image 20220605221152.png]]
+- ![[Pasted image 20220605221221.png]]
+	- Like every mathemtaical expression, this is just a predicate too. 
+- ![[Pasted image 20220605225512.png]]
+- 
 
 
-
-## 1.1 Propositions
+#### Ideas with proofs
+- An EXTREMELY important technique is looking at the POSSIBLE solutions for a modulo. If two expression shave the same POSSIBLE solutions for a modulo, then they are the same. If they only have the same possible solution out of the many, then they are only the same if some property is upheld to ensure that is taken into accouint. Finally, if they can’t ever have the same remainder, then they are never the same. 
+### 1.1 Propositions
 
 #### Proving something is a tautology or contradiction 
 - Logical equivalences to make it True 
 - Even easier, PROVE it can’t be false. Look at the secenario in which it might be false and prove it isn’t possible. 
 
-
-
-
-WHEN DOING MATH PROBLEMS TALK ABOUT CONCEPTS YOU HAVE LEARNED, EVEN IF THEY ARE OBVIOUS
-
-
-#### Translating to English
-MAKE TEST CASES
-
+#### Showing a biconditional is true
+For $p \iff q$
+- start at p and see if you can get q, so $p \to q$
+- start at q and see if you can get p, so $q \to p$
+- It’s okay if there are middle steps, like some s is involved, and $p \to s$ but then $s \to q$
+- Just make sure to keep your thoughts organized in your head. Start with p, then start with q, and make sure things workout. 
 
 ---
 
 
-## 1.3 Equivalences
+#### Making expressions from truth tables
+- Look at this problem 
+	- ![[Pasted image 20220604154017.png]]
+		- Solution 
+			- ![[Pasted image 20220604154031.png]]
+- The approach is to make sure you think about a situation that gives you exactly what you want. Like for w, we know it is true when p false, so maybe have that -p, then we know it is true only when we have q and r, so maybe something like q and -r needs to be true, because in any other case, they aren’t both true. 
+
+#### Cheat Sheet for Propostions
+- ![[Pasted image 20220606173916.png]]
+- ![[Pasted image 20220606173927.png]]
+- ![[Pasted image 20220606173957.png]]
+
+#### Translating to english tips
+- Neither a nor b = not (a or b)
+- Not a or b = not (a or b)
+- 
+### 1.3 Equivalences
 
 
 
@@ -106,6 +149,7 @@ MAKE TEST CASES
 	- For example: -(-p V -q). You can do demorgan inside….or you can do demorgan outside. Both actually work out very well.  
 - Also sometimes you can distirbute one term out, or another term out. Do it in a way such that your problem is MOST simplified.
 - English 
+- If you see two things that look very very similar but flipped, maybe try doing reverse DeMorgan’s law on one of them. It may be very very helpful. 
 
 First translate very straightforwardly, then make it easy. 
 
@@ -118,10 +162,10 @@ First translate very straightforwardly, then make it easy.
 
 
 
-## 1.4 Quantificaiton 
+### 1.4 Quantificationton 
 
 #### Working with quantifiers 
-###### Test Cases 
+##### Test Cases 
 
 
 ![[Drawing 2022-05-18 23.54.57.excalidraw]]
@@ -130,7 +174,7 @@ First translate very straightforwardly, then make it easy.
 
 
 ##### Showing that a for all is true/fasle
-- True: Show that it works for all vlaues
+- True: Show that it works for all values
 - False: Show ONE counterexample 
 
 ##### Showring that a exists is true /false
@@ -176,10 +220,21 @@ When making a translation from english to logic.
 Look at when your logical statement is true, and look at when it’s false. SEE IF THIS LINES UP WITH THE ORIGINAL STATEMENT.
 
 
-## Natural Deduction 
+##### Uniqueness
+- When writing a quantification of uniqueness, you show there exists an element that has the property, and then that for all other elements, if they have that property, then they must be our original element. 
+	- Or that if they are not our original element, they don’t have that property.
+- And when showing double uniquness, or only two objects exist, make sure you show that they are not equal. Good tip. 
+
+#### Cheat sheet 
+- ![[Pasted image 20220606184327.png]]
+
+
+
+### Natural Deduction 
 - Be calm, when you form something, check every statement and see if it can do something with that statement when you are stuck.
 - Generally when you see a negated large propstion, the point of it is to use it as a CONTRADICTION to get false. So make assumptions of its negation. Like if we have $\neg (p \land q)$, It’s probably best to try to find an assumption like P or an assumption like Q, which eventually lets us make $p \land q$ to have a contradiction in whichever case we’re dealing with.
 - With quantiifers, be prepared to have some niteresting manipulation to use certain variables you have introduced.  
+- If you are doing negation intro with $\neg p$ then when you do the negation intro, make sure to write $\neg \neg p$
 
 ##### Forming different answers
 No one way to approach these. It’s all about doing lots of practice. 
@@ -193,7 +248,13 @@ No one way to approach these. It’s all about doing lots of practice.
 	- You need to form BOTH parts of the statement 
 	- Could maybe do it with an or elim but very unlikely
 	- You could try assuming the negation of each part 
-## Proving a natural deduction is False
+
+#### Cheat sheet tips
+- ![[Pasted image 20220606193042.png]]
+- ![[Pasted image 20220606193106.png]]
+- 
+
+### Proving a natural deduction is False
 So try to find a counter example 
 
 It is a true proof when $\forall \text{truthValues} (\text{premise} \rightarrow \text{conclusion})$
@@ -207,4 +268,103 @@ So we need a counter example to when this is false
 
 
 
- 
+
+
+
+
+#### Different contradictions you can find
+- One side is even, the other is odd
+- Integer + Integer = fraction  
+- One side is divisibile by some number, while the other side isn’t 
+- 
+
+
+#### Proof with modular
+- Always take steps to take your poof and use the definition of modular equivalence to turn it into an equation, usually in the form $a \equiv b \pmod{m}$ to $a = b + mk$
+- Be careful not to start your proof by assuming the thing you want to prove. That causes big issues!
+	- ![[Pasted image 20220605154657.png]]
+
+
+- Look at this overview of proof techniques
+	- ![[Pasted image 20220605190330.png]]
+	- ![[Pasted image 20220605190406.png]]
+	- ![[Pasted image 20220605190421.png]]
+- Proof techniques for quantified statements
+	- You can combine this without proof techniques
+	- ![[Pasted image 20220605190509.png]]
+	- ![[Pasted image 20220605190530.png]]
+- WLOG is very, very important. Sometimes it makes your proof more straightforward, and, and don’t need to waste time. Usually important when order doesn’t matter. 
+	- ![[Pasted image 20220605190621.png]]
+
+
+
+
+
+.
+.
+.
+Proof by cases you get one contradiction, and one truth value 
+
+For a disproof of an exists
+
+And contradiction requires arbitrary 
+
+
+
+## Exam 2
+
+### Mathematical Induction
+### Strong Induction
+
+- For difficult base cases, be VERY VERY caerful. 
+	- Like for example, for prcoesses where we multiply things, usually the base case if the process stops at P(1) is just 1….we just use the **multiplicative** identity. IT really depends. For sums, it’s usually 0. It can depend though. 
+
+### Set Theory 
+- Visualize a set as a “bucket”. It is not ordered.
+- The roster method works when there is a repeated pattern. Otherwise, for some non-repetitive property, you need to set builder notation. 
+- Set builder notation can have multiple predicates separated by a comma. 
+- When using set builder notation, be smart about it. 
+	- Example: The set of the sum of all primes
+		- $A = {x \;\;\; | \;\;\; \exists y \exists z [Prime(y) \land Prime(z) \land x = y + z]}$
+			- This is one way to write it, but it’s not the best way 
+		- $A = \{y + z \;\;\; | \;\;\; Prime(y) \land Prime(z)\}$
+			- This is even better. We can include expressions for our element (on the left), which is perfectly fine. 
+
+
+
+#### How do you show that $B \subseteq A$?
+**Method 1**
+You can approach this similar to a natural deduction problem, since really, we are proving: $$\forall x \in \mathbb{U} [x \in B \to x \in A]$$
+To prove this, we can :
+- Consider an arbitrary element x in the universe. 
+- Assume x is an element of B, whatever that is. 
+- Use that information to show that if it is an element of B, then it must be an element of A. 
+- Conclude the proof by stating that this is true for all arbitrary elements and that B is a subset of A. 
+- This is like natural deduction
+- When doing problems like this, you MUST use the definition of UNION/INTERSECTION/COMPLEMENT
+	- This includes turning then into more useful propositions 
+	- You can use this definition to turn these statements into **propostions**, which will then help you solve the problem. 
+- After doing this, you can also use proof techniques like proof by condtradiction and such, since you’re just trying to show that x in B → x in A, and so you can use any proof technique you really want. Usually direct proof works best. 
+
+**Method 2**
+- Convert to set builder notation and work with the predicate 
+
+We can also use logical equivalences for sets 
+
+#### Showing that two sets are equivalent
+You merely need to show that they are subsets of each other
+
+![[Pasted image 20220621165504.png]]
+
+
+
+
+#### Function / Proofs
+
+
+- When dealing with sets of real numbers, or intervals, a NUMBER LINE is very helpful to graph to help see what you are doing. 
+	- ![[Pasted image 20220622003448.png]]
+
+
+- Ask if something works and see if it exists
+- A L

@@ -29,5 +29,6 @@
   "chesser-obsidian",
   "obsidian-pandoc",
   "obsidian-style-settings",
-  "obsidian-reset-font-size"
+  "obsidian-reset-font-size",
+  "convert-url-to-iframe"
 ]

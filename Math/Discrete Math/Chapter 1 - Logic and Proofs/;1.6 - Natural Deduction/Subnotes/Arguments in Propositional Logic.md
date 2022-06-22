@@ -27,6 +27,8 @@ Furthermore,
 It is valid when
 The premises are true, AND the conclusion is true. And if the premises are false, then we should have NO WAY to determine what the conclusion is. 
 
+A proof is not necessarily invalid just because ur argument form is wrong by the way. Not at all. It is invalid if you get true → false. 
+
 ### How can you write a valid argument as a quantification then? 
 
 $\forall \text{Truth Values}[\text{Premises} \to \text{Conclusion}]$

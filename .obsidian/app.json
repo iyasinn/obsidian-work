@@ -8,7 +8,16 @@
   "attachmentFolderPath": "Images",
   "fileSortOrder": "alphabetical",
   "spellcheckDictionary": [
-    "firsts"
+    "firsts",
+    "goint",
+    "statement",
+    "WLOG",
+    "th",
+    "nonnegative",
+    "propostions",
+    "codomain",
+    "Codomain"
   ],
-  "vimMode": true
+  "vimMode": true,
+  "showLineNumber": true
 }

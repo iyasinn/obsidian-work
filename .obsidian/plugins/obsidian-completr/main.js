@@ -103,13 +103,33 @@ function matchWordBackwards(editor, cursor, charValidator, maxLookBackDistance =
   return { query, separatorChar };
 }
 function isInFrontMatterBlock(editor, pos) {
-  if (editor.getLine(0) !== "---" || editor.getLine(1) === "---" || pos.line === 0)
+  if (pos.line === 0)
     return false;
-  for (let i = 2; i < Math.max(30, editor.lastLine()); i++) {
-    if (editor.getLine(i) === "---")
-      return pos.line < i;
+  const bounds = getFrontMatterBounds(editor);
+  if (!bounds)
+    return false;
+  return pos.line > bounds.startLine && pos.line < bounds.endLine;
+}
+function getFrontMatterBounds(editor) {
+  let startLine = -1;
+  for (let i = 0; i < Math.min(5, editor.lastLine()); i++) {
+    if (editor.getLine(i) !== "---")
+      continue;
+    startLine = i;
+    break;
   }
-  return false;
+  if (startLine === -1)
+    return null;
+  let endLine = -1;
+  for (let i = startLine + 1; i < Math.min(50, editor.lastLine()); i++) {
+    if (editor.getLine(i) !== "---")
+      continue;
+    endLine = i;
+    break;
+  }
+  if (endLine === -1)
+    return null;
+  return { startLine, endLine };
 }
 var _BlockType = class {
   constructor(c, isMultiLine, otherType0 = null) {
@@ -138,8 +158,12 @@ BlockType.CODE_SINGLE = new _BlockType("`", false, _BlockType.CODE_MULTI);
 })();
 BlockType.SINGLE_TYPES = [_BlockType.DOLLAR_SINGLE, _BlockType.CODE_SINGLE];
 function isInLatexBlock(editor, cursorPos, triggerInCodeBlocks) {
-  let blockTypeStack = [];
+  var _a;
+  const frontMatterBounds = (_a = getFrontMatterBounds(editor)) != null ? _a : { startLine: -1, endLine: -1 };
+  const blockTypeStack = [];
   for (let lineIndex = Math.max(0, cursorPos.line - 1e3); lineIndex <= cursorPos.line; lineIndex++) {
+    if (lineIndex >= frontMatterBounds.startLine && lineIndex <= frontMatterBounds.endLine)
+      continue;
     const line = editor.getLine(lineIndex);
     for (let j = cursorPos.line == lineIndex ? cursorPos.ch - 1 : line.length - 1; j >= 0; j--) {
       const currentChar = line.charAt(j);
@@ -358,6 +382,45 @@ function getSuggestionReplacement(suggestion) {
 
 // src/provider/latex_provider.ts
 var import_obsidian = __toModule(require("obsidian"));
+
+// src/provider/blacklist.ts
+var BLACKLIST_PATH = ".obsidian/plugins/obsidian-completr/blacklisted_suggestions.txt";
+var NEW_LINE_REGEX = /\r?\n/;
+var SuggestionBlacklist = new class {
+  constructor() {
+    this.blacklist = new Set();
+  }
+  add(suggestion) {
+    this.blacklist.add(getSuggestionDisplayName(suggestion));
+  }
+  has(suggestion) {
+    return this.blacklist.has(getSuggestionDisplayName(suggestion));
+  }
+  filter(suggestions) {
+    if (this.blacklist.size < 1)
+      return suggestions;
+    return suggestions.filter((s) => !this.blacklist.has(getSuggestionDisplayName(s)));
+  }
+  saveData(vault) {
+    return __async(this, null, function* () {
+      yield vault.adapter.write(BLACKLIST_PATH, [...this.blacklist].join("\n"));
+    });
+  }
+  loadData(vault) {
+    return __async(this, null, function* () {
+      if (!(yield vault.adapter.exists(BLACKLIST_PATH)))
+        return;
+      const contents = (yield vault.adapter.read(BLACKLIST_PATH)).split(NEW_LINE_REGEX);
+      for (let word of contents) {
+        if (!word)
+          continue;
+        this.add(word);
+      }
+    });
+  }
+}();
+
+// src/provider/latex_provider.ts
 function substringUntil(str, delimiter) {
   let index = str.indexOf(delimiter);
   if (index === -1)
@@ -397,16 +460,21 @@ var LatexSuggestionProvider = class {
         const defaultCommands = generateDefaultLatexCommands();
         yield vault.adapter.write(LATEX_COMMANDS_PATH, JSON.stringify(defaultCommands, null, 2));
         this.loadedCommands = defaultCommands;
-        return;
+      } else {
+        const data = yield vault.adapter.read(LATEX_COMMANDS_PATH);
+        try {
+          const commands = JSON.parse(data);
+          const invalidCommand = commands.find((c) => getSuggestionDisplayName(c).includes("\n"));
+          if (invalidCommand)
+            throw new Error("Display name cannot contain a newline: " + getSuggestionDisplayName(invalidCommand));
+          this.loadedCommands = commands;
+        } catch (e) {
+          console.log("Completr latex commands parse error:", e.message);
+          new import_obsidian.Notice("Failed to parse latex commands file " + LATEX_COMMANDS_PATH + ". Using default commands.", 3e3);
+          this.loadedCommands = generateDefaultLatexCommands();
+        }
       }
-      const data = yield vault.adapter.read(LATEX_COMMANDS_PATH);
-      try {
-        this.loadedCommands = JSON.parse(data);
-      } catch (e) {
-        console.log("Completr latex commands parse error:", e.message);
-        new import_obsidian.Notice("Failed to parse latex commands file " + LATEX_COMMANDS_PATH + ". Using default commands.", 3e3);
-        this.loadedCommands = generateDefaultLatexCommands();
-      }
+      this.loadedCommands = SuggestionBlacklist.filter(this.loadedCommands);
     });
   }
 };
@@ -1550,6 +1618,7 @@ function filterMapIntoSet(set, iterable, predicate, map) {
 
 // src/provider/word_list_provider.ts
 var BASE_FOLDER_PATH = ".obsidian/plugins/obsidian-completr/wordLists";
+var NEW_LINE_REGEX2 = /\r?\n/;
 var WordListSuggestionProvider = class extends DictionaryProvider {
   constructor() {
     super(...arguments);
@@ -1571,7 +1640,7 @@ var WordListSuggestionProvider = class extends DictionaryProvider {
           console.log("Completr: Unable to read " + fileName);
           continue;
         }
-        const lines = data.split("\n");
+        const lines = data.split(NEW_LINE_REGEX2);
         for (let line of lines) {
           if (line === "" || line.length < settings.minWordLength)
             continue;
@@ -1585,8 +1654,9 @@ var WordListSuggestionProvider = class extends DictionaryProvider {
       }
       let count = 0;
       for (let entry of this.wordMap.entries()) {
-        entry[1] = entry[1].sort((a, b) => a.length - b.length);
-        count += entry[1].length;
+        const newValue = SuggestionBlacklist.filter(entry[1].sort((a, b) => a.length - b.length));
+        this.wordMap.set(entry[0], newValue);
+        count += newValue.length;
       }
       return count;
     });
@@ -1617,6 +1687,7 @@ var WordList = new WordListSuggestionProvider();
 
 // src/provider/scanner_provider.ts
 var SCANNED_WORDS_PATH = ".obsidian/plugins/obsidian-completr/scanned_words.txt";
+var NEW_LINE_REGEX3 = /\r?\n/;
 var ScannerSuggestionProvider = class extends DictionaryProvider {
   constructor() {
     super(...arguments);
@@ -1660,7 +1731,7 @@ var ScannerSuggestionProvider = class extends DictionaryProvider {
     return __async(this, null, function* () {
       if (!(yield vault.adapter.exists(SCANNED_WORDS_PATH)))
         return;
-      const contents = (yield vault.adapter.read(SCANNED_WORDS_PATH)).split("\n");
+      const contents = (yield vault.adapter.read(SCANNED_WORDS_PATH)).split(NEW_LINE_REGEX3);
       for (let word of contents) {
         this.addWord(word);
       }
@@ -1673,7 +1744,7 @@ var ScannerSuggestionProvider = class extends DictionaryProvider {
     });
   }
   addWord(word) {
-    if (!word)
+    if (!word || SuggestionBlacklist.has(word))
       return;
     let list = this.wordMap.get(word.charAt(0));
     if (!list) {
@@ -1898,7 +1969,7 @@ var SuggestionPopup = class extends import_obsidian3.EditorSuggest {
         break;
       }
     }
-    return suggestions.length === 0 ? null : suggestions;
+    return suggestions.length === 0 ? null : suggestions.filter((s) => !SuggestionBlacklist.has(s));
   }
   onTrigger(cursor, editor, file) {
     if (this.justClosed) {
@@ -1944,6 +2015,10 @@ var SuggestionPopup = class extends import_obsidian3.EditorSuggest {
   selectNextItem(dir) {
     const self = this;
     self.suggestions.setSelectedItem(self.suggestions.selectedItem + dir, true);
+  }
+  getSelectedItem() {
+    const self = this;
+    return self.suggestions.values[self.suggestions.selectedItem];
   }
   applySelectedItem() {
     const self = this;
@@ -2274,6 +2349,22 @@ var CompletrPlugin = class extends import_obsidian5.Plugin {
       isVisible: () => this._suggestionPopup.isVisible()
     });
     this.addCommand({
+      id: "completr-blacklist-current-word",
+      name: "Add the currently selected word to the blacklist",
+      hotkeys: [
+        {
+          key: "D",
+          modifiers: ["Shift"]
+        }
+      ],
+      editorCallback: (editor) => {
+        SuggestionBlacklist.add(this._suggestionPopup.getSelectedItem());
+        SuggestionBlacklist.saveData(this.app.vault);
+        this._suggestionPopup.trigger(editor, this.app.workspace.getActiveFile(), true);
+      },
+      isVisible: () => this._suggestionPopup.isVisible()
+    });
+    this.addCommand({
       id: "completr-close-suggestion-popup",
       name: "Close suggestion popup",
       hotkeys: [
@@ -2327,9 +2418,11 @@ var CompletrPlugin = class extends import_obsidian5.Plugin {
   loadSettings() {
     return __async(this, null, function* () {
       this.settings = Object.assign({}, DEFAULT_SETTINGS, yield this.loadData());
-      WordList.loadFromFiles(this.app.vault, this.settings);
-      FileScanner.loadData(this.app.vault);
-      Latex.loadCommands(this.app.vault);
+      SuggestionBlacklist.loadData(this.app.vault).then(() => {
+        WordList.loadFromFiles(this.app.vault, this.settings);
+        FileScanner.loadData(this.app.vault);
+        Latex.loadCommands(this.app.vault);
+      });
     });
   }
   get suggestionPopup() {

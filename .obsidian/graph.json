@@ -29,7 +29,14 @@
       }
     },
     {
-      "query": "path:\"Math/Discrete Math/Chapter 1 - Logic and Proofs\"",
+      "query": "file:Discrete Math",
+      "color": {
+        "a": 1,
+        "rgb": 16711816
+      }
+    },
+    {
+      "query": "path:\"Math/Discrete Math\"",
       "color": {
         "a": 1,
         "rgb": 393119
@@ -53,6 +60,6 @@
   "repelStrength": 20,
   "linkStrength": 1,
   "linkDistance": 500,
-  "scale": 0.13995092731268588,
-  "close": true
+  "scale": 0.1399509273126932,
+  "close": false
 }
