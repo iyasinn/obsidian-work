@@ -11,6 +11,7 @@ It is possible for multiple sets to have similar elements. There are ***relation
 
 ![[Pasted image 20220619233951.png]]
 
+![[Pasted image 20220626180428.png]]
 
 #### What is the notation for a subset? 
 $\subseteq$ = Is a subset of 

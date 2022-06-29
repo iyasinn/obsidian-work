@@ -38,6 +38,7 @@ A lot of discrete math is devoted to the study of discrete structures, which can
 %% Begin Waypoint %%
 - **[[Chapter 2 - Basic Structures]]**
 	- **[[;2.1 - Sets]]**
+		- [[2.2 hoemwork]]
 		- **Subnotes**
 			- [[Cardinality]]
 			- [[Cartesian Product]]
@@ -59,6 +60,11 @@ A lot of discrete math is devoted to the study of discrete structures, which can
 			- [[Using Set Notation with Quantifiers]]
 			- [[Venn Diagrams]]
 	- **[[;2.3 - Functions]]**
+		- [[Bijective]]
+		- [[Function Classifications]]
+		- [[Inverse Functions]]
+		- [[One-to-one]]
+		- [[Onto]]
 		- **Subnotes**
 			- [[Functions]]
 

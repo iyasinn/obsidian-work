@@ -23,12 +23,17 @@
   "obsidian-dynamic-toc",
   "obsidian-smart-typography",
   "obsidian-activity-history",
-  "obsidian-git",
   "obsidian-custom-frames",
   "obsidian-completr",
   "chesser-obsidian",
   "obsidian-pandoc",
   "obsidian-style-settings",
   "obsidian-reset-font-size",
-  "convert-url-to-iframe"
+  "convert-url-to-iframe",
+  "discordian-plugin",
+  "obsidian-image-toolkit",
+  "enlightenment-obsidian",
+  "obsidian-mind-map",
+  "mousewheel-image-zoom",
+  "obsidian-git"
 ]

@@ -5,7 +5,7 @@
   "showAttachments": false,
   "hideUnresolved": false,
   "showOrphans": false,
-  "collapse-color-groups": false,
+  "collapse-color-groups": true,
   "colorGroups": [
     {
       "query": "file:excalidraw",
@@ -50,16 +50,16 @@
       }
     }
   ],
-  "collapse-display": true,
+  "collapse-display": false,
   "showArrow": true,
-  "textFadeMultiplier": -1.2,
-  "nodeSizeMultiplier": 1.08584971910112,
-  "lineSizeMultiplier": 2.16544124723318,
-  "collapse-forces": false,
+  "textFadeMultiplier": -0.3,
+  "nodeSizeMultiplier": 1.51346153846154,
+  "lineSizeMultiplier": 1.79615384615385,
+  "collapse-forces": true,
   "centerStrength": 0.397366495976591,
   "repelStrength": 20,
   "linkStrength": 1,
   "linkDistance": 500,
-  "scale": 0.018429751744881418,
+  "scale": 0.09982356242340217,
   "close": true
 }

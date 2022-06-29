@@ -33,6 +33,14 @@ Induction is an incredibly important technique that you must master!
 	- **[[Chapter 1 - Logic and Proofs]]**
 	- **[[Chapter 2 - Basic Structures]]**
 	- **[[Chapter 5 - Induction and Recursion]]**
+
+%% End Waypoint %%
+- **[[Discrete Math]]**
+	- **[[Chapter 1 - Logic and Proofs]]**
+	- **[[Chapter 2 - Basic Structures]]**
+	- **[[Chapter 5 - Induction and Recursion]]**
 	- [[My methods]]
 
 
+
+Can we have sub proofs by contradiction? Just like proof by cases? But only if we split into arbitrar x and y 

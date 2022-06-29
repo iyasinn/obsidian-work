@@ -17,14 +17,14 @@ For writing X, we can also define the domain, such as saying that the domain is 
 
 The | in set builder notation can be viewed as an “if and only if”
 aka
-“left side is an element of set if and only if right predicate true”
+{What elements of the set look liek What needs to be true of those elements}
 
 ###### How can you characterize the universe?
 You can declare your universe (domain of discourse) as some larger set, and then pull in any elements that have some property in that set. 
 
 ![[Pasted image 20220614225434.png]]
 
-Generally, this is used when you can’t describe all the elements in a set with some easy property. 
+Generally, this is used when you can’t describe all the elements in a set with some easy property. Here, the pattern isn’t so obvious, so set builder notation is easy and intuitive to use rather than the roster method. 
 
 ![[Pasted image 20220614225504.png]]
 

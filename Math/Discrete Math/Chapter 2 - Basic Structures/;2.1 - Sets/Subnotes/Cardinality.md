@@ -20,12 +20,16 @@ With an absolute value sign
 
 #### What is the cardinality of sets that are not finite? 
 
-#### What is the cardinlity of $\emptyset$
+#### What is the cardinality of $\emptyset$
 
 $|\emptyset| = 0$
 
 --- 
 
+#### What are some tips when finding the cardinality? 
+Make sure to get rid of all distinct elements. 
+This includes getting rid of distinct elements in sets so that you don’t get confused!
 #### Examples
 
 ![[Pasted image 20220620010533.png]]
+

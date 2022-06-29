@@ -6,7 +6,7 @@ Cartesian product is incredibly important!
 
 ## Cartesian product
 
-#### What is the ***Cartesian Product*** of a set? 
+#### What is the ***Cartesian Product*** of a set? ✅
 
 The Cartesian product of A and B is denoted by A x B. It represents the set of ALL ordered pairs (a, b), n orderd tuples, such that a is an element of A and b is an element of B
 
@@ -15,11 +15,11 @@ The Cartesian product of A and B is denoted by A x B. It represents the set of A
 So really, it’s the set of all **combinations** of elements from set A and set B
 
 
-#### Express the Cartesian product in set builder notation 
+#### Express the Cartesian product in set builder notation ✅
 
 $A \;x\; B = \{(a, b) \; | \; a \in A \land b \in B\}$
 
-#### What happens if you take a Cartesian product with an empty set? 
+#### What happens if you take a Cartesian product with an empty set?  ✅
 Will that will just yield an empty set. 
 Like 
 A x $\emptyset$ = $\emptyset$
@@ -35,14 +35,14 @@ Or when either A or B are equivalent to the emptyset
 
 
 
-#### Can you take the Cartesian product with multiple sets?
+#### Can you take the Cartesian product with multiple sets? 📗
 
 Yes, you can, the collection will just have more elements, all of which are ordered. 
 
 ![[Pasted image 20220620184250.png]]
 
 
-#### Explain exponents with Cartesian products. 
+#### Explain exponents with Cartesian products. 🔴
 ![[Pasted image 20220620184415.png]]
 
 

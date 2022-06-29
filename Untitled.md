@@ -1,0 +1,1 @@
+Alt + Scroll will zoom images 

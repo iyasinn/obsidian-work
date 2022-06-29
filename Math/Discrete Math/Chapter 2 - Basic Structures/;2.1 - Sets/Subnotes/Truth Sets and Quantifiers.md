@@ -2,10 +2,14 @@
 
 [[;2.1 - Sets]]
 [[Quantifiers]]
+[[Subsets]]
 
 ### What is the truth set of any given predicate? 
 
 ![[Pasted image 20220620184613.png]]
+
+Technically, since in set builder notation you put your predicate to the right, you always have a truth set for that specific predicate. 
+
 
 ### Use set builder notation for a truth set 
 

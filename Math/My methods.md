@@ -11,7 +11,6 @@
 	- ***A number m is a perfect square if it can be written in terms of an number n such that*** $m = n^2$**
 - Definition of an Irrational number.
 	- ![[Pasted image 20220603201343.png]]
-- Definition of Prime numbers
 	- ****An integer k $\geq$ 2 is “prime” if there do not exist two integers a, b, such k = ab***
 	- ![[Pasted image 20220603205818.png]]
 		- $\forall k [\neg \exists a \exists b[a \geq 2 \land b \geq 2 \land a * b = k] \to \text{k is prime}]$
@@ -43,13 +42,6 @@ I always given an answer the nmove on
 
 - Always look at edge cases
 
----
-
-
-[[My methods]]
-
-
-
 
 
 
@@ -69,7 +61,15 @@ When considering cases for a and b, consider cases where they are the same but a
 - Proof by contradiction lets you assume the most things (for a conditional) and so it is a powerful technique. 
 - Always remember the importance of definitions!
 - After you finish writing your proof, read over it. Does each statement follow logically. Are you leaving out cases/hidden assumptions?
-- Use **proof by contradiction** when you want to see if two statements are compatible or not. i
+- Use **proof by contradiction** when you want to see if two statements are compatible or not.d
+- Disproving something is the SAME as proving its negation! ANd proving something is the same as disproving its negation! (Disproving the negation is just a proof by contradiction), but proving something thorugh proving its negatino is like proof by contradiction but not actually a contradiciton. 
+- Remember, if you want to see something general isn’t the case, proof by contradiction works
+- You can have SUB proofs by contradiction, and they work VERY VERY WELL. 
+	- Like when proving $\exists y \forall x [f(x) \neq y]$
+	- To prove that something is not equal is very difficult. But to get a proof that it is equal is actually easier and easy to disprove. 
+	- So when you choose your example for y, why not just assume the negation aka $\exists x [f(x) = y]$ and have a nice proof by contradiction to prove the inner statement. 
+- Proof by contradiction is VERY, VERY strong when you prove that “nothing” works, because you can assume something works, and then get a contradiction.  
+- **make sure to work backwards in proofs, just like ND proofs. 
 
 
 ## Exam 1
@@ -168,9 +168,9 @@ First translate very straightforwardly, then make it easy.
 ##### Test Cases 
 
 
-![[Drawing 2022-05-18 23.54.57.excalidraw]]
+![[Drawing 2022-05-18 23.54.57.excalidraw|650]]
 
-![[Pasted image 20220519004442.png]]
+![[Pasted image 20220519004442.png|525]]
 
 
 ##### Showing that a for all is true/fasle
@@ -314,14 +314,22 @@ And contradiction requires arbitrary
 ## Exam 2
 
 ### Mathematical Induction
+
+---
+
+
 ### Strong Induction
 
 - For difficult base cases, be VERY VERY caerful. 
 	- Like for example, for prcoesses where we multiply things, usually the base case if the process stops at P(1) is just 1….we just use the **multiplicative** identity. IT really depends. For sums, it’s usually 0. It can depend though. 
 
+
+---
+
+
 ### Set Theory 
 - Visualize a set as a “bucket”. It is not ordered.
-- The roster method works when there is a repeated pattern. Otherwise, for some non-repetitive property, you need to set builder notation. 
+- **Drawing sets in problems very, VERYRY helpful.**
 - Set builder notation can have multiple predicates separated by a comma. 
 - When using set builder notation, be smart about it. 
 	- Example: The set of the sum of all primes
@@ -330,9 +338,16 @@ And contradiction requires arbitrary
 		- $A = \{y + z \;\;\; | \;\;\; Prime(y) \land Prime(z)\}$
 			- This is even better. We can include expressions for our element (on the left), which is perfectly fine. 
 
+#### Finding cardinalities
+- The biggest thing here is to always **simplify** your function. For example
+	- $\{\emptyset, \emptyset, \{\emptyset, \emptyset\}, \{\emptyset\}\}$
+	  This is equivalent to 
+	  $\{\emptyset, \{\emptyset\}\}$
+	  
+	  Note: $\{\emptyset, \emptyset\} \equiv \{\emptyset\}$
+	- Make sure to FULLY simplify ALL SETS, including the ones that are elements.
 
-
-#### How do you show that $B \subseteq A$?
+#### How do you show that $B \subseteq A$ ?
 **Method 1**
 You can approach this similar to a natural deduction problem, since really, we are proving: $$\forall x \in \mathbb{U} [x \in B \to x \in A]$$
 To prove this, we can :
@@ -343,8 +358,9 @@ To prove this, we can :
 - This is like natural deduction
 - When doing problems like this, you MUST use the definition of UNION/INTERSECTION/COMPLEMENT
 	- This includes turning then into more useful propositions 
-	- You can use this definition to turn these statements into **propostions**, which will then help you solve the problem. 
-- After doing this, you can also use proof techniques like proof by condtradiction and such, since you’re just trying to show that x in B → x in A, and so you can use any proof technique you really want. Usually direct proof works best. 
+	- You can use this definition to turn these statements into **prpropositions, which will then help you solve the problem. 
+- After doing this, you can also use proof techniques like proof by contradiction and such, since you’re just trying to show that x in B → x in A, and so you can use any proof technique you really want. Usually direct proof works best. 
+- **Note**: If you have other premises, don’t change what you assume, but you might need to use those other premises to help you solve the problem. 
 
 **Method 2**
 - Convert to set builder notation and work with the predicate 
@@ -352,19 +368,68 @@ To prove this, we can :
 We can also use logical equivalences for sets 
 
 #### Showing that two sets are equivalent
-You merely need to show that they are subsets of each other
+There are a few ways to this. 
+##### Show $B \subseteq A \land A \subseteq$
+- You have to do two subset proofs. But after you do this, since both are a subset of each other, then you know they are equivalent. 
 
+##### Use set Equivalences
+- You can use the set equivalence rules to merely convert one set to the other. 
+- Note that if you have to prove $B = A$, then you can start with B to get A, or you can start with A to get B. Either works. Technically this was also true for logical equivalence rules. 
+
+##### For fundamental set equivalence rules, you can convert to set builder notation and use basic set identity rules. 
+- This is harder, but it would require writing sets in set builder notation, then working with the predicate for that set, manipulating it with fundamental logical equivalence laws. 
+
+#### Inclusion Exclusion Questions
 ![[Pasted image 20220621165504.png]]
 
 
 
 
-#### Function / Proofs
+
+
+---
+
+### Function /
+
+#### Visualizing / Test Cases
+
+![[Functions showcase|925]]
+
+Note: Graphs like are valid as values
+
 
 
 - When dealing with sets of real numbers, or intervals, a NUMBER LINE is very helpful to graph to help see what you are doing. 
 	- ![[Pasted image 20220622003448.png]]
 
+- Furthermore, a function proof where you use venn diagrams is a **valid way** to **define** functions to give **examples** or **counterexamples**
+	- ![[Pasted image 20220624202312.png]]
 
-- Ask if something works and see if it exists
-- A L
+
+![[Pasted image 20220626223354.png]]
+
+
+#### Proving onto
+
+- First write out your statement, that is very helpful. (logical statement) 
+- The goal of an onto proof is to show $\forall y \exists x [f(x) = y]$ where y is in the codomain and x is in the domain. 
+	- We need to show that for any arbitrary value in the codomain, there is always some value in the domain that maps to it, which we can do through a direct proof. 
+- We can start by considering an arbitrary y in the codomain. Then we can consider an arbitrary x in the domain. 
+- We can then try to find some expression to represent x that will ALWAYS give your desired y when you plug x into the function f. 
+- **Make sure** that your expression for x is ALWAYS in the domain, and that it never goes outside that domain. 
+- Make sure to specify your domains/codomains for your variables in general. 
+
+
+- Try to do scratch work to solve for y and see if that could be plugged in 
+- Make sure that your expression for whatever input you believe will give you your desired output is actually defined IN THE DOMAIN. 
+	- If your domain is [0, 1], and your input is x = y + 4, then make sure your expression still works overall. 
+
+
+
+![[Pasted image 20220623225210.png]]
+
+
+![[Pasted image 20220624165600.png]]
+
+
+![[Pasted image 20220628191356.png]]

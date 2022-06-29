@@ -18,6 +18,7 @@ It is important to note that a set is:
 An element can be ANYTHING in a set. Generally, the set of all elements in a set is defined by the [[Domain for Sets]]
 
 
+--- 
 
 
 

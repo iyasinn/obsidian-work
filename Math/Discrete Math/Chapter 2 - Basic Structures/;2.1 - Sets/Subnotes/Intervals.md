@@ -43,3 +43,9 @@ It also has no bounds, since we can get arbitrarily close to a or b
 #### Can we make intervals with non-real numbers too? 
 We can, but we would probably have to specific that x is an integer. 
 But that’s not an interval, that’s just a set and we can specify that with set builder notation 
+
+
+#### What is an easy way to visualize these sets? 
+![[Intervals 2022-06-25 23.21.05.excalidraw|650]]
+
+Make sure to keep the sizes relevant
