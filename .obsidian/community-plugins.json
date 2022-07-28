@@ -35,5 +35,7 @@
   "enlightenment-obsidian",
   "obsidian-mind-map",
   "mousewheel-image-zoom",
-  "obsidian-git"
+  "obsidian-git",
+  "obsidian-fullscreen-plugin",
+  "templater-obsidian"
 ]

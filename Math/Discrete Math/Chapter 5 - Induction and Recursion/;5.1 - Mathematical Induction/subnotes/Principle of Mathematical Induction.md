@@ -8,6 +8,8 @@
 > **Basis step**: Verify P(1), or P(first value in set) is true
 > **Inductive step:** Show that the conditional statement $p(k) \to p(k + 1)$ is true for all positive integers k 
 
+If our inductive step is p(k) → p(k + 1), that means we proved it for every other integer (even if start at p(2) and odd if start at p(1))
+
 ---
 
 

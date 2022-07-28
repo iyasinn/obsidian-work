@@ -60,12 +60,17 @@ A lot of discrete math is devoted to the study of discrete structures, which can
 			- [[Using Set Notation with Quantifiers]]
 			- [[Venn Diagrams]]
 	- **[[;2.3 - Functions]]**
-		- [[Bijective]]
-		- [[Function Classifications]]
-		- [[Inverse Functions]]
-		- [[One-to-one]]
-		- [[Onto]]
+		- [[2.3 Homework]]
 		- **Subnotes**
+			- [[Bijective]]
+			- [[Function Classifications]]
+			- [[Function Compositions]]
+			- [[Function Graphs]]
 			- [[Functions]]
+			- [[Inverse Functions]]
+			- [[One-to-one]]
+			- [[Onto]]
+			- [[Partial Functions]]
+	- **[[;2.5 - Set Cardinality]]**
 
 %% End Waypoint %%

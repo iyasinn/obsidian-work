@@ -33,9 +33,10 @@ This will be true for all elements
 
 ![[Pasted image 20220620185007.png]]
 
-
+And an element only exists if the domain itself is nonempty. 
 
 ### Example
 
 - ![[Pasted image 20220620184759.png]]
 	- ![[Pasted image 20220620184802.png]]
+	- Be careful of domains, since here the domain is the integers. 

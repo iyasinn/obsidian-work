@@ -1,0 +1,16 @@
+{
+  "frames": [
+    {
+      "url": "https://calendar.google.com/calendar/u/0/r",
+      "displayName": "Google Calendar",
+      "icon": "calendar",
+      "hideOnMobile": true,
+      "addRibbonIcon": true,
+      "openInCenter": true,
+      "zoomLevel": 1,
+      "forceIframe": false,
+      "customCss": "/* hide right-side menu, and some buttons */\ndiv.d6McF,\ndiv.pw6cBb,\ndiv.gb_Td.gb_Va.gb_Id,\ndiv.Kk7lMc-QWPxkf-LgbsSe-haAclf,\ndiv.h8Aqhb,\ndiv.gboEAb,\ndiv.dwlvNd {\n    display: none !important;\n}"
+    }
+  ],
+  "padding": 5
+}

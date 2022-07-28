@@ -56,6 +56,9 @@ Now, if it does = 0, then it must only do so at one point. If that’s the case,
 
 
 
+##### If a function is 1-1, what does this tell you about the cardinalites of the domain and codomain? 
+[[Cardinality]]
+
 ### Examples
 - ![[Pasted image 20220627233552.png]]
 - ![[Pasted image 20220627233601.png]]

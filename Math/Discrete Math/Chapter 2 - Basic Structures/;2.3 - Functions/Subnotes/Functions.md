@@ -1,6 +1,6 @@
 # Functions
 
-[[;2.3 - Functions]]
+[[;2.3 - Functions 1]]
 
 [[Set]]
 

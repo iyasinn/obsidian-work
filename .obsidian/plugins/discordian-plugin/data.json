@@ -9,7 +9,7 @@
   "fontSizeNotes": 20,
   "fontSizeFileExplorer": 14,
   "writerMode": true,
-  "paragraphFocusMode": true,
+  "paragraphFocusMode": false,
   "paragraphFocusFade": 75,
   "flatAndyMode": true,
   "readableLength": 45

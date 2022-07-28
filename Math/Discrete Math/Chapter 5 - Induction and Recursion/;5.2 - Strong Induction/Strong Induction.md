@@ -7,6 +7,10 @@
 
 In strong induction, we have the same thing as simple induction, but we get to use all the information we can
 
+Doesn’t have to be →p(k+1), could also → p(k + 2) or → p(k) or → p(k + 4)
+
+Adjust the range of your inductive hypothesis though
+
 ##### Explain the base case
 Here, we just need to verify that P(1) or P(first value) is true. 
 
@@ -104,4 +108,4 @@ Then you should use strong induction, since it provides you with much more infor
 #### Explain the alternate (But equivalent) form of strong induction 
 ![[Pasted image 20220613223914.png]]
 
-WE need access to our base cases! That’s how we limit k!
+We need access to our base cases! That’s how we limit k!

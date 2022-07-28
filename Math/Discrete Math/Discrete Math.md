@@ -33,6 +33,17 @@ Induction is an incredibly important technique that you must master!
 	- **[[Chapter 1 - Logic and Proofs]]**
 	- **[[Chapter 2 - Basic Structures]]**
 	- **[[Chapter 5 - Induction and Recursion]]**
+	- **[[Chapter 6 - Counting]]**
+		- **[[;6.1 - The Basics of Counting]]**
+			- **Subnotes**
+				- [[Basic Counting Principles]]
+				- [[Division Rule]]
+				- [[Product Rule Counting]]
+				- [[Subtraction Rule]]
+				- [[Sum Rule Counting]]
+		- [[6.1 HW]]
+	- **[[Chapter 9 - Relations]]**
+	- **[[Chapter 10 - Graphs]]**
 
 %% End Waypoint %%
 - **[[Discrete Math]]**

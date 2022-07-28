@@ -104,3 +104,85 @@ And then you can or can’t have reflexive to get two combinations.
 For properties like reflexive, transitive….given some R relation that describes something, it DEPENDS
 
 
+![[Pasted image 20220630163444.png]]
+
+
+
+
+---
+
+
+
+# Lecture 16
+
+![[Pasted image 20220630163536.png]]
+
+
+A closure is just the smallest relation S that contains R, it’s an **extenstion** of R, but it has to have a specific property (reeflexiv,e symmetric, transitive, etc)
+
+- Look at R
+- See if it violates the proeprty
+- Fix that violation
+
+To fix the violation, we can’t manually do it
+WE DO KNOW THOUGH that
+if we take some set
+and take the union
+anything the original set already has doesn’t really change
+but it does add new thing
+
+And so if we took a set R, and we add another relation that we know is reflexive set only on all the elements of R
+then we will get the minimal set with their union
+
+---
+
+You can’t remove edges for a closure, you only add what’s NEEDED
+And the symmetric closure is the SMALLEST possible closure
+
+
+
+
+![[Pasted image 20220630211014.png]]
+
+
+
+![[Pasted image 20220630211032.png]]
+
+
+
+
+# Graphs
+
+
+Graphs and relations aren’t exactly the same
+
+You’d have to turn the graph into a relation
+If you do dthat, then you have have undirect graphs youd’ have to make two connections. 
+
+Multiple edges have to be the EXACT same
+
+
+
+Neighborhood is the set of all adjacent vertices
+We can have an out neighborhood and an in neighborhood. 
+
+![[Pasted image 20220704201924.png]]
+
+
+
+
+![[Pasted image 20220704201941.png]]
+
+
+
+Degree is just the number of ad
+
+IT"‘S BASED ON EDGES NOT ELEMENTS
+
+degrees counted twice
+
+You can have PATHS of length 0 
+
+
+
+
