@@ -1,4 +1,5 @@
 
+
 # My methods of solving problems
 
 ## Definitions
@@ -727,8 +728,59 @@ They are quite similar, but this is all a matter of understanding $\forall$ stat
 
 ### Counting
 
+
+Make sure you understand the notino of sequence and sets. 
+When say sequences of k objects in n dont matter, we can divide by nPk 
+Or when k orderings dont matter, we can subtract by kPk
+Again we can either spam use permutations or keep it simple and just use !
+Like when dont k matter, that’s k! orderings that are in the way
+
+WHENEVER looking at A OR B for counting, REMEMBER TO REMOVE THE OVERLAP. INCLUSION EXCLUSION IS VERY VERY IMPORTANT. 
+
+
 #### Techniques
 - You can place certain objects first, then place the rest depending on the remaining positions. 
 - You can use the complement, aka subtracting from the total number of opportunities
 - You can do cases (useful in general)
-- 
+- Good strategy Graetz does is
+	- Build up one specific choice, going through things to question and things to count
+	- Then test if it makes a bijection to (all the choices to the set of all outcomes)outcomes. Make sure to IGNORE the process. Just try to find WEIRD outcomes. Then see if there are multiple ways to make that outcome, make sure that outcome is actually possible. Make sure it’s one to one, if it’s n to 1, then divide by n for example.
+	- if it doesn’t, see what else to count or what to subtract or how to change the counting technique, otherwise continue on. 
+- Simplify the parameters in a problem. This is very helpful. 
+
+Remember for your counting to think about unordered sets or ordered tuples as inputs. 
+
+
+#### Formulas 
+
+For these formulas, we have k objects we are picking, and n **distinct** objects. 
+
+- Permutation NO repetition: $nPk = \frac{n!}{(n - k)!}$
+	- Sequence of k of the n objects. 
+- Combination NO repetition: ${n \choose k} = \frac{n!}{(n - k)! \; * \; n!}$
+	- Set with cardinality k objects from the n objects. 
+- Permutation repetition: $n^k$
+	- Sequence of k objects of n objects where we can have repetition
+- Combination repetition: ${{n + k - 1} \choose {k}} = {{n + k - 1} \choose {n - 1}}$
+	- Set of k objects from n objects where we can have repetition. 
+	- Putting unlabeled objects into labeled bins
+	- Picking objects and giving them a label 
+
+|               |         Permutation (sequence)         |                         Combination (set)                         |
+| ------------- |:---------------------------:|:-----------------------------------------------------------:|
+| No Repetition | $nPk = \frac{n!}{(n - k)!}$ |      ${n \choose k} = \frac{n!}{(n - k)! \; * \; n!}$       |
+| Repetition    |            $n^k$            | ${{n + k - 1} \choose {k}} = {{n + k - 1} \choose {n - 1}}$ |
+
+
+
+
+#### Labeled and Unlabeled balls and boxes
+
+
+
+### Pigeonhole Principle
+
+- It really helps to think about worst case scenarios
+	- Things are distributed evenly 
+	- You first pick things you don’t want before picking things you do want
+- Genearlly if we have n objects, making a list of n + 1 things can help us deduce something interesting via the pigeonhole principle. 

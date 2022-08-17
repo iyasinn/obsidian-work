@@ -26,32 +26,15 @@ Sets incredibly important structures!
 Induction is an incredibly important technique that you must master!
 [[Chapter 5 - Induction and Recursion]]
 
+[[Chapter 6 - Counting]]
 
+[[Chapter 7 - Discrete Probability]]
 
-%% Begin Waypoint %%
-- **[[Discrete Math]]**
-	- **[[Chapter 1 - Logic and Proofs]]**
-	- **[[Chapter 2 - Basic Structures]]**
-	- **[[Chapter 5 - Induction and Recursion]]**
-	- **[[Chapter 6 - Counting]]**
-		- **[[;6.1 - The Basics of Counting]]**
-			- **Subnotes**
-				- [[Basic Counting Principles]]
-				- [[Division Rule]]
-				- [[Product Rule Counting]]
-				- [[Subtraction Rule]]
-				- [[Sum Rule Counting]]
-		- [[6.1 HW]]
-	- **[[Chapter 9 - Relations]]**
-	- **[[Chapter 10 - Graphs]]**
+[[Chapter 9 - Relations]]
 
-%% End Waypoint %%
-- **[[Discrete Math]]**
-	- **[[Chapter 1 - Logic and Proofs]]**
-	- **[[Chapter 2 - Basic Structures]]**
-	- **[[Chapter 5 - Induction and Recursion]]**
-	- [[My methods]]
+[[Chapter 10 - Graphs]]
 
 
 
 Can we have sub proofs by contradiction? Just like proof by cases? But only if we split into arbitrar x and y 
+$\sum\limits $

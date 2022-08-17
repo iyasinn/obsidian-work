@@ -5,11 +5,11 @@
     "fontSize": 16,
     "iconColor": null,
     "recentlyUsedIcons": [
-      "FarChessQueen",
-      "RiCamera3Line",
-      "RiQuillPenLine",
+      "FarSnowflake",
+      "RiNumber1",
       "RiInkBottleLine",
-      "RiNumber1"
+      "RiQuillPenLine",
+      "RiCamera3Line"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -27,5 +27,6 @@
     "iconName": null,
     "inheritanceIcon": "RiQuillPenLine"
   },
-  "Math/Review.md": "FarChessQueen"
+  "Math/Review.md": "FarChessQueen",
+  "Work Completed.md": "FarSnowflake"
 }

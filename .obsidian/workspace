@@ -4,12 +4,12 @@
     "type": "split",
     "children": [
       {
-        "id": "840f505029066e0d",
+        "id": "94d568aea18d0004",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Math/Discrete Math/Chapter 6 - Counting/6.1 HW.md",
+            "file": "Math/Discrete Math/Chapter 7 - Discrete Probability/;7.2 - Probability Theory/Homework.md",
             "mode": "source",
             "source": false
           }
@@ -58,9 +58,21 @@
               "type": "graph",
               "state": {}
             }
+          },
+          {
+            "id": "cf4d3098c36fc312",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Work Completed.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       },
       {
         "id": "878481651a0844f7",
@@ -94,8 +106,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 277.0366897583008,
-    "collapsed": true
+    "width": 267.5
   },
   "right": {
     "id": "cea5acb34f371c6b",
@@ -111,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Math/Discrete Math/Chapter 6 - Counting/6.1 HW.md",
+                "file": "Math/Discrete Math/Chapter 7 - Discrete Probability/;7.2 - Probability Theory/Homework.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -171,24 +182,24 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
     "width": 131.622314453125,
     "collapsed": true
   },
-  "active": "840f505029066e0d",
+  "active": "94d568aea18d0004",
   "lastOpenFiles": [
-    "Math/My methods.md",
-    "Math/Discrete Math/Chapter 6 - Counting/;6.1 - The Basics of Counting/Subnotes/Basic Counting Principles.md",
-    "Math/Discrete Math/Chapter 6 - Counting/;6.1 - The Basics of Counting/;6.1 - The Basics of Counting.md",
-    "Math/Discrete Math/Chapter 6 - Counting/Chapter 6 - Counting.md",
-    "Math/Discrete Math/Chapter 6 - Counting/6.1 HW.md",
-    "Untitled.md",
-    "Lecture 15 - Relations.md",
+    "Math/Discrete Math/Chapter 7 - Discrete Probability/;7.2 - Probability Theory/;7.2 - Probability Theory.md",
+    "Math/Discrete Math/Chapter 7 - Discrete Probability/Chapter 7 - Discrete Probability.md",
     "Homework Template.md",
-    "Drawing pane.md",
-    "Useful/Important Functions.md"
+    "Math/Discrete Math/Chapter 7 - Discrete Probability/;7.2 - Probability Theory/Homework.md",
+    "Math/Discrete Math/Chapter 7 - Discrete Probability/;7.2 - Probability Theory/Subnotes/Assigning Probabilities.md",
+    "Math/Discrete Math/Chapter 7 - Discrete Probability/;7.2 - Probability Theory/Subnotes/Random Variables.md",
+    "Math/Discrete Math/Chapter 7 - Discrete Probability/;7.2 - Probability Theory/Subnotes/Bernoulli Trials and the Binomial Distribution.md",
+    "Math/Questions.md",
+    "Math/Discrete Math/Chapter 7 - Discrete Probability/;7.2 - Probability Theory/Subnotes/Independence.md",
+    "Math/Discrete Math/Chapter 7 - Discrete Probability/;7.2 - Probability Theory/Subnotes/Conditional Probability.md"
   ]
 }

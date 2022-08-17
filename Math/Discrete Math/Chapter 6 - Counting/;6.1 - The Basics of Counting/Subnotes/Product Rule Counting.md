@@ -5,7 +5,7 @@
 
 ## Notes
 
-### Explain the product rule
+### Explain the product rule 🟨
 
 >[!info] Product rule
 >![[Pasted image 20220718142812.png]]
@@ -22,6 +22,13 @@ Take a big problem and make it smaller and smaller! :D
 ### Explain how the product rule can be thought of for sets?
 
 It can be thought of taking the Cartesian product of sets, and the size of the Cartesian product is the count we get from applying the product rule. 
+
+Each task is a SET
+The cartesian  product of these sets will give the preocedure
+
+Where the n tuple, say a 2-tuple, (a, b), will represent the choice for the first task and then the second task. Very useful in allowing us to test what we’ve don
+
+The cardinatliy of the cartesina product is the total way to do the tasks.  
 
 ## Examples
 - ![[Pasted image 20220719043603.png]]

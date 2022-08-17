@@ -23,6 +23,11 @@ No. Generally, they will use a combination of both
 
 We can use them to represent the objects we are counting from, and so the counted objects will be a subset of the set of all objects we are counting from. 
 
+So a set will represent all the CHOICES for something, and the cardinality of the sets is the ways to count those choices. 
+
+Or more sepcifically, the set will reprsetn an object or an outcome, a choice that needs to be decided. 
+
+
 
 ![[Pasted image 20220719121408.png]]
 
